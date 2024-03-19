@@ -114,11 +114,11 @@ function set_timeouts(i, on_duration, off_duration, on_sound, off_sound) {
     
     }, ((i - 1) * on_duration_ms + (i - 1) * off_duration_ms));
 
-    setTimeout(function() {set_timer("off-" + String(i), off_duration, off_sound)}, (i * on_duration_ms + (i-1) * off_duration_ms));
+    setTimeout(function() {set_timer("off-" + String(i), off_duration, off_sound, 0.1)}, (i * on_duration_ms + (i-1) * off_duration_ms));
 
 };
 
-function set_timer(element, duration, sound) {
+function set_timer(element, duration, sound, volume = 1) {
 
     var target = duration;
     var now = 0;
@@ -140,10 +140,10 @@ function set_timer(element, duration, sound) {
         document.getElementById(element).innerHTML = "0" + minutes + ":" + seconds;
 
         if (!Array.isArray(sound)) {
-            beep(notes[sound], 'triangle');
+            beep(notes[sound], 'triangle', volume);
         } else {
             console.log(sound[now % sound.length])
-            beep(notes[sound[now % sound.length]], 'triangle');
+            beep(notes[sound[now % sound.length]], 'triangle', volume);
         }
                 
             
@@ -158,7 +158,7 @@ function set_timer(element, duration, sound) {
 
 };
 
-function beep(frequency, type) {           
+function beep(frequency, type, volume = 1) {           
 
     o = context.createOscillator()
     g = context.createGain()
@@ -168,6 +168,7 @@ function beep(frequency, type) {
     g.connect(context.destination)
     o.start(0)
 
+    g.gain.value = volume;
     g.gain.exponentialRampToValueAtTime(
         0.00001, context.currentTime + 1
     );
