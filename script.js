@@ -108,17 +108,17 @@ function set_timeouts(i, on_duration, off_duration, on_sound, off_sound) {
 
     setTimeout(function() {               
     
-        set_timer("on-" + String(i), on_duration, on_sound);
+        set_timer("on-" + String(i), on_duration, on_sound, 0.1);
         document.getElementById("block-" + String(i-1)).classList.remove('active-block');
         document.getElementById("block-" + String(i)).classList.add('active-block');        
     
     }, ((i - 1) * on_duration_ms + (i - 1) * off_duration_ms));
 
-    setTimeout(function() {set_timer("off-" + String(i), off_duration, off_sound, 0.1)}, (i * on_duration_ms + (i-1) * off_duration_ms));
+    setTimeout(function() {set_timer("off-" + String(i), off_duration, off_sound, 0.01)}, (i * on_duration_ms + (i-1) * off_duration_ms));
 
 };
 
-function set_timer(element, duration, sound, volume = 1) {
+function set_timer(element, duration, sound, volume = 0.1) {
 
     var target = duration;
     var now = 0;
@@ -140,10 +140,10 @@ function set_timer(element, duration, sound, volume = 1) {
         document.getElementById(element).innerHTML = "0" + minutes + ":" + seconds;
 
         if (!Array.isArray(sound)) {
-            beep(notes[sound], 'triangle', volume);
+            beep(notes[sound], 'sine', volume);
         } else {
             console.log(sound[now % sound.length])
-            beep(notes[sound[now % sound.length]], 'triangle', volume);
+            beep(notes[sound[now % sound.length]], 'sine', volume);
         }
                 
             
@@ -158,18 +158,29 @@ function set_timer(element, duration, sound, volume = 1) {
 
 };
 
-function beep(frequency, type, volume = 1) {           
+function beep(frequency, type, volume = 0.1) {  
+    
+    frequency = frequency / 2;
 
     o = context.createOscillator()
-    g = context.createGain()
+    g = context.createGain()    
+    c = context.createDynamicsCompressor();
     o.type = type
     o.connect(g)
     o.frequency.value = frequency
-    g.connect(context.destination)
-    o.start(0)
-
     g.gain.value = volume;
+
+    ramp_down = 0.97;
+    ramp_up = 0.03;
+
+    o.connect(g).connect(c).connect(context.destination)
+    
     g.gain.exponentialRampToValueAtTime(
-        0.00001, context.currentTime + 1
+        g.gain.value, context.currentTime + ramp_up
     );
+
+    g.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + ramp_down);
+
+    o.start(0)
+    o.stop(context.currentTime + ramp_up + ramp_down);
 }; 
