@@ -1,0 +1,54 @@
+<head>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="timer" onClick="start_timer('Meditation', 270, 30, 3)"> 
+        
+        <img src="../Images/Clock.png">
+
+        <p id="clock-carrier"> Click to start </p> 
+    
+    </div>
+    
+    <div class="main"> 
+
+        <div class="block active-block" id="block-1">
+
+            <span class="timer-text">Box breathing</span>
+
+            <span class="timer on-timer" id="on-1">04:30</span>
+            <span class="timer off-timer" id="off-1">00:30</span>
+
+        </div>
+
+        <div class="block" id="block-2">
+
+            <span class="timer-text">Belly breathing</span>
+
+            <span class="timer on-timer" id="on-2">04:30</span>
+            <span class="timer off-timer" id="off-2">00:30</span>
+
+        </div>
+
+        <div class="block" id="block-3">
+
+            <span class="timer-text">Empty meditation</span>
+
+            <span class="timer on-timer" id="on-3">04:30</span>
+            <span class="timer off-timer" id="off-3">00:30</span>
+
+        </div>
+
+    </div>
+
+<script src="../script.js"></script>
+</body>
+
+</HTML>

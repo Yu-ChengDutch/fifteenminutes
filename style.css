@@ -1,0 +1,79 @@
+/* General settings */
+
+body {
+    font-family: "Josefin Slab", serif;
+}
+
+/* Specific settings */
+
+.card, .timer {
+
+    width: 80vw;
+    margin-left: 10vw;
+    font-size: 8vw;
+    text-align: center;
+    margin-top: 10vh;
+
+}
+
+.card > img {
+
+    width: 20vw;
+    height: 20vw;
+    padding: 5vw;
+    border: 1vw solid black;
+    border-radius: 10vw;
+    box-shadow: 2.5vw 2.5vw 5vw rgba(0, 0, 0, 0.5);
+
+}
+
+.timer > img {
+
+    margin: 0px; 
+
+    width: 20vw;
+    height: 20vw;
+
+}
+
+.block {
+
+    width: 70vw;
+    margin-left: 10vw;
+    border-radius: 5vw;
+    
+    font-size: 5vw;
+
+    margin-bottom: 5vh;
+    padding: 2.5vw;
+
+}
+
+.timer-text {
+    display: inline-block;
+    width: 45vw;
+    margin: 0px;
+    padding: 0px;
+}
+
+.on-timer {
+    font-size: 3vw;
+    width: 5vw;
+    background-color: rgba(62, 133, 62, 0.537);
+    padding: 1vw;
+    border-radius: 1vw;
+    margin: 0px;
+}
+
+.off-timer {
+    font-size: 3vw;
+    width: 5vw;
+    background-color: rgba(133, 62, 62, 0.537);
+    padding: 1vw;    
+    border-radius: 1vw;
+    margin: 0px;
+}
+
+.active-block {
+    border: 1vw solid black;
+}
