@@ -2,6 +2,8 @@
 
 body {
     font-family: "Josefin Slab", serif;
+    font-weight: 800;
+    color: rgb(52, 52, 52);
 }
 
 /* Specific settings */
@@ -58,7 +60,6 @@ body {
 
 .on-timer {
     font-size: 3vw;
-    width: 5vw;
     background-color: rgba(62, 133, 62, 0.537);
     padding: 1vw;
     border-radius: 1vw;
@@ -67,7 +68,6 @@ body {
 
 .off-timer {
     font-size: 3vw;
-    width: 5vw;
     background-color: rgba(133, 62, 62, 0.537);
     padding: 1vw;    
     border-radius: 1vw;
@@ -77,3 +77,16 @@ body {
 .active-block {
     border: 1vw solid black;
 }
+
+.cue {
+    padding-top: 2vh;
+    margin-top: 2vh;
+    border-top: 1vw solid lightgrey;
+    color: lightgrey;
+}
+
+.active-block > .cue {
+    color: rgb(52, 52, 52);
+    border-top: 1vw solid darkgrey;
+}
+

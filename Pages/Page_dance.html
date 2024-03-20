@@ -9,13 +9,50 @@
 
 <body>
 
-    <div class="timer" onClick="start_timer()"> 
+    <div class="timer" onClick="start_timer('Dance', 270, 30, 3)"> 
         
         <img src="../Images/Clock.png">
 
         <p id="clock-carrier"> Click to start </p> 
     
-    </div>    
+    </div>
+    
+    <div class="main"> 
+
+        <div class="block active-block" id="block-1">
+
+            <span class="timer-text" id="text-1">Rhumba</span>
+
+            <span class="timer on-timer" id="on-1">04:30</span>
+            <span class="timer off-timer" id="off-1">00:30</span>
+
+            <div class="cue" id="cue-1">Mind your hip action!</div>
+
+        </div>
+
+        <div class="block" id="block-2">
+
+            <span class="timer-text" id="text-2">Chacha</span>
+
+            <span class="timer on-timer" id="on-2">04:30</span>
+            <span class="timer off-timer" id="off-2">00:30</span>
+
+            <div class="cue" id="cue-2">Close your legs!</div>
+
+        </div>
+
+        <div class="block" id="block-3">
+
+            <span class="timer-text" id="text-3">Jive</span>
+
+            <span class="timer on-timer" id="on-3">04:30</span>
+            <span class="timer off-timer" id="off-3">00:30</span>
+
+            <div class="cue" id="cue-1">Lift your knee before backstep and chassé!</div>
+
+        </div>
+
+    </div>
 
 <script src="../script.js"></script>
 </body>

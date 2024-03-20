@@ -15,6 +15,19 @@ var notes = {
     "B": 493.9
 }
 
+var rhythms = {
+    "English Waltz": [85, 3],
+    "Tango": [120, 4],
+    "Viennese Waltz": [174, 3],
+    "Foxtrot": [112, 4],
+    "Quickstep": [200, 4],
+    "Chacha": [120, 4],
+    "Samba": [96, 2],
+    "Rhumba": [100, 4],
+    "Paso Doble": [120, 2],
+    "Jive": [168,4]
+}
+
 var context = new AudioContext()
 var o = null
 var g = null
@@ -67,24 +80,34 @@ function start_timer(category = null, on_duration = null, off_duration = null, n
 
     } else if (running === true) {
 
-        document.getElementById("clock-carrier").innerHTML = "Click to start!";
         clearInterval(y);
+        window.location.href = '../../index.html';
+
     };
 
-    if (category == "Flexibility" || category == "Meditation") {
+    if (category == "Flexibility" || category == "Meditation" || category == "Dance") {
 
         for (i = 1; i <= nr_blocks; i++) {
 
             box_breathing = [['C', 'C', 'E', 'G', 'B', 'B', 'B', 'B', 'G', 'E', 'C', 'C'], 'C#']
             belly_breathing = [['C', 'C', 'E', 'G', 'G', 'F', 'E', 'D'], 'C#']
 
-            if (category == "Flexibility" || (category == "Meditation" && i == 2)) {
+            if (category === "Flexibility" || (category === "Meditation" && i === 2)) {
 
                 set_timeouts(i, on_duration, off_duration, belly_breathing[0], belly_breathing[1]);
 
-            } else if (category == "Meditation" && i == 1) {
+            } else if (category === "Meditation" && i === 1) {
 
                 set_timeouts(i, on_duration, off_duration, box_breathing[0], box_breathing[1]);
+
+            } else if (category === "Dance") {
+
+                current_dance = document.getElementById("text-" + String(i)).innerText;
+
+                current_bpm = rhythms[current_dance][0];
+                current_rhythm = rhythms[current_dance][1];
+
+                set_timeouts(i, on_duration, off_duration, box_breathing[0], box_breathing[1], current_bpm, current_rhythm, current_dance);
 
             } else {
 
@@ -101,24 +124,34 @@ function start_timer(category = null, on_duration = null, off_duration = null, n
 
 };
 
-function set_timeouts(i, on_duration, off_duration, on_sound, off_sound) {
+function set_timeouts(i, on_duration, off_duration, on_sound, off_sound, bpm=60, rhythm = 1, dance = null) {
 
     on_duration_ms = on_duration * 1000
     off_duration_ms = off_duration * 1000
 
     setTimeout(function() {               
     
-        set_timer("on-" + String(i), on_duration, on_sound, 0.1);
+        if (bpm === 60 && rhythm === 1 ) {
+
+            console.log("Setting timer");
+            set_timer("on-" + String(i), on_duration, on_sound, 0.5);
+
+        } else {
+
+            console.log("Setting rhythm");
+            set_rhythm("on-" + String(i), on_duration, 0.5, bpm, rhythm, dance)
+        }
+        
         document.getElementById("block-" + String(i-1)).classList.remove('active-block');
         document.getElementById("block-" + String(i)).classList.add('active-block');        
     
     }, ((i - 1) * on_duration_ms + (i - 1) * off_duration_ms));
 
-    setTimeout(function() {set_timer("off-" + String(i), off_duration, off_sound, 0.01)}, (i * on_duration_ms + (i-1) * off_duration_ms));
+    setTimeout(function() {set_timer("off-" + String(i), off_duration, off_sound, 0.1)}, (i * on_duration_ms + (i-1) * off_duration_ms));
 
 };
 
-function set_timer(element, duration, sound, volume = 0.1) {
+function set_timer(element, duration, sound, volume = 0.5) {
 
     var target = duration;
     var now = 0;
@@ -158,7 +191,84 @@ function set_timer(element, duration, sound, volume = 0.1) {
 
 };
 
-function beep(frequency, type, volume = 0.1) {  
+function set_rhythm(element, duration, volume = 0.5, bpm, rhythm, dance) {
+
+    var target = duration;
+    var now = 0;
+    var rhythm_counter = 0;
+    var distance = 5;
+
+    console.log(bpm)
+    console.log(60 / (bpm / 1000))
+
+    var z = setInterval(function() {
+
+        running = true;
+
+        now = now + 1;
+        
+        // Find the distance between now and the count down date
+        distance = target - now;
+            
+        // Time calculations for days, hours, minutes and seconds
+        var minutes = Math.floor(distance / 60);
+        var seconds = Math.floor(distance % 60);
+            
+        // Output the result in an element with id="demo"
+        document.getElementById(element).innerHTML = "0" + minutes + ":" + seconds;                
+            
+        // If the count down is over, write some text 
+        if (distance <= 0) {
+            
+            clearInterval(z);         
+
+        };
+
+    }, 1000);
+
+    var r = setInterval(function() {
+
+        rhythm_counter = rhythm_counter + 1
+
+        console.log(rhythm_counter % rhythm);
+
+        duration = ((60 / (bpm / 1000)) / 1000);
+
+        if (rhythm_counter % rhythm === 1) {
+            
+            if (dance === "Jive" || dance === "Waltz"){
+                beep(notes["G"], 'sine', volume * 2, duration);
+            } else {
+                beep(notes["A"], 'sine', volume * 2, duration);
+            }
+            
+
+        } else if (dance == "Rhumba" && rhythm_counter % rhythm === 0) {
+
+            beep(notes["A"], 'sine', volume * 1, duration * 2);
+
+        } else if (dance == "Chacha" && rhythm_counter % rhythm === 0) {
+
+            beep(notes["A"], 'sine', volume * 1, duration / 2);
+            setTimeout(function() {beep(notes["A"], 'sine', volume * 1, duration / 2)}, (60 / (bpm / 1000)) / 2)
+
+        } else {
+
+            beep(notes["A"], 'sine', volume * 1, duration);
+
+        }     
+
+        if (distance <= 0) {
+            
+            clearInterval(r);         
+
+        };
+
+    }, 60 / (bpm / 1000));
+
+}
+
+function beep(frequency, type, volume = 0.25, duration = 0.3) {  
     
     frequency = frequency / 2;
 
@@ -170,7 +280,7 @@ function beep(frequency, type, volume = 0.1) {
     o.frequency.value = frequency
     g.gain.value = volume;
 
-    ramp_down = 0.97;
+    ramp_down = duration;
     ramp_up = 0.03;
 
     o.connect(g).connect(c).connect(context.destination)
