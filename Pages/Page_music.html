@@ -1,0 +1,49 @@
+<head>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="timer" onClick="start_timer('Music', 270, 30, 3)"> 
+        
+        <img src="../Images/Clock.png">
+
+        <p id="clock-carrier"> Click to start </p> 
+    
+    </div>
+    
+    <div class="main"> 
+
+        <div class="button-panel">
+
+            <div>
+
+                <span class="solfege-button" id="do" onClick="check_music('do')">Do</span>
+                <span class="solfege-button" id="re" onClick="check_music('re')">Re</span>
+                <span class="solfege-button" id="mi" onClick="check_music('mi')">Mi</span>
+                <span class="solfege-button" id="fa" onClick="check_music('fa')">Fa</span>
+
+            </div>
+
+            <div>
+
+                <span class="solfege-button" id="sol" onClick="check_music('sol')">Sol</span>
+                <span class="solfege-button" id="la" onClick="check_music('la')">La</span>
+                <span class="solfege-button" id="ti" onClick="check_music('ti')">Ti</span> 
+                <span class="solfege-button" id="teu" onClick="check_music('teu')">Teu</span>  
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="../script.js"></script>
+</body>
+
+</HTML>

@@ -8,7 +8,7 @@ body {
 
 /* Specific settings */
 
-.card, .timer {
+.card, .timer, .button-panel {
 
     width: 80vw;
     margin-left: 10vw;
@@ -88,5 +88,33 @@ body {
 .active-block > .cue {
     color: rgb(52, 52, 52);
     border-top: 1vw solid darkgrey;
+}
+
+.solfege-button, .solfege-button:active {
+
+    width: 6vw;
+    height: 6vw;
+    font-size: 5vw;
+    display: inline-block;
+    padding: 2.5vw;
+    margin: 2.5vw;
+    border: 1vw solid black;
+    border-radius: 1vw;
+    transition-duration: 0.5s;
+
+}
+
+.active-button {
+
+    background-color: lightgrey;
+    transition-duration: 0.5s;
+
+}
+
+.right-button {
+
+    background-color: lightgreen;
+    transition-duration: 0.5s;
+
 }
 

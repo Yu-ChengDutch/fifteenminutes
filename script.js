@@ -13,7 +13,13 @@ var notes = {
     "A": 440.0,
     "Bb": 466.2,
     "B": 493.9
-}
+};
+
+var solfege_keys = ["C", "D", "E", "F", "G", "A", "B", "Bb"]
+var solfege_names = ["do", "re", "mi", "fa", "sol", "la", "ti", "teu"]
+
+var first_solfege = null;
+var second_solfege = null;
 
 var rhythms = {
     "English Waltz": [85, 3],
@@ -27,6 +33,8 @@ var rhythms = {
     "Paso Doble": [120, 2],
     "Jive": [168,4]
 }
+
+var next_note = true;
 
 var context = new AudioContext()
 var o = null
@@ -57,6 +65,13 @@ function start_timer(category = null, on_duration = null, off_duration = null, n
             // Output the result in an element with id="demo"
             document.getElementById("clock-carrier").innerHTML = minutes + "m " + seconds + "s ";
                 
+            if (category == "Music" && next_note) {
+
+                next_note = false;
+                start_music();
+        
+            }
+
             // If the count down is over, write some text 
             if (distance < 0) {
 
@@ -139,7 +154,7 @@ function set_timeouts(i, on_duration, off_duration, on_sound, off_sound, bpm=60,
         } else {
 
             console.log("Setting rhythm");
-            set_rhythm("on-" + String(i), on_duration, 0.5, bpm, rhythm, dance)
+            set_rhythm("on-" + String(i), on_duration, 0.5, (bpm * 0.8), rhythm, dance)
         }
         
         document.getElementById("block-" + String(i-1)).classList.remove('active-block');
@@ -294,3 +309,44 @@ function beep(frequency, type, volume = 0.25, duration = 0.3) {
     o.start(0)
     o.stop(context.currentTime + ramp_up + ramp_down);
 }; 
+
+function start_music() {
+
+    first_key = Math.floor(Math.random() * solfege_keys.length)
+    first_note = solfege_keys[first_key]
+
+    beep(notes[first_note], "sine", 0.75, 1.5);
+    
+    document.getElementById(solfege_names[first_key]).classList.add('active-button');
+
+    second_key = Math.floor(Math.random() * solfege_keys.length);
+    second_note = solfege_keys[second_key];
+
+    setTimeout(function() { beep(notes[second_note], "sine", 0.75, 1.5) }, 2000);
+
+    first_solfege = solfege_names[first_key]
+    second_solfege = solfege_names[second_key]
+
+};
+
+function check_music(note) {
+
+    if (note === second_solfege) {
+
+        document.getElementById(first_solfege).classList.remove('active-button');
+        document.getElementById(first_solfege).classList.add('right-button');
+        document.getElementById(second_solfege).classList.add('right-button');
+
+        console.log("Right!")
+
+        setTimeout(function() {
+
+            document.getElementById(first_solfege).classList.remove('right-button');
+            document.getElementById(second_solfege).classList.remove('right-button');
+
+        }, 1000)
+
+        setTimeout(function() { next_note = true }, 1500);
+    };
+
+}
