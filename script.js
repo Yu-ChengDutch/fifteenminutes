@@ -21,6 +21,8 @@ var solfege_names = ["do", "re", "mi", "fa", "sol", "la", "ti", "teu"]
 var first_solfege = null;
 var second_solfege = null;
 
+var difficulty = null;
+
 var rhythms = {
     "English Waltz": [85, 3],
     "Tango": [120, 4],
@@ -88,7 +90,6 @@ function start_timer(category = null, on_duration = null, off_duration = null, n
                     setTimeout(function() {beep(notes["E"], 'sine')}, 1000);                      
             
             }, 1500)    
-
             };
 
         }, 1000);
@@ -166,7 +167,7 @@ function set_timeouts(i, on_duration, off_duration, on_sound, off_sound, bpm=60,
 
 };
 
-function set_timer(element, duration, sound, volume = 0.5) {
+function set_timer(element, duration, sound, volume = 0.75) {
 
     var target = duration;
     var now = 0;
@@ -206,7 +207,7 @@ function set_timer(element, duration, sound, volume = 0.5) {
 
 };
 
-function set_rhythm(element, duration, volume = 0.5, bpm, rhythm, dance) {
+function set_rhythm(element, duration, volume = 0.75, bpm, rhythm, dance) {
 
     var target = duration;
     var now = 0;
@@ -312,20 +313,30 @@ function beep(frequency, type, volume = 0.25, duration = 0.3) {
 
 function start_music() {
 
-    first_key = Math.floor(Math.random() * solfege_keys.length)
-    first_note = solfege_keys[first_key]
+    if (difficulty === 'easy') {
 
-    beep(notes[first_note], "sine", 0.75, 1.5);
-    
-    document.getElementById(solfege_names[first_key]).classList.add('active-button');
+        first_note = 'C'
+        first_solfege = 'do'
+
+    } else {
+
+        first_key = Math.floor(Math.random() * solfege_keys.length)
+        first_note = solfege_keys[first_key]
+        first_solfege = solfege_names[first_key]
+        
+    }    
+
+    beep(notes[first_note], "sine", 0.75, 1.5);    
+    document.getElementById(first_solfege).classList.add('active-button');
 
     second_key = Math.floor(Math.random() * solfege_keys.length);
     second_note = solfege_keys[second_key];
+    second_solfege = solfege_names[second_key]
 
     setTimeout(function() { beep(notes[second_note], "sine", 0.75, 1.5) }, 2000);
 
-    first_solfege = solfege_names[first_key]
-    second_solfege = solfege_names[second_key]
+    
+    
 
 };
 
@@ -348,5 +359,14 @@ function check_music(note) {
 
         setTimeout(function() { next_note = true }, 1500);
     };
+
+}
+
+function activate_level(level, antagonist) {
+
+    document.getElementById(level).classList.add("active-button");
+    document.getElementById(antagonist).classList.remove("active-button");
+
+    difficulty = level;
 
 }
