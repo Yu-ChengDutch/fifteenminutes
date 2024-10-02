@@ -38,16 +38,28 @@ body {
 
 }
 
+.main {
+
+    width: 75vw;
+    margin-left: 7.5vw;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 500;
+
+}
+
 .block {
 
-    width: 70vw;
-    margin-left: 10vw;
+    width: 100%;
     border-radius: 5vw;
     
     font-size: 5vw;
 
-    margin-bottom: 5vh;
+    margin-bottom: 1.5vh;
     padding: 2.5vw;
+
+    text-align: left;
+    font-weight: bold;
 
 }
 
@@ -129,3 +141,13 @@ body {
 
 }
 
+.introduction {
+    width: 70vw;
+    border-radius: 5vw;
+    
+    font-size: 5vw;
+    margin-left: 10vw;
+
+    margin-bottom: 5vh;
+    padding: 2.5vw;
+}

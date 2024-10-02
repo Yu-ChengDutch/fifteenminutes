@@ -46,7 +46,7 @@ var y = null
 
 function start_timer(category = null, on_duration = null, off_duration = null, nr_blocks = null, on_sound=null, off_sound=null) {
 
-    var target = 900;
+    var target = (on_duration + off_duration) * nr_blocks;
     var now = 0;
 
     if (running === false) {
@@ -101,42 +101,39 @@ function start_timer(category = null, on_duration = null, off_duration = null, n
 
     };
 
-    if (category == "Flexibility" || category == "Meditation" || category == "Dance") {
+    for (i = 1; i <= nr_blocks; i++) {
 
-        for (i = 1; i <= nr_blocks; i++) {
+        box_breathing = [['C', 'C', 'E', 'G', 'B', 'B', 'B', 'B', 'G', 'E', 'C', 'C'], 'C#']
+        belly_breathing = [['C', 'C', 'E', 'G', 'G', 'F', 'E', 'D'], 'C#']
+        three_breathing = [['C', 'E', 'G'], 'C#']
 
-            box_breathing = [['C', 'C', 'E', 'G', 'B', 'B', 'B', 'B', 'G', 'E', 'C', 'C'], 'C#']
-            belly_breathing = [['C', 'C', 'E', 'G', 'G', 'F', 'E', 'D'], 'C#']
+        if (category === "Flexibility" || (category === "Meditation" && i === 2)) {
 
-            if (category === "Flexibility" || (category === "Meditation" && i === 2)) {
+            set_timeouts(i, on_duration, off_duration, belly_breathing[0], belly_breathing[1]);
 
-                set_timeouts(i, on_duration, off_duration, belly_breathing[0], belly_breathing[1]);
+        } else if (category === "Meditation" && i === 1) {
 
-            } else if (category === "Meditation" && i === 1) {
+            set_timeouts(i, on_duration, off_duration, box_breathing[0], box_breathing[1]);
 
-                set_timeouts(i, on_duration, off_duration, box_breathing[0], box_breathing[1]);
+        } else if (category === "Dance") {
 
-            } else if (category === "Dance") {
+            current_dance = document.getElementById("text-" + String(i)).innerText;
 
-                current_dance = document.getElementById("text-" + String(i)).innerText;
+            current_bpm = rhythms[current_dance][0];
+            current_rhythm = rhythms[current_dance][1];
 
-                current_bpm = rhythms[current_dance][0];
-                current_rhythm = rhythms[current_dance][1];
+            set_timeouts(i, on_duration, off_duration, box_breathing[0], box_breathing[1], current_bpm, current_rhythm, current_dance);
 
-                set_timeouts(i, on_duration, off_duration, box_breathing[0], box_breathing[1], current_bpm, current_rhythm, current_dance);
+        } else {
 
-            } else {
-
-                set_timeouts(i, on_duration, off_duration, "A", "B");
-
-            };
-            
+            set_timeouts(i, on_duration, off_duration, three_breathing[0], three_breathing[1]);
 
         };
-
-        setTimeout(function() {document.getElementById("block-" + String(nr_blocks)).classList.remove('active-block');}, (nr_blocks * on_duration_ms + nr_blocks * off_duration_ms))
+        
 
     };
+
+    setTimeout(function() {document.getElementById("block-" + String(nr_blocks)).classList.remove('active-block');}, (nr_blocks * on_duration_ms + nr_blocks * off_duration_ms))
 
 };
 
