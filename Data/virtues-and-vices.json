@@ -1,0 +1,23 @@
+{
+    "Charity": {
+        "Counter": "Sloth"
+    },
+    "Hope": {
+        "Counter": "Envy"
+    },
+    "Faith": {
+        "Counter": "Pride"
+    },
+    "Prudence": {
+        "Counter": "Greed"
+    },
+    "Fortitude": {
+        "Counter": "Anger"
+    },
+    "Justice": {
+        "Counter": "Lust"
+    },
+    "Temperance": {
+        "Counter": "Gluttony"
+    }
+}
