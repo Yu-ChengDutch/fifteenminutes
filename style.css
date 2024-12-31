@@ -42,6 +42,10 @@ body {
 
 }
 
+ul {
+    list-style-type: none; /* Remove bullets */
+}
+
 .timer > img {
 
     margin: 0px; 
@@ -85,6 +89,13 @@ body {
 
     text-align: left;
     font-weight: bold;
+
+}
+
+#angelus_block, #angelus_block > img {
+
+    width: 90vw;
+    margin-left: 0px;
 
 }
 
@@ -170,5 +181,69 @@ body {
 
     background-color: lightgreen;
     transition-duration: 0.5s;
+
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    outline: none;
+    width: 100%;
+    background-color: white;
+    font-family: "Josefin Slab", serif;
+    font-weight: 800;
+    color: rgb(52, 52, 52);
+    font-size: 4vw;
+  }
+
+.collapsible > h1 {
+    background-color: lightblue;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.collapsible:hover > h1 {
+    background-color: aquamarine;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+/* N-back task */
+
+.container {
+    width: 80vw;
+    margin-left: 10vw;
+    height: 80vw;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.container > div {
+    background-color: lightgray;
+    border: 1vw solid white;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#check_button {
+
+    width: 60vw;
+    height: 10vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background-color: aquamarine;
+    border-radius: 2vh;
+    border-style: none;
+    font-size: 1.5vh;
+    font-family: "Josefin Slab", serif;
+    font-weight: 800;
 
 }

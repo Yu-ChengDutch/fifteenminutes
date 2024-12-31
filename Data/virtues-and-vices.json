@@ -1,23 +1,31 @@
 {
     "Charity": {
-        "Counter": "Sloth"
+        "Counter": "Sloth",
+        "Prayer": "Lord, protect me from spiritual sloth. Help me to be a good steward of the opportunities, spiritual gifts, influence, relationships, resources, wisdom, and all the other blessings You have so generously given me. I know I do not deserve any of them. Help me to diligently employ all of them in Your service, for Your glory, and to advance Your Kingdom. Let me not be concerned for my own comfort, ease, convenience, and pleasure, but rather with how to please You and serve others. I know that all of these “spiritual” sins are expressions of loving You and others inadequately and wrongly. Teach me to love You with all my heart, mind, soul, and strength and to love others as I love myself."
     },
     "Hope": {
-        "Counter": "Envy"
+        "Counter": "Envy",
+        "Prayer": "Lord, protect me from spiritual envy. Protect me from comparing myself with others. Protect me from dissatisfaction with Your good gifts. Protect me from desiring what others have, whether it is their reputation, their ministry impact, their relationship with You, or any other good thing You have given them. Let me be satisfied with how You have made me and determined to serve You with as much love and devotion as I can, giving You my best rather than wishing for what I don’t have."
     },
     "Faith": {
-        "Counter": "Pride"
-    },
-    "Prudence": {
-        "Counter": "Greed"
-    },
-    "Fortitude": {
-        "Counter": "Anger"
-    },
-    "Justice": {
-        "Counter": "Lust"
+        "Counter": "Pride",
+        "Prayer": "Lord, I realize that spiritual pride is, if anything, more egregious than carnal pride, because it robs You of even more glory. Protect my heart from any temptation to think that anything good comes from me apart from Your work through me. I know that any virtue or righteousness comes from You. I know that any spiritual gift I have is from You. I know that any fruit in ministry comes from You. I know that any way others are blessed by me is from You. Let me not think of myself, but of You and others. Let me not consider myself better than others. You are the vine. I am simply a branch. I can do nothing apart from You."
     },
     "Temperance": {
-        "Counter": "Gluttony"
+        "Counter": "Gluttony",
+        "Prayer": "Lord, protect me from spiritual gluttony. Protect me from consuming more than I need and of failing to concern myself with enabling others to have what they need. Protect me from spiritual selfishness—the temptation to consume rather than contribute, to be served rather than to serve, to be blessed rather than to be a blessing to others."
+    },
+    "Justice": {
+        "Counter": "Lust",
+        "Prayer": "Lord, protect me from spiritual lust, from desiring what You have chosen that I should not have. Do not let me be tempted by lust for credit or glory. Do not let me lust for power or authority over others in matters of Your Kingdom. Let me love You rather than the benefits You bless me with or the gifts You give."
+    },
+    "Prudence": {
+        "Counter": "Greed",
+        "Prayer": "Lord, protect me from spiritual greed. Just as greed for temporal things leads to pursuit of more things than one needs, so spiritual greed can tempt me to pursue more than You have ordained in spiritual matters. I can desire more admiration for ministry, more spiritual gifts than I can steward well, and more influence than I have the wisdom to use for the good of others and for Your glory. Let me concern myself with wisely stewarding the gifts and influence You have given me. Help me to be concerned with the depth of my ministry and to let You be concerned with the breadth of it."
+    },
+    "Fortitude": {
+        "Counter": "Wrath",
+        "Prayer": "Lord, protect me from spiritual wrath. Do not let my feelings of frustration or irritation or impatience with others prevent me from dealing with them in love. Remind me of Your forgiveness toward me, Your patience with me, and Your forbearance of my immature motives. Remind me of how many advantages and privileges and opportunities You have given me and of the fact that I still remain so far short of Your intentions for me. Help me to love those who fall short just as I love myself, desiring the best for them."
     }
+    
 }
