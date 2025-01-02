@@ -1,3 +1,5 @@
+let liturgical_season = ""
+
 // Handles setting the prayers
 
 fetch('../Data/virtues-and-vices.json')
@@ -80,16 +82,35 @@ const d = new Date();
 let year = d.getFullYear();
 let easter_date = getEaster(year)
 let pentecost_date = easter_date.addDays(49)
+let christmas_date = new Date(d.getFullYear(), 11, 25)
+let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay())- 28))
+let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
+let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
+
+console.log(holy_saturday_date)
+
+// Fill in the hymns / Angelus
 
 if (d >= easter_date && d <= pentecost_date){
 
     console.log("Eastertide")
     document.getElementById("angelus_block").innerHTML = "<img src='../Images/IMAGE_Regina_coeli.png'>"
-    
+    document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Regina_coeli.png'>"
+
 } else {
 
     console.log("Not eastertide")
     document.getElementById("angelus_block").innerHTML = "<img src='../Images/IMAGE_Angelus_1.png'>"
+
+    // Marian hymns
+
+    if (d <= candlemass_date || d >= advent_date) {
+        document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Alma_Redemptoris.png'>"
+    } else if (d > candlemass_date && d <= holy_saturday_date) {
+        document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
+    } else {
+        document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
+    }
 
 }
 

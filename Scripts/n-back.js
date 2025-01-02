@@ -8,10 +8,12 @@ let n = 2
 
 let correct = 0
 let wrong = 0
+let missed = 0
 let counter = 0 
 
 let current_number = 0;
 let current_trigger = 0
+let pressed_button = false
 
 let random_numbers = [];
 let n_backs = new Array(n + 1).fill(0);
@@ -37,6 +39,8 @@ console.log(random_numbers)
 let button = document.getElementById("check_button");
 
 button.addEventListener("click", function() {
+
+    pressed_button = true;
     
     if (current_trigger == 0) {
 
@@ -50,7 +54,9 @@ button.addEventListener("click", function() {
         correct += 1;
         document.getElementById("correct_block").innerHTML = "Correct: " + correct.toString();
 
-    }
+    };
+
+
 
   });
 
@@ -80,8 +86,16 @@ async function iterate() {
         await sleep(1500);
         document.getElementById(current_number.toString()).style.backgroundColor = "lightgrey";
         await sleep(500);
-    
-    }
+
+        if (pressed_button == false && current_trigger == 1) {
+
+            console.log("Found missing!")
+            missed += 1
+            document.getElementById("missed_block").innerHTML = "Missed: " + missed.toString();
+
+        };
+
+    };
     
 };
 
