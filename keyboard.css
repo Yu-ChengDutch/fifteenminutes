@@ -1,0 +1,32 @@
+.piano-keys-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    min-width: 90vw;
+    max-width: 90vw;
+    margin-left: 0vw;
+}
+
+.piano-keys {
+    width: 6vw;
+    cursor: pointer;
+    position: relative;
+    height: 30vw;
+    border-radius: 1vw;
+    border: 1px solid #000;
+}
+
+.white-key {
+    background-color: #fff;
+}
+
+.black-key {
+    width: 3vw;
+    height: 20vw;
+    border-radius: 0.5vw;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #000;
+    z-index: 2;
+    margin: 0 -1.5vw 0 -1.5vw;
+}
