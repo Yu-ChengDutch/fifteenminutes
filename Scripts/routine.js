@@ -13,6 +13,7 @@ fetch('../Data/virtues-and-vices.json')
     // Get month, and the associated virtue
 
     const d = new Date();
+
     let month = d.getMonth();
 
     let current_virtue = virtues[month % 7];
@@ -78,7 +79,7 @@ function getEaster(year) {
 	return new Date(year, month - 1, day);
 }
 
-const d = new Date();
+var d = new Date();
 let year = d.getFullYear();
 let easter_date = getEaster(year)
 let pentecost_date = easter_date.addDays(49)
@@ -87,7 +88,7 @@ let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date
 let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
 let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
 
-console.log(holy_saturday_date)
+console.log(d)
 
 // Fill in the hymns / Angelus
 
@@ -114,9 +115,24 @@ if (d >= easter_date && d <= pentecost_date){
 
 }
 
+d = new Date();
+
 if (d.getDay() == 0 || d.getDay() == 3 || d.getDay() == 5) {
 
-    document.getElementById("cleanse_block").innerHTML = "Step 3: Cleanse face (Bettoli, V., 2020)"
+    document.getElementById("cleanse_block").innerHTML = "Cleanse face (Bettoli, V., 2020)"
+    document.getElementById("cut_block").innerHTML = "Cut facial hair"
+    document.getElementById("toilet_block").innerHTML = "Toilet"
+
+} else if (d.getDay() == 6) {
+
+    document.getElementById("diary_block_week1").innerHTML = "Analyse monthly goals"
+    document.getElementById("diary_block_week2").innerHTML = "Analyse week"
+
+}
+
+if (d.getDay() == 0) {
+
+    document.getElementById("cut_block").innerHTML = "Cut facial hair & finger nails"
 
 }
 
