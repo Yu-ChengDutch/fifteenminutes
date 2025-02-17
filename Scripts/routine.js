@@ -117,22 +117,22 @@ if (d >= easter_date && d <= pentecost_date){
 
 d = new Date();
 
-if (d.getDay() == 0 || d.getDay() == 3 || d.getDay() == 5) {
+if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 
     document.getElementById("cleanse_block").innerHTML = "Cleanse face (Bettoli, V., 2020)"
-    document.getElementById("cut_block").innerHTML = "Cut facial hair"
     document.getElementById("toilet_block").innerHTML = "Toilet"
+    document.getElementById("cut_block").innerHTML = "Cut facial hair"
+
+    if (d.getDay() == 6) {
+
+        document.getElementById("cut_block").innerHTML = "Cut facial hair<br>Trim haircut<br>Trim finger nails";
+
+    }
 
 } else if (d.getDay() == 6) {
 
     document.getElementById("diary_block_week1").innerHTML = "Analyse monthly goals"
     document.getElementById("diary_block_week2").innerHTML = "Analyse week"
-
-}
-
-if (d.getDay() == 0) {
-
-    document.getElementById("cut_block").innerHTML = "Cut facial hair & finger nails"
 
 }
 
