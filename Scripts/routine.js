@@ -126,13 +126,17 @@ if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
     if (d.getDay() == 6) {
 
         document.getElementById("cut_block").innerHTML = "Cut facial hair<br>Trim haircut<br>Trim finger nails";
+        document.getElementById("diary_block_week1").innerHTML = "Analyse monthly goals"
+        document.getElementById("diary_block_week2").innerHTML = "Analyse week"
+
+        
 
     }
 
-} else if (d.getDay() == 6) {
+} else if (d.getDay() == 0) {
 
-    document.getElementById("diary_block_week1").innerHTML = "Analyse monthly goals"
-    document.getElementById("diary_block_week2").innerHTML = "Analyse week"
+    document.getElementById("med_intro").outerHTML = ""
+    document.getElementById("med_card").outerHTML = ""
 
 }
 

@@ -4,7 +4,7 @@ let max = 9;
 let min = 1;
 let number = 0
 
-let n = 2
+let n = 3
 
 let correct = 0
 let wrong = 0
@@ -17,6 +17,8 @@ let pressed_button = false
 
 let random_numbers = [];
 let n_backs = new Array(n + 1).fill(0);
+
+document.getElementById("n_intro").innerHTML = `Currently doing: ${n}\-back task`
 
 for (let i = 0; i < 100; i++) {
 
