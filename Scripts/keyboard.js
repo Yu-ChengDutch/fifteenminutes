@@ -25,39 +25,39 @@ var notes = {
     "E5": 659.2
 };
 
-major_scales = {
+all_scales = {
 
-    "C": ["C4", "D4", "E4", "F4", "G4", "A4", 'B4', "C5"],
-    "C#": ["C#4", "D#4", "F4", "F#4", "G#4", "A#4", "C4", "C#4"],
-    "D": ["D4", "E4", "F#4", "G4", "A4", "B4", "C#5", "D5"],
-    "D#": ["D#4", "F4", "G4", "G#4", "A#4", "C5", "D5", "D#5"],
-    "E": ["E4", "F#4", "G#4", "A4", "B4", "C#5", "D#5", "E5"],
-    "F": ["F3", 'G3', "A3", "A#3", "C4", "D4", "E4", "F4"],
-    "F#": ["F#3", "G#3", "A#3", "B3", "C#4", "D#4", "F4", "F#4"],
-    "G": ["G3", "A3", "B3", "C4", "D4", "E4", "F#4", 'G4'],
-    "G#": ["G#3", "A#3", "C4", "C#4", "D#4", "F4", "G4", "G#4"],
-    "A": ["A3", "B3", "C#4", "D4", "E4", "F#4", "G#4", "A4"],
-    "A#": ["A#3", "C4", "D4", "D#4", "F4", "G4", "A4", "A#4"],
-    "B": ["B3", "C#4", "D#4", "E4", "F#4", "G#4", "A#4", "B4"],
+    // Major scales
 
-}
+    "C major": ["C4", "D4", "E4", "F4", "G4", "A4", 'B4', "C5"],
+    "C# major": ["C#4", "D#4", "F4", "F#4", "G#4", "A#4", "C5", "C#5"],
+    "D major": ["D4", "E4", "F#4", "G4", "A4", "B4", "C#5", "D5"],
+    "D# major": ["D#4", "F4", "G4", "G#4", "A#4", "C5", "D5", "D#5"],
+    "E major": ["E4", "F#4", "G#4", "A4", "B4", "C#5", "D#5", "E5"],
+    "F major": ["F3", 'G3', "A3", "A#3", "C4", "D4", "E4", "F4"],
+    "F# major": ["F#3", "G#3", "A#3", "B3", "C#4", "D#4", "F4", "F#4"],
+    "G major": ["G3", "A3", "B3", "C4", "D4", "E4", "F#4", 'G4'],
+    "G# major": ["G#3", "A#3", "C4", "C#4", "D#4", "F4", "G4", "G#4"],
+    "A major": ["A3", "B3", "C#4", "D4", "E4", "F#4", "G#4", "A4"],
+    "A# major": ["A#3", "C4", "D4", "D#4", "F4", "G4", "A4", "A#4"],
+    "B major": ["B3", "C#4", "D#4", "E4", "F#4", "G#4", "A#4", "B4"],
 
-natural_minor_scales = {
+    // Natural minor scales
 
-    "A": ["A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4"],
-    "A#": ["A#3", "B#3", "C#4", "D#4", "F", "F#4", "G#4", "A#4"],
-    "B": ["B3", "C#4", "D4", "E4", "F#4", "G4", "A4", "B4"],
-    "C": ["C4", "D4", "D#4", "F#", "G4", "G#4", "A#4", "C5"],
-    "C#": ["C#4", "D#4", "E4", "F#4", "G#4", "A4", "B4", "C#5"],
-    "D": ["D4", "E4", 'F4', "G4", "A4", "A#4", "C5", "D5"],
-    "D#": ["D#4", "F4", "F#4", "G#4", "A#4", "B4", "C#5", "D#5"],
-    "E": ["E4", "F#4", "G4", "A4", "B4", 'C4', "D5", "E5"],
-    "F": ["F3", "G3", "Ab3", "Bb3", "C4", "C#4", "D#4", "F4"],
-    "F#": ["F#3", "G#3", "A3", "B3", "C#4", "D4", "E4", "F#4"],
-    "G": ["G3", "A3", "A#3", "C4", "D4", "D#4", "F4", "G4"],
-    "G#": ["G#3", "A#3", "B3", "C#4", "D#4", "E4", "F#4", "G#4"]
+    "A natural minor": ["A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4"],
+    "A# natural minor": ["A#3", "B#3", "C#4", "D#4", "F", "F#4", "G#4", "A#4"],
+    "B natural minor": ["B3", "C#4", "D4", "E4", "F#4", "G4", "A4", "B4"],
+    "C natural minor": ["C4", "D4", "D#4", "F#", "G4", "G#4", "A#4", "C5"],
+    "C# natural minor": ["C#4", "D#4", "E4", "F#4", "G#4", "A4", "B4", "C#5"],
+    "D natural minor": ["D4", "E4", 'F4', "G4", "A4", "A#4", "C5", "D5"],
+    "D# natural minor": ["D#4", "F4", "F#4", "G#4", "A#4", "B4", "C#5", "D#5"],
+    "E natural minor": ["E4", "F#4", "G4", "A4", "B4", 'C4', "D5", "E5"],
+    "F natural minor": ["F3", "G3", "Ab3", "Bb3", "C4", "C#4", "D#4", "F4"],
+    "F# natural minor": ["F#3", "G#3", "A3", "B3", "C#4", "D4", "E4", "F#4"],
+    "G natural minor": ["G3", "A3", "A#3", "C4", "D4", "D#4", "F4", "G4"],
+    "G# natural minor": ["G#3", "A#3", "B3", "C#4", "D#4", "E4", "F#4", "G#4"]
 
-}
+};
 
 // Initialisation
 
@@ -107,7 +107,7 @@ function registerButton(event) {
 
             if (target_scale.length == 0) {
 
-                message.innerHTML = "Correctly played " + scale_name + " major"
+                message.innerHTML = "Correctly played " + scale_name
                 next_target_scale();
 
             }
@@ -119,7 +119,7 @@ function registerButton(event) {
             
             if (fail_counter > 1) { 
 
-                message.innerHTML = "Oops! The " + scale_name + " major scale is: " + major_scales[scale_name] 
+                message.innerHTML = "Oops! The " + scale_name + " scale is: " + all_scales[scale_name] 
                 next_target_scale();
                 fail_counter = 0
         
@@ -182,7 +182,7 @@ function shuffle(array) {
 
 // Generate 12 major scales at random
 
-let random_scales = shuffle(Object.keys(major_scales));
+let random_scales = shuffle(Object.keys(all_scales));
 
 console.log(random_scales)
 
@@ -192,7 +192,7 @@ function next_target_scale() {
 
     scale_name = random_scales.shift()
 
-    target_scale = major_scales[scale_name];
+    target_scale = all_scales[scale_name];
     console.log(target_scale)
 
     document.getElementById("instructions").innerHTML = "Please play " + scale_name + " major"
