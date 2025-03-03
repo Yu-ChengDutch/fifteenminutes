@@ -30,23 +30,29 @@ fetch('../Data/virtues-and-vices.json')
         .then((question_file) => {
 
             let title_block = document.getElementById("title_block");
+            let title_block_2 = document.getElementById("title_block_2");
             title_block.innerHTML = current_virtue + " / " + exam_file[current_virtue]["Counter"]
+            title_block_2.innerHTML = current_virtue + " / " + exam_file[current_virtue]["Counter"]
 
             let current_questions = question_file[current_virtue]
             let first_question_block = document.getElementById("examination_block")
-            first_question_block.innerHTML = current_questions[0]
+            let first_question_block_2 = document.getElementById("examination_block_2")
 
             for (let i = 1; i < current_questions.length; i++) {
 
                 let new_block = document.createElement('div');
                 new_block.setAttribute("class", "block");
                 new_block.innerHTML = current_questions[i]
-                first_question_block.parentNode.insertBefore(new_block, first_question_block.nextSibling);
+                first_question_block.appendChild(new_block);
 
             };
 
             let post_examination_prayer = document.getElementById("post_prayer_block");
+            let post_examination_prayer_2 = document.getElementById("post_prayer_block_2");
             post_examination_prayer.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue +  " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
+            post_examination_prayer_2.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue +  " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
+
+            first_question_block_2.innerHTML = first_question_block.innerHTML;
 
         });
 
