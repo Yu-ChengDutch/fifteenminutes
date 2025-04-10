@@ -31,8 +31,13 @@ fetch('../Data/virtues-and-vices.json')
 
             let title_block = document.getElementById("title_block");
             let title_block_2 = document.getElementById("title_block_2");
-            title_block.innerHTML = current_virtue + " / " + exam_file[current_virtue]["Counter"]
-            title_block_2.innerHTML = current_virtue + " / " + exam_file[current_virtue]["Counter"]
+            let virtue_block = document.getElementById("virtue-question");
+
+            let current_vice = exam_file[current_virtue]["Counter"];
+
+            title_block.innerHTML = current_virtue + " / " + current_vice
+            title_block_2.innerHTML = current_virtue + " / " + current_vice
+            virtue_block.innerHTML = "How did I work on " + current_virtue + " and avoid " + current_vice + " today?"
 
             let current_questions = question_file[current_virtue]
             let first_question_block = document.getElementById("examination_block")
