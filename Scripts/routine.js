@@ -103,30 +103,61 @@ console.log(d)
 
 // Fill in the hymns / Angelus
 
+let angelus_text = ""
+
 if (d >= easter_date && d <= pentecost_date){
 
-    console.log("Eastertide")
-    document.getElementById("angelus_block").innerHTML = "<img src='../Images/IMAGE_Regina_coeli.png'>"
-    document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Regina_coeli.png'>"
+    liturgical_season = "Eastertide"
+    angelus_text = `
+    <img src='../Images/IMAGE_Regina_coeli.png'>
+
+    <div class="introduction"> 
+    
+    V. Gaude et laetare, Virgo Maria, alleluia!<br>
+    R. Quia surrexit Dominus vere, alleluia!<br><br>
+
+    Oremus.<br>
+    Deus, qui per resurrectionem Filii tui, Domini nostri Iesu Christi, mundum laetificare dignatus es:
+    praesta, quaesumus, ut per eius Genetricem Virginem Mariam, perpetuae capiamus gaudia vitae. <br>
+    Per eundem Christum Dominum nostrum.<br><br>
+
+    Gloria Patri et Filio et Spiritui Sancto, sicut erat in principo et nunc et semper, et in saecula
+    saeculorum. Amen. <br><br>
+
+    In nomine Patris, et Filii, et Spiritus Sancti. Amen. 
+    
+    </div
+    `
 
 } else {
 
     console.log("Not eastertide")
-    document.getElementById("angelus_block").innerHTML = "<img src='../Images/IMAGE_Angelus_1.png'>"
+    angelus_text = "<img src='../Images/IMAGE_Angelus_1.png'>"
+    liturgical_season = "Ordinary time"
 
     // Marian hymns
 
     if (d <= candlemass_date || d >= advent_date) {
+        liturgical_season = "Advent"
         document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Alma_Redemptoris.png'>"
     } else if (d > candlemass_date && d <= holy_saturday_date) {
+        liturgical_season = "Christmastide"
         document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
     } else {
+        liturgical_season = "Ordinary time"
         document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
     }
 
 }
 
+document.getElementById("angelus_block_2").innerHTML = angelus_text
+document.getElementById("angelus_block").innerHTML = angelus_text
+
+
 d = new Date();
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+document.getElementById("date").innerHTML = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br>It is " + liturgical_season;
 
 if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 

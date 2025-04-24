@@ -92,11 +92,15 @@ ul {
 
 }
 
-#angelus_block, #marian-hymn, #angelus_block > img, #marian-hymn > img {
+#angelus_block, #angelus_block_2, #angelus_block_2 > img, #angelus_block > img {
 
     width: 90vw;
     margin-left: 0px;
 
+}
+
+.block > .introduction {
+    margin: auto;
 }
 
 .introduction {
