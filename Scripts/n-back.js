@@ -4,7 +4,7 @@ let max = 9;
 let min = 1;
 let number = 0
 
-let n = 3
+let n = 5
 
 let correct = 0
 let wrong = 0

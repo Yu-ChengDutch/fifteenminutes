@@ -157,7 +157,9 @@ document.getElementById("angelus_block").innerHTML = angelus_text
 d = new Date();
 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-document.getElementById("date").innerHTML = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br>It is " + liturgical_season;
+let text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br>It is " + liturgical_season
+
+document.getElementById("date").innerHTML = text_date;
 
 if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 
