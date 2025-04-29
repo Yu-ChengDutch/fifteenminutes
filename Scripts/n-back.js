@@ -2,34 +2,34 @@
 
 let max = 9;
 let min = 1;
-let number = 0
+let number = 0;
 
-let n = 5
+let n = 4;
 
-let correct = 0
-let wrong = 0
-let missed = 0
-let counter = 0 
+let correct = 0;
+let wrong = 0;
+let missed = 0;
+let counter = 0; 
 
 let current_number = 0;
 let current_trigger = 0
-let pressed_button = false
+let pressed_button = false;
 
 let random_numbers = [];
 let n_backs = new Array(n + 1).fill(0);
 
-document.getElementById("n_intro").innerHTML = `Currently doing: ${n}\-back task`
+document.getElementById("n_intro").innerHTML = `Currently doing: ${n}\-back task`;
 
 for (let i = 0; i < 100; i++) {
 
-    number = Math.floor(Math.random() * (max - min + 1)) + min
-    random_numbers.push(number)
+    number = Math.floor(Math.random() * (max - min + 1)) + min;
+    random_numbers.push(number);
 
     if (i > n && random_numbers[i-n] == number ) {
         n_backs.push(1)
     } else if (i > n) {
         n_backs.push(0)
-    }
+    };
 
 };
 
