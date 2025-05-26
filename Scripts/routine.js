@@ -63,6 +63,69 @@ fetch('../Data/virtues-and-vices.json')
 
     });
 
+// Set readings
+
+fetch('../Data/readings.json')
+    .then((response) => response.json())
+    .then((readings_file) => {
+
+        console.log("Check")
+
+        console.log(liturgical_season);
+
+        let source = readings_file[liturgical_season]
+
+        let base = 0;
+
+        if (liturgical_season == "Eastertide") { base = easter_date;} 
+        else if (liturgical_season == "Ascensiontide") { base = ascension_date;} 
+        else if (liturgical_season == "Time after Pentecost") { base = pentecost_date;}
+
+        let difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));;
+
+        let day_source = source[difference];
+
+        let name = day_source["Name"];
+        let remark = day_source["Remark"];
+        let first_reading = day_source["Reading"];
+        let gospel_reading = day_source["Gospel"];
+
+        d = new Date();
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+        let text_date = "";
+
+        if (remark == null) {
+            text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + difference + "th day in " + liturgical_season + ": <br>" + name;
+        } else {
+            text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + difference + "th day in " + liturgical_season + ": <br>" + name + "<br><br>Also: " + remark;
+        }
+        console.log(text_date);
+
+        // Set first reading
+
+        if (first_reading == null) {document.getElementById("first_reading").innerHTML = "No reading"}
+        else {
+            
+            document.getElementById("reading_title").innerHTML = first_reading[0]
+            document.getElementById("first_reading").innerHTML = first_reading[1]
+        
+        };
+
+        // Set gospel reading
+
+        if (gospel_reading == null) {document.getElementById("gospel_reading").innerHTML = "No reading"}
+        else {
+            
+            document.getElementById("gospel_title").innerHTML = gospel_reading[0]
+            document.getElementById("gospel_reading").innerHTML = gospel_reading[1]
+        
+        };
+
+        document.getElementById("date").innerHTML = text_date;
+
+    });
+
 // Handles setting the Angelus
 
 Date.prototype.addDays = function(days) {
@@ -93,6 +156,7 @@ function getEaster(year) {
 var d = new Date();
 let year = d.getFullYear();
 let easter_date = getEaster(year)
+let ascension_date = easter_date.addDays(39);
 let pentecost_date = easter_date.addDays(49)
 let christmas_date = new Date(d.getFullYear(), 11, 25)
 let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay())- 28))
@@ -128,6 +192,11 @@ if (d >= easter_date && d <= pentecost_date){
     
     </div
     `
+    if (d >= ascension_date) {
+
+        liturgical_season = "Ascensiontide"
+
+    }
 
 } else {
 
@@ -144,7 +213,7 @@ if (d >= easter_date && d <= pentecost_date){
         liturgical_season = "Christmastide"
         document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
     } else {
-        liturgical_season = "Ordinary time"
+        liturgical_season = "Time after Pentecost"
         document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
     }
 
@@ -152,14 +221,6 @@ if (d >= easter_date && d <= pentecost_date){
 
 document.getElementById("angelus_block_2").innerHTML = angelus_text
 document.getElementById("angelus_block").innerHTML = angelus_text
-
-
-d = new Date();
-const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-
-let text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br>It is " + liturgical_season
-
-document.getElementById("date").innerHTML = text_date;
 
 if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 

@@ -1,0 +1,164 @@
+{
+    "Sources": { 
+
+        "Readings": "https://catholic-resources.org/Lectionary/Roman_Missal.htm",
+        "Calendar": "https://gcatholic.org/calendar/2025/Extraordinary-en",
+        "Text": "https://rkbijbel.nl/kbs/bijbel/willibrord1975/neovulgaat"
+
+    },
+    "Eastertide": [
+
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+            "Class": 2,
+            "Plus": 35,
+            "Name": "Fifth Sunday after Easter",
+            "Remark": "TOMORROW start the rogation days",
+            "Reading": ["James 1:22-27", "22Weest uitvoerders van het woord, en niet alleen toehoorders; dan zoudt gij uzelf bedriegen.  23Wie het woord hoort maar niet volbrengt, lijkt op iemand die het gelaat waarmee hij geboren is, in een spiegel beschouwt.  24Nauwelijks heeft hij zich bekeken, of hij gaat heen en is vergeten hoe hij er uitzag.  25Maar wie zich verdiept in de volmaakte wet, de wet van de vrijheid, en daarbij blijft, niet als een vergeetachtig toehoorder, maar als een uitvoerder metterdaad, die zal zalig zijn door zijn doen.  26Als iemand meent vroom te zijn, terwijl hij zijn tong niet beteugelt en zijn hart misleidt, diens vroomheid is waardeloos.  <br>27Zuivere en onbevlekte vroomheid in de ogen van onze God en Vader is dit: wezen en weduwen opzoeken in hun nood, en zichzelf vrijwaren voor de besmetting van de wereld."],
+            "Gospel": ["John 16:23-30", "23Op die dag zult gij Mij over niets ondervragen. Voorwaar, voorwaar, Ik zeg u: wat gij de Vader ook zult vragen, Hij zal het u geven in mijn Naam.  24Tot nu toe hebt gij niets gevraagd in mijn Naam. Vraagt en gij zult verkrijgen, opdat uw vreugde volkomen zij.  25In beelden heb Ik hierover tot u gesproken; er komt een uur, dat Ik niet meer in beelden tot u zal spreken, maar Mij onomwonden tegenover u zal uiten omtrent de Vader.  26Op die dag zult gij bidden in mijn Naam; het is niet nodig te zeggen dat Ik bij de Vader uw voorspreker zal zijn,  27want de Vader zelf heeft u lief omdat gij Mij liefhebt en gelooft dat Ik van God ben uitgegaan.  <br>28Ik ben van de Vader uitgegaan en in de wereld gekomen; weer verlaat Ik de wereld en ga naar de Vader.”  29Toen zeiden zijn leerlingen: “Kijkt, nu spreekt Gij onomwonden en gebruikt geen enkel beeld.  30Nu zien wij dat Gij alles weet. Het is voor U niet nodig dat iemand U ondervraagt. Wij geloven daarom dat Gij van God zijn uitgegaan.”"]
+        },
+        {
+            "Class": 3,
+            "Plus": 36,
+            "Name": "Saint Philip Neri, confessor",
+            "Remark": "ROGATION DAY",
+            "Reading": ["James 5:16-20", "16Belijdt daarom elkander uw zonden en bidt voor elkaar, opdat gij genezing moogt vinden. Het vurig gebed van een rechtvaardige vermag veel.  17Elia was een mens van gelijke aard als wij. Hij bad met aandrang dat het niet zou regenen, en er viel geen regen op het land, drie jaar en zes maanden lang.  18Hij bad opnieuw, en de hemel gaf regen en het land bracht zijn vrucht voort.  19Broeders, als iemand onder u van de waarheid afdwaalt en een ander brengt hem tot inkeer,  20weet dan dat hij die een zondaar van zijn dwaalweg bekeert, zijn ziel zal redden van de dood en tal van zonden zal bedekken. "],
+            "Gospel": ["Luke 11:5-13", "5Hij vervolgde: 'Stel, iemand van u heeft een vriend. Midden in de nacht gaat hij naar hem toe en zegt: Vriend, leen mij drie broden,  6want een vriend van mij is van een reis bij mij aangekomen en ik heb niets om hem voor te zetten.  7Zou die ander van binnenuit dan antwoorden: Val me niet lastig, de deur is al op slot en mijn kinderen en ik liggen in bed; ik kan niet opstaan om het je te geven?  8Ik zeg u: als hij al niet opstaat en het hem geeft omdat hij zijn vriend is, zal hij toch opstaan en hem geven al wat hij nodig heeft, om zijn onbescheiden aandringen.  <br>9Tot u zeg Ik hetzelfde: Vraagt en u zal gegeven worden; zoekt en gij zult vinden; klopt en er zal worden opengedaan.  10Want al wie vraagt, verkrijgt; wie zoekt, vindt; en voor wie klopt, wordt opengedaan.  11Is er soms onder u een vader die aan zijn zoon een steen zal geven, als deze hem om brood vraagt? Of als hij om vis vraagt, zal hij hem toch in plaats van vis geen slang geven?  12Of als hij een ei vraagt, zal hij hem toch geen schorpioen geven?  13Als gij dus, ofschoon ge slecht zijt, goede gaven aan uw kinderen weet te geven, hoeveel te meer zal dan uw Vader in de hemel de heilige Geest geven aan wie Hem erom vragen.'"]
+        },
+        {
+            "Class": 3,
+            "Plus": 37,
+            "Name": "Saint Bede the Venerable, confessor and doctor of the Church",
+            "Remark": "ROGATION DAY",
+            "Reading": ["James 5:16-20", "Belijdt daarom elkander uw zonden en bidt voor elkaar, opdat gij genezing moogt vinden. Het vurig gebed van een rechtvaardige vermag veel.  17Elia was een mens van gelijke aard als wij. Hij bad met aandrang dat het niet zou regenen, en er viel geen regen op het land, drie jaar en zes maanden lang.  18Hij bad opnieuw, en de hemel gaf regen en het land bracht zijn vrucht voort.  19Broeders, als iemand onder u van de waarheid afdwaalt en een ander brengt hem tot inkeer,  20weet dan dat hij die een zondaar van zijn dwaalweg bekeert, zijn ziel zal redden van de dood en tal van zonden zal bedekken. "],
+            "Gospel": ["Luke 11:5-13", "Hij vervolgde: 'Stel, iemand van u heeft een vriend. Midden in de nacht gaat hij naar hem toe en zegt: Vriend, leen mij drie broden,  6want een vriend van mij is van een reis bij mij aangekomen en ik heb niets om hem voor te zetten.  7Zou die ander van binnenuit dan antwoorden: Val me niet lastig, de deur is al op slot en mijn kinderen en ik liggen in bed; ik kan niet opstaan om het je te geven?  8Ik zeg u: als hij al niet opstaat en het hem geeft omdat hij zijn vriend is, zal hij toch opstaan en hem geven al wat hij nodig heeft, om zijn onbescheiden aandringen.  <br>9Tot u zeg Ik hetzelfde: Vraagt en u zal gegeven worden; zoekt en gij zult vinden; klopt en er zal worden opengedaan.  10Want al wie vraagt, verkrijgt; wie zoekt, vindt; en voor wie klopt, wordt opengedaan.  11Is er soms onder u een vader die aan zijn zoon een steen zal geven, als deze hem om brood vraagt? Of als hij om vis vraagt, zal hij hem toch in plaats van vis geen slang geven?  12Of als hij een ei vraagt, zal hij hem toch geen schorpioen geven?  13Als gij dus, ofschoon ge slecht zijt, goede gaven aan uw kinderen weet te geven, hoeveel te meer zal dan uw Vader in de hemel de heilige Geest geven aan wie Hem erom vragen.'"]
+        },
+        {
+            "Class": 2,
+            "Plus": 38,
+            "Name": "Vigil of the Ascension of the Lord",
+            "Remark": "ROGATION DAY",
+            "Reading": ["Eph 4:7-13", "7Maar aan ieder van ons afzonderlijk is de genade verleend naar de maat van Christus’ gave.  8Daarom zegt de Schrift: Hij is opgevaren naar den hoge, Hij heeft gevangenen meegevoerd, Hij heeft gaven gegeven aan de mensen.  9Hij is opgestegen: dit betekent dat Hij eerst in de diepte is afgedaald tot op de aarde.  10Hij die is neergedaald, is dezelfde die ook is opgestegen hoog boven alle hemelen, om het heelal te vervullen.  11Hij heeft ook gaven gegeven: sommigen maakte Hij apostelen, anderen profeten, anderen evangelisten, weer anderen herders en leraars,  12om de heiligen toe te rusten voor het werk der bediening, tot opbouw van het lichaam van Christus,  <br>13totdat wij allen tezamen komen tot de eenheid in het geloof en de kennis van Gods Zoon, tot de volmaakte Man, tot de gehele omvang van de volheid van de Christus."],
+            "Gospel": ["John 17:1-11", "1Zo sprak Jezus. Toen sloeg Hij zijn ogen ten hemel en zei: “Vader, het uur is gekomen. Verheerlijk uw Zoon, opdat de Zoon U verheerlijke.  2Gij hebt Hem immers macht gegeven over alle mensen om eeuwig leven te schenken aan allen die Gij Hem gegeven hebt.  3En dit is het eeuwige leven, dat zij U kennen, de enige ware God en Hem die Gij hebt gezonden, Jezus Christus.  4Ik heb U op aarde verheerlijkt door het werk te volbrengen dat Gij Mij hebt opgedragen te doen.  5Gij, Vader, verheerlijk Mij thans bij Uzelf en geef Mij de heerlijkheid, die Ik bij U had eer de wereld bestond. Ik heb uw Naam geopenbaard aan de mensen die Gij Mij uit de wereld gegeven hebt. U behoorden ze toe; Mij hebt Gij ze gegeven en zij hebben uw woord onderhouden.  <br>7Nu weten zij dat al wat Gij Mij gegeven hebt van U komt.  8Want de boodschap die Gij Mij hebt meegedeeld, heb Ik hun meegedeeld, en zij hebben ze aangenomen en naar waarheid erkend dat Ik van U ben uitgegaan, en zij hebben geloofd dat Gij Mij hebt gezonden.  9Ik bid voor hen. Niet voor de wereld bid Ik, maar voor hen die Gij Mij gegeven hebt, omdat zij U toebehoren.  10Al het mijne is van U en het uwe is van Mij. Zo ben Ik in hen verheerlijkt.  11Ik blijf niet langer in de wereld, zij echter blijven in de wereld, terwijl Ik naar U toe kom. Heilige Vader, bewaar in uw Naam hen die Gij Mij gegeven hebt, opdat zij één mogen zijn zoals Wij. "]
+        }
+
+    ],
+    "Ascensiontide": [
+
+        {
+            "Class": 1,
+            "Plus": 0,
+            "Name": "The Ascension of the Lord",
+            "Remark": null,
+            "Reading": ["Acts 1:1-11", "1Het eerste boek, dat ik geschreven heb, Teófilus, ging over alles wat Jezus gedaan en geleerd heeft  2tot aan de dag waarop Hij zijn opdracht gaf aan de apostelen die Hij door de heilige Geest had uitgekozen, en ten hemel werd opgenomen.  3Na zijn sterven toonde Hij hun met vele bewijzen dat Hij in leven was. Hij verscheen hun gedurende veertig dagen en sprak met hen over het Rijk Gods. 4Terwijl Hij met hen at, beval Hij hun Jeruzalem niet te verlaten maar de belofte van de Vader af te wachten, “die gij van Mij vernomen hebt:  5Johannes doopte met water, maar gij zult over enkele dagen gedoopt worden met de heilige Geest.”  <br>6Toen zij eens bijeengekomen waren stelden zij Hem de vraag: “Heer, gaat Gij in deze tijd voor Israël het koninkrijk herstellen?”  7Maar Hij gaf hun ten antwoord: “Het komt u niet toe dag en uur te kennen die de Vader in zijn macht heeft vastgesteld.  8Maar gij zult kracht ontvangen van de heilige Geest die over u komt, om mijn getuigen te zijn in Jeruzalem, in geheel Judea en Samaria en tot het uiteinde der aarde.”  9Na deze woorden werd Hij ten aanschouwen van hen omhooggeheven en een wolk onttrok Hem aan hun ogen.  10Terwijl zij Hem bij zijn hemelvaart gespannen nastaarden, stonden opeens twee mannen in witte gewaden bij hen,  11die zeiden: “Mannen van Galilea, wat staat ge naar de hemel te kijken? Deze Jezus die van u is weggenomen naar de hemel, zal op dezelfde wijze wederkeren als gij Hem naar de hemel hebt zien gaan.”"],
+            "Gospel": ["Mark 16:14-20", "14Later verscheen Hij aan de elf, terwijl zij aan tafel aanlagen. Hij maakte hun een verwijt van hun hardnekkig ongeloof, omdat zij geen geloof hadden geschonken aan degenen die Hem gezien hadden, nadat Hij verrezen was.  15Daarop sprak Hij tot hen: “Gaat uit over de hele wereld en verkondigt het evangelie aan heel de schepping.  16Wie gelooft en gedoopt is, zal gered worden, maar wie niet gelooft zal veroordeeld worden.  17En deze tekenen zullen de gelovigen vergezellen: in mijn Naam zullen ze duivels uitdrijven, nieuwe talen spreken,  18slangen opnemen; zelfs als ze dodelijk vergif drinken zal het hun geen kwaad doen; en als ze aan zieken de handen opleggen, zullen deze genezen zijn.”  <br>19Nadat de Heer Jezus aldus tot hen gesproken had, werd Hij ten hemel opgenomen en zit aan de rechterhand van God.  20Maar zij trokken uit om overal te prediken, en de Heer werkte met hen mee en schonk kracht aan hun woord door de tekenen die het vergezelden. "]
+        },
+        {
+            "Class": 1,
+            "Plus": 1,
+            "Name": "Saint Felix I, pope and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Plus": 2,
+            "Name": "The Queenship of the Blessed Virgin Mary",
+            "Remark": "Saint Petronilla, virgin and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Plus": 3,
+            "Name": "Sunday after the Ascension",
+            "Remark": null,
+            "Reading": ["1 Pet 4:7b-11", "7Het einde van alle dingen is nabij. Weest dus bezonnen en nuchter opdat gij kunt bidden.  8Beoefent vooral de onderlinge liefde met volharding, want de liefde bedekt tal van zonden.  9Betoont elkander gastvrijheid zonder morren.  10Dient elkaar, als goede beheerders van Gods veelsoortige genade, met de gaven, zoals ieder die heeft ontvangen:  11wie spreekt, moet beseffen dat hij Gods woorden spreekt; wie een dienst verricht, wete dat God het is die hem kracht verleent. Dan zal God in alles worden verheerlijkt door Jezus Christus, aan wie de heerlijkheid is en de macht in de eeuwen der eeuwen. Amen."],
+            "Gospel": ["John 15:26-27; 16:1-4", "26Wanneer de Helper komt, die Ik u van de Vader zal zenden, de Geest der waarheid die van de Vader uitgaat, zal Hij over Mij getuigenis afleggen.  27Maar ook gij moet getuigen, want vanaf het begin zijt gij bij Mij. 1Dit heb Ik u gezegd, opdat gij niet ten val komt.  2Zij zullen u uit de synagoge bannen. Ja, er komt een tijd dat ieder die u doodt, zal menen een daad van godsverering te stellen.  3Zij zullen dat doen, omdat zij noch de Vader noch Mij erkend hebben.  4Dit heb Ik u gezegd, opdat wanneer de tijd hiervan aanbreekt, gij u zoudt herinneren dat Ik het u gezegd heb. Over deze dingen heb Ik aanvankelijk niet gesproken, omdat Ik bij U was. "]
+        },
+        {
+            "Class": 4,
+            "Plus": 4,
+            "Name": "Saints Marcellinus, Peter, and Erasmus, bishop, martyrs",
+            "Remark": null,
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Plus": 45,
+            "Name": "Feria: Sunday after the Ascension",
+            "Remark": null,
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Plus": 6,
+            "Name": "Saint Francis Caracciolo, confessor",
+            "Remark": null,
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Plus": 7,
+            "Name": "Saint Boniface, bishop and martyr",
+            "Remark": null,
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Plus": 4,
+            "Name": "Saint Norbert, bishop",
+            "Remark": null,
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Plus": 4,
+            "Name": "Pentecost vigil",
+            "Remark": null,
+            "Reading": ["Acts 19:1-8", "1Terwijl Apollos in Korinte was, kwam Paulus na zijn reis door het binnenland in Éfeze. Daar ontmoette hij enige leerlingen,  2aan wie hij vroeg: “Hebt gij de heilige Geest ontvangen toen ge het geloof hebt aangenomen?” Zij antwoordden: “Wij hebben niet eens gehoord dat er een heilige Geest bestaat.”  3Toen zei hij: “Hoe zijt ge dan gedoopt?” Ze antwoordden: “Met het doopsel van Johannes.”  4Paulus hernam: “Johannes diende een doopsel toe ten teken van bekering, maar zei aan het volk, dat ze moesten geloven in Wie na hem kwam, dat is Jezus.”  5Toen zij dit gehoord hadden, lieten zij zich dopen in de naam van de Heer Jezus.  6Nadat Paulus hun de handen had opgelegd, kwam de heilige Geest over hen; ze spraken in talen en profeteerden.  <br>7Bij elkaar waren het een man of twaalf.  8Hij ging naar de synagoge, waar hij gedurende drie maanden vrijmoedig optrad en hen door zijn uiteenzettingen over het Koninkrijk Gods trachtte te overtuigen."],
+            "Gospel": ["John 14:15-21", "15Als gij Mij liefhebt, zult ge mijn geboden onderhouden.  16Dan zal de Vader op mijn gebed u een andere Helper geven om voor altijd bij u te blijven:  17de Geest van de waarheid, voor wie de wereld niet ontvankelijk is, omdat zij Hem niet ziet en niet kent. Gij kent Hem, want Hij blijft bij u en zal in u zijn.  18Ik zal u niet verweesd achterlaten: Ik keer tot u terug.  19Nog een korte tijd en de wereld ziet Mij niet meer; gij echter zult Mij zien, want Ik leef en ook gij zult leven.  20Op die dag zult gij weten, dat Ik in mijn Vader ben en gij in Mij en Ik in u.  <br>21Wie mijn geboden onderhoudt, die hij heeft ontvangen, hij is het die Mij liefheeft. En wie Mij liefheeft, zal door mijn Vader bemind worden; ook Ik zal hem beminnen en Ik zal Mij aan hem openbaren. "]
+        }
+
+    ]
+}
