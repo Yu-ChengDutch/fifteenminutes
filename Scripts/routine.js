@@ -1,4 +1,47 @@
-let liturgical_season = ""
+// Establish date prototype
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+// Set necessary variables
+
+let liturgical_season = "";
+let d = new Date();
+
+// Establish functions
+function getEaster(year) {
+	var f = Math.floor,
+		// Golden Number - 1
+		G = year % 19,
+		C = f(year / 100),
+		// related to Epact
+		H = (C - f(C / 4) - f((8 * C + 13)/25) + 19 * G + 15) % 30,
+		// number of days from 21 March to the Paschal full moon
+		I = H - f(H/28) * (1 - f(29/(H + 1)) * f((21-G)/11)),
+		// weekday for the Paschal full moon
+		J = (year + f(year / 4) + I + 2 - C + f(C / 4)) % 7,
+		// number of days from 21 March to the Sunday on or before the Paschal full moon
+		L = I - J,
+		month = 3 + f((L + 40)/44),
+		day = L + 28 - 31 * f(month / 4);
+
+	return new Date(year, month - 1, day);
+}
+
+// Set all dates
+let year = d.getFullYear();
+let easter_date = getEaster(year)
+let ascension_date = new Date(easter_date.addDays(39));
+let pentecost_date = new Date(easter_date.addDays(49));
+let christmas_date = new Date(d.getFullYear(), 11, 25)
+let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay())- 28))
+let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
+let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
+
+// Tester
+// d = d.addDays(11);
 
 // Handles setting the prayers
 
@@ -12,9 +55,8 @@ fetch('../Data/virtues-and-vices.json')
 
     // Get month, and the associated virtue
 
-    const d = new Date();
-
-    let month = d.getMonth();
+    const extra_day = new Date();
+    let month = extra_day.getMonth();
 
     let current_virtue = virtues[month % 7];
 
@@ -81,7 +123,7 @@ fetch('../Data/readings.json')
         else if (liturgical_season == "Ascensiontide") { base = ascension_date;} 
         else if (liturgical_season == "Time after Pentecost") { base = pentecost_date;}
 
-        let difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));;
+        let difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
 
         let day_source = source[difference];
 
@@ -90,7 +132,6 @@ fetch('../Data/readings.json')
         let first_reading = day_source["Reading"];
         let gospel_reading = day_source["Gospel"];
 
-        d = new Date();
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
         let text_date = "";
@@ -107,8 +148,43 @@ fetch('../Data/readings.json')
         if (first_reading == null) {document.getElementById("first_reading").innerHTML = "No reading"}
         else {
             
-            document.getElementById("reading_title").innerHTML = first_reading[0]
-            document.getElementById("first_reading").innerHTML = first_reading[1]
+            if(!Array.isArray(first_reading[0])) {
+
+                document.getElementById("reading_title").innerHTML = first_reading[0]
+                document.getElementById("first_reading").innerHTML = first_reading[1]
+
+            } else {
+
+                document.getElementById("reading_title").innerHTML = first_reading[0][0]
+                document.getElementById("first_reading").innerHTML = first_reading[0][1]
+
+                let gospel = document.getElementById("gospel");
+
+                let reading_length = first_reading.length;
+
+                for (let i=1;i < reading_length;i++) {
+
+                    let reading_title = document.createElement("h4");
+                    let first_reading_card = document.createElement("div");
+
+                    // Set classes and ids
+                    reading_title.id = "reading_title";
+                    first_reading_card.id = "first_reading";
+                    first_reading_card.className = "text_card";
+
+                    // Set content
+                    reading_title.innerHTML = first_reading[i][0];
+                    first_reading_card.innerHTML = first_reading[i][1];
+
+                    // Set in page
+                    gospel.parentNode.insertBefore(reading_title, gospel);
+                    gospel.parentNode.insertBefore(first_reading_card, gospel);
+
+                }
+
+            }
+
+            
         
         };
 
@@ -127,43 +203,6 @@ fetch('../Data/readings.json')
     });
 
 // Handles setting the Angelus
-
-Date.prototype.addDays = function(days) {
-    var date = new Date(this.valueOf());
-    date.setDate(date.getDate() + days);
-    return date;
-}
-
-function getEaster(year) {
-	var f = Math.floor,
-		// Golden Number - 1
-		G = year % 19,
-		C = f(year / 100),
-		// related to Epact
-		H = (C - f(C / 4) - f((8 * C + 13)/25) + 19 * G + 15) % 30,
-		// number of days from 21 March to the Paschal full moon
-		I = H - f(H/28) * (1 - f(29/(H + 1)) * f((21-G)/11)),
-		// weekday for the Paschal full moon
-		J = (year + f(year / 4) + I + 2 - C + f(C / 4)) % 7,
-		// number of days from 21 March to the Sunday on or before the Paschal full moon
-		L = I - J,
-		month = 3 + f((L + 40)/44),
-		day = L + 28 - 31 * f(month / 4);
-
-	return new Date(year, month - 1, day);
-}
-
-var d = new Date();
-let year = d.getFullYear();
-let easter_date = getEaster(year)
-let ascension_date = easter_date.addDays(39);
-let pentecost_date = easter_date.addDays(49)
-let christmas_date = new Date(d.getFullYear(), 11, 25)
-let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay())- 28))
-let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
-let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
-
-console.log(d)
 
 // Fill in the hymns / Angelus
 
@@ -192,8 +231,11 @@ if (d >= easter_date && d <= pentecost_date){
     
     </div
     `
+    console.log("It is indeed easter. Ascension is on: " + ascension_date + ". It is now: " + d);
+
     if (d >= ascension_date) {
 
+        console.log("It is Ascensiontide")
         liturgical_season = "Ascensiontide"
 
     }
