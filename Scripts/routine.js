@@ -41,7 +41,7 @@ let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
 let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
 
 // Tester
-// d = d.addDays(11);
+//d = d.addDays(2);
 
 // Handles setting the prayers
 
@@ -80,6 +80,8 @@ fetch('../Data/virtues-and-vices.json')
             title_block.innerHTML = current_virtue + " / " + current_vice
             title_block_2.innerHTML = current_virtue + " / " + current_vice
             virtue_block.innerHTML = "How did I work on " + current_virtue + " and avoid " + current_vice + " today?"
+
+            console.log(current_virtue);
 
             let current_questions = question_file[current_virtue]
             let first_question_block = document.getElementById("examination_block")
@@ -137,9 +139,9 @@ fetch('../Data/readings.json')
         let text_date = "";
 
         if (remark == null) {
-            text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + difference + "th day in " + liturgical_season + ": <br>" + name;
+            text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + (difference + 1) + "th day in " + liturgical_season + ": <br>" + name;
         } else {
-            text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + difference + "th day in " + liturgical_season + ": <br>" + name + "<br><br>Also: " + remark;
+            text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + (difference + 1) + "th day in " + liturgical_season + ": <br>" + name + "<br><br>Also: " + remark;
         }
         console.log(text_date);
 
@@ -186,6 +188,51 @@ fetch('../Data/readings.json')
 
             
         
+        };
+
+        // Set hagiography
+
+        if (Object.keys(day_source).includes("Hagiography")) {
+
+            let hagio_reading = day_source["Hagiography"];
+
+            if (!Array.isArray(hagio_reading[0])) {
+
+                document.getElementById("hagio_title").innerHTML = hagio_reading[0]
+                document.getElementById("hagio_reading").innerHTML = hagio_reading[1]
+
+            } else {
+
+                console.log("More than one, namely: " + hagio_reading.length)
+                let reading_length = hagio_reading.length;
+
+                document.getElementById("hagio_title").innerHTML = hagio_reading[0][0]
+                document.getElementById("hagio_reading").innerHTML = hagio_reading[0][1]
+
+                let at_one = document.getElementById("at_one");
+
+                for (let i=1;i < reading_length;i++) {
+
+                    let hagio_title = document.createElement("h4");
+                    let hagio_reading_card = document.createElement("div");
+
+                    // Set classes and ids
+                    hagio_title.id = "hagio_title";
+                    hagio_reading_card.id = "hagio_reading";
+                    hagio_reading_card.className = "text_card";
+
+                    // Set content
+                    hagio_title.innerHTML = hagio_reading[i][0];
+                    hagio_reading_card.innerHTML = hagio_reading[i][1];
+
+                    // Set in page
+                    at_one.parentNode.insertBefore(hagio_title, at_one);
+                    at_one.parentNode.insertBefore(hagio_reading_card, at_one);
+
+                }
+
+            };
+
         };
 
         // Set gospel reading
@@ -267,7 +314,6 @@ document.getElementById("angelus_block").innerHTML = angelus_text
 if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 
     document.getElementById("cleanse_block").innerHTML = "Cleanse face (Bettoli, V., 2020)"
-    document.getElementById("toilet_block").innerHTML = "Toilet"
     document.getElementById("cut_block").innerHTML = "Cut facial hair"
 
     if (d.getDay() == 6) {
