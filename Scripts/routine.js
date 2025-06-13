@@ -41,7 +41,7 @@ let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
 let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
 
 // Tester
-//d = d.addDays(2);
+d = d.addDays(0);
 
 // Handles setting the prayers
 
@@ -129,6 +129,8 @@ fetch('../Data/readings.json')
 
         let day_source = source[difference];
 
+        console.log(difference);
+
         let name = day_source["Name"];
         let remark = day_source["Remark"];
         let first_reading = day_source["Reading"];
@@ -198,16 +200,16 @@ fetch('../Data/readings.json')
 
             if (!Array.isArray(hagio_reading[0])) {
 
-                document.getElementById("hagio_title").innerHTML = hagio_reading[0]
-                document.getElementById("hagio_reading").innerHTML = hagio_reading[1]
+                document.getElementById("hagio_title").innerHTML = hagio_reading[0];
+                document.getElementById("hagio_reading").innerHTML = hagio_reading[1];
 
             } else {
 
-                console.log("More than one, namely: " + hagio_reading.length)
+                console.log("More than one, namely: " + hagio_reading.length);
                 let reading_length = hagio_reading.length;
 
-                document.getElementById("hagio_title").innerHTML = hagio_reading[0][0]
-                document.getElementById("hagio_reading").innerHTML = hagio_reading[0][1]
+                document.getElementById("hagio_title").innerHTML = hagio_reading[0][0];
+                document.getElementById("hagio_reading").innerHTML = hagio_reading[0][1];
 
                 let at_one = document.getElementById("at_one");
 
@@ -233,7 +235,10 @@ fetch('../Data/readings.json')
 
             };
 
-        };
+        } else {
+
+            document.getElementById("hagio_reading").innerHTML = "No hagiography today"
+        }
 
         // Set gospel reading
 
@@ -255,7 +260,7 @@ fetch('../Data/readings.json')
 
 let angelus_text = ""
 
-if (d >= easter_date && d <= pentecost_date){
+if (d >= easter_date && d <= (pentecost_date.addDays(8))){
 
     liturgical_season = "Eastertide"
     angelus_text = `
@@ -280,10 +285,15 @@ if (d >= easter_date && d <= pentecost_date){
     `
     console.log("It is indeed easter. Ascension is on: " + ascension_date + ". It is now: " + d);
 
-    if (d >= ascension_date) {
+    if (d >= ascension_date && d < pentecost_date) {
 
         console.log("It is Ascensiontide")
         liturgical_season = "Ascensiontide"
+
+    } else if (d >= pentecost_date) {
+
+        console.log("It is Octave of Pentecost")
+        liturgical_season = "Time after Pentecost"
 
     }
 
@@ -291,19 +301,19 @@ if (d >= easter_date && d <= pentecost_date){
 
     console.log("Not eastertide")
     angelus_text = "<img src='../Images/IMAGE_Angelus_1.png'>"
-    liturgical_season = "Ordinary time"
+    liturgical_season = "Time after Pentecost"
 
     // Marian hymns
 
     if (d <= candlemass_date || d >= advent_date) {
         liturgical_season = "Advent"
-        document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Alma_Redemptoris.png'>"
+        //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Alma_Redemptoris.png'>"
     } else if (d > candlemass_date && d <= holy_saturday_date) {
         liturgical_season = "Christmastide"
-        document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
+        //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
     } else {
-        liturgical_season = "Time after Pentecost"
-        document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
+        liturgical_season = "Ordinary time"
+        //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
     }
 
 }
