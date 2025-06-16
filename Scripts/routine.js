@@ -30,6 +30,25 @@ function getEaster(year) {
 	return new Date(year, month - 1, day);
 }
 
+function fetch_imitatio() {
+
+    fetch('../Data/imitation_of_christ.html')
+    .then(response => {
+
+    let all_divs = document.getElementsByTagName("div");
+
+    // Get random
+    const myArray = new Uint8Array(10);
+    let random_val = crypto.getRandomValues(myArray)[0] / 256;
+    let random_index = Math.floor(all_divs.length * random_val);
+
+    return all_divs[random_index]
+
+    });
+
+
+}
+
 // Set all dates
 let year = d.getFullYear();
 let easter_date = getEaster(year)
@@ -127,6 +146,7 @@ fetch('../Data/readings.json')
 
         let difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
 
+        console.log(liturgical_season);
         let day_source = source[difference];
 
         console.log(difference);
@@ -237,8 +257,34 @@ fetch('../Data/readings.json')
 
         } else {
 
-            document.getElementById("hagio_reading").innerHTML = "No hagiography today"
-        }
+            fetch('../Data/imitation_of_christ.html')
+            .then(response => {
+                return response.text()
+            })
+            .then(html => {
+                // Initialize the DOM parser
+                const parser = new DOMParser()
+
+                // Parse the text
+                const imitatio_christi = parser.parseFromString(html, "text/html")
+
+                console.log(imitatio_christi)
+
+                let all_divs = imitatio_christi.getElementsByTagName("div");
+
+                // Get random
+                const myArray = new Uint8Array(10);
+                let random_val = crypto.getRandomValues(myArray)[0] / 256;
+                let random_index = Math.floor(all_divs.length * random_val);
+
+                let page =  all_divs[random_index]
+
+                console.log(page.innerHTML)
+                document.getElementById("hagio_announcement").innerHTML = "Step 6: Imitatio Christi"
+                document.getElementById("hagio_reading").innerHTML = page.innerHTML;
+
+            });        
+        };
 
         // Set gospel reading
 
@@ -312,7 +358,7 @@ if (d >= easter_date && d <= (pentecost_date.addDays(8))){
         liturgical_season = "Christmastide"
         //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
     } else {
-        liturgical_season = "Ordinary time"
+        liturgical_season = "Time after Pentecost"
         //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
     }
 
