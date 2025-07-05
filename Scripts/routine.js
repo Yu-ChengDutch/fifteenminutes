@@ -59,9 +59,6 @@ let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date
 let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
 let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
 
-// Tester
-d = d.addDays(0);
-
 // Handles setting the prayers
 
 fetch('../Data/virtues-and-vices.json')
@@ -392,4 +389,13 @@ if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 if (d.getMonth() >= 3 && d.getMonth() <= 8) {
 
     document.getElementById("spirulina_block").innerHTML = "6pcs Spirulina"
+}
+
+// Tester
+// d = d.addDays(8);
+
+if (d.getDay() == 6 || d.getDay() == 0) {
+
+    document.getElementById("weekend").innerHTML = "Extra step: Abs & cardio"
+
 }
