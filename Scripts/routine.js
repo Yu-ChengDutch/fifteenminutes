@@ -157,7 +157,7 @@ fetch('../Data/readings.json')
 
         let text_date = "";
 
-        if (remark == null) {
+        if (remark == null || remark == "") {
             text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + (difference + 1) + "th day in " + liturgical_season + ": <br>" + name;
         } else {
             text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + (difference + 1) + "th day in " + liturgical_season + ": <br>" + name + "<br><br>Also: " + remark;
@@ -389,6 +389,11 @@ if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 if (d.getMonth() >= 3 && d.getMonth() <= 8) {
 
     document.getElementById("spirulina_block").innerHTML = "6pcs Spirulina"
+} else {
+
+    document.getElementById("lipbalm_1").innerHTML = "Lipbalm"
+    document.getElementById("lipbalm_2").innerHTML = "Winter step: Lipbalm"
+
 }
 
 // Tester
@@ -397,5 +402,7 @@ if (d.getMonth() >= 3 && d.getMonth() <= 8) {
 if (d.getDay() == 6 || d.getDay() == 0) {
 
     document.getElementById("weekend").innerHTML = "Extra step: Abs & cardio"
+    document.getElementById("gym-clothes").innerHTML = "Change into gym clothes"
+    document.getElementById("pre-gym-clothes").innerHTML = "Undress & log myself"
 
 }

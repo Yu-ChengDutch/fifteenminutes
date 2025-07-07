@@ -103,6 +103,14 @@ ul {
     margin: auto;
 }
 
+#date {
+
+    max-width: 90%;
+    margin-left:auto;
+    margin-right: auto;
+
+}
+
 .introduction {
     text-align: center;
     width: 72vw;
