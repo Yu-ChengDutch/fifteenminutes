@@ -1,5 +1,5 @@
 // Establish date prototype
-Date.prototype.addDays = function(days) {
+Date.prototype.addDays = function (days) {
     var date = new Date(this.valueOf());
     date.setDate(date.getDate() + days);
     return date;
@@ -12,39 +12,39 @@ let d = new Date();
 
 // Establish functions
 function getEaster(year) {
-	var f = Math.floor,
-		// Golden Number - 1
-		G = year % 19,
-		C = f(year / 100),
-		// related to Epact
-		H = (C - f(C / 4) - f((8 * C + 13)/25) + 19 * G + 15) % 30,
-		// number of days from 21 March to the Paschal full moon
-		I = H - f(H/28) * (1 - f(29/(H + 1)) * f((21-G)/11)),
-		// weekday for the Paschal full moon
-		J = (year + f(year / 4) + I + 2 - C + f(C / 4)) % 7,
-		// number of days from 21 March to the Sunday on or before the Paschal full moon
-		L = I - J,
-		month = 3 + f((L + 40)/44),
-		day = L + 28 - 31 * f(month / 4);
+    var f = Math.floor,
+        // Golden Number - 1
+        G = year % 19,
+        C = f(year / 100),
+        // related to Epact
+        H = (C - f(C / 4) - f((8 * C + 13) / 25) + 19 * G + 15) % 30,
+        // number of days from 21 March to the Paschal full moon
+        I = H - f(H / 28) * (1 - f(29 / (H + 1)) * f((21 - G) / 11)),
+        // weekday for the Paschal full moon
+        J = (year + f(year / 4) + I + 2 - C + f(C / 4)) % 7,
+        // number of days from 21 March to the Sunday on or before the Paschal full moon
+        L = I - J,
+        month = 3 + f((L + 40) / 44),
+        day = L + 28 - 31 * f(month / 4);
 
-	return new Date(year, month - 1, day);
+    return new Date(year, month - 1, day);
 }
 
 function fetch_imitatio() {
 
     fetch('../Data/imitation_of_christ.html')
-    .then(response => {
+        .then(response => {
 
-    let all_divs = document.getElementsByTagName("div");
+            let all_divs = document.getElementsByTagName("div");
 
-    // Get random
-    const myArray = new Uint8Array(10);
-    let random_val = crypto.getRandomValues(myArray)[0] / 256;
-    let random_index = Math.floor(all_divs.length * random_val);
+            // Get random
+            const myArray = new Uint8Array(10);
+            let random_val = crypto.getRandomValues(myArray)[0] / 256;
+            let random_index = Math.floor(all_divs.length * random_val);
 
-    return all_divs[random_index]
+            return all_divs[random_index]
 
-    });
+        });
 
 
 }
@@ -55,7 +55,7 @@ let easter_date = getEaster(year)
 let ascension_date = new Date(easter_date.addDays(39));
 let pentecost_date = new Date(easter_date.addDays(49));
 let christmas_date = new Date(d.getFullYear(), 11, 25)
-let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay())- 28))
+let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay()) - 28))
 let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
 let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
 
@@ -63,63 +63,71 @@ let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easte
 
 fetch('../Data/virtues-and-vices.json')
     .then((response) => response.json())
-    .then((exam_file) => { 
+    .then((exam_file) => {
 
-    // For each virtue, add title plus all questions
+        // For each virtue, add title plus all questions
 
-    var virtues = Object.keys(exam_file);
+        var virtues = Object.keys(exam_file);
 
-    // Get month, and the associated virtue
+        // Get month, and the associated virtue
 
-    const extra_day = new Date();
-    let month = extra_day.getMonth();
+        const extra_day = new Date();
+        let month = extra_day.getMonth();
 
-    let current_virtue = virtues[month % 7];
+        let current_virtue = virtues[month % 7];
 
-    // Set morning prayer to the correct one
+        // Set morning prayer to the correct one
 
-    let prayer_div = document.getElementById("prayer_block");
-    prayer_div.innerHTML = "In the name of the Father, the Son and the Holy Spirit.<br>Amen<br><br>" + exam_file[current_virtue]["Prayer"] + "<br><br>St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue +  " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
+        let prayer_div = document.getElementById("prayer_block");
+        prayer_div.innerHTML = "In the name of the Father, the Son and the Holy Spirit.<br>Amen<br><br>" + exam_file[current_virtue]["Prayer"] + "<br><br>St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue + " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
 
-    // Set examination correct
+        // Set examination correct
 
-    fetch('../Data/examination-of-conscience.json')
-        .then((response) => response.json())
-        .then((question_file) => {
+        fetch('../Data/examination-of-conscience.json')
+            .then((response) => response.json())
+            .then((question_file) => {
 
-            let title_block = document.getElementById("title_block");
-            let title_block_2 = document.getElementById("title_block_2");
-            let virtue_block = document.getElementById("virtue-question");
+                let title_block = document.getElementById("title_block");
+                let title_block_2 = document.getElementById("title_block_2");
+                let virtue_block = document.getElementById("virtue-question");
 
-            let current_vice = exam_file[current_virtue]["Counter"];
+                let current_vice = exam_file[current_virtue]["Counter"];
 
-            title_block.innerHTML = current_virtue + " / " + current_vice
-            title_block_2.innerHTML = current_virtue + " / " + current_vice
-            virtue_block.innerHTML = "How did I work on " + current_virtue + " and avoid " + current_vice + " today?"
+                title_block.innerHTML = current_virtue + " / " + current_vice
+                title_block_2.innerHTML = current_virtue + " / " + current_vice
+                virtue_block.innerHTML = "How did I work on " + current_virtue + " and avoid " + current_vice + " today?"
 
-            console.log(current_virtue);
+                console.log(current_virtue);
 
-            let current_questions = question_file[current_virtue]
-            let first_question_block = document.getElementById("examination_block")
-            let first_question_block_2 = document.getElementById("examination_block_2")
+                let current_questions = question_file[current_virtue]
+                let examinations = document.getElementsByClassName("particular-examination")
 
-            for (let i = 1; i < current_questions.length; i++) {
+                for (let x = 0; x < examinations.length; x++) {
 
-                let new_block = document.createElement('div');
-                new_block.setAttribute("class", "block");
-                new_block.innerHTML = current_questions[i]
-                first_question_block.appendChild(new_block);
+                    let current_examination = examinations[x]
 
-            };
+                    console.log("ATTENTION")
+                    console.log(current_examination)
 
-            let post_examination_prayer = document.getElementById("post_prayer_block");
-            let post_examination_prayer_2 = document.getElementById("post_prayer_block_2");
-            post_examination_prayer.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue +  " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
-            post_examination_prayer_2.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue +  " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
+                    for (let i = 1; i < current_questions.length; i++) {
 
-            first_question_block_2.innerHTML = first_question_block.innerHTML;
+                        let new_block = document.createElement('div');
+                        //new_block.setAttribute("class", "block");
+                        new_block.innerHTML = current_questions[i] + "<br><br>"
+                        current_examination.appendChild(new_block);
 
-        });
+                    };
+
+
+                }
+
+
+                let post_examination_prayer = document.getElementById("post_prayer_block");
+                let post_examination_prayer_2 = document.getElementById("post_prayer_block_2");
+                post_examination_prayer.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue + " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
+                post_examination_prayer_2.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue + " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
+
+            });
 
     });
 
@@ -137,9 +145,9 @@ fetch('../Data/readings.json')
 
         let base = 0;
 
-        if (liturgical_season == "Eastertide") { base = easter_date;} 
-        else if (liturgical_season == "Ascensiontide") { base = ascension_date;} 
-        else if (liturgical_season == "Time after Pentecost") { base = pentecost_date;}
+        if (liturgical_season == "Eastertide") { base = easter_date; }
+        else if (liturgical_season == "Ascensiontide") { base = ascension_date; }
+        else if (liturgical_season == "Time after Pentecost") { base = pentecost_date; }
 
         let difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
 
@@ -153,7 +161,7 @@ fetch('../Data/readings.json')
         let first_reading = day_source["Reading"];
         let gospel_reading = day_source["Gospel"];
 
-        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         let text_date = "";
 
@@ -166,10 +174,10 @@ fetch('../Data/readings.json')
 
         // Set first reading
 
-        if (first_reading == null) {document.getElementById("first_reading").innerHTML = "No reading"}
+        if (first_reading == null) { document.getElementById("first_reading").innerHTML = "No reading" }
         else {
-            
-            if(!Array.isArray(first_reading[0])) {
+
+            if (!Array.isArray(first_reading[0])) {
 
                 document.getElementById("reading_title").innerHTML = first_reading[0]
                 document.getElementById("first_reading").innerHTML = first_reading[1]
@@ -183,7 +191,7 @@ fetch('../Data/readings.json')
 
                 let reading_length = first_reading.length;
 
-                for (let i=1;i < reading_length;i++) {
+                for (let i = 1; i < reading_length; i++) {
 
                     let reading_title = document.createElement("h4");
                     let first_reading_card = document.createElement("div");
@@ -205,8 +213,8 @@ fetch('../Data/readings.json')
 
             }
 
-            
-        
+
+
         };
 
         // Set hagiography
@@ -230,7 +238,7 @@ fetch('../Data/readings.json')
 
                 let at_one = document.getElementById("at_one");
 
-                for (let i=1;i < reading_length;i++) {
+                for (let i = 1; i < reading_length; i++) {
 
                     let hagio_title = document.createElement("h4");
                     let hagio_reading_card = document.createElement("div");
@@ -255,42 +263,42 @@ fetch('../Data/readings.json')
         } else {
 
             fetch('../Data/imitation_of_christ.html')
-            .then(response => {
-                return response.text()
-            })
-            .then(html => {
-                // Initialize the DOM parser
-                const parser = new DOMParser()
+                .then(response => {
+                    return response.text()
+                })
+                .then(html => {
+                    // Initialize the DOM parser
+                    const parser = new DOMParser()
 
-                // Parse the text
-                const imitatio_christi = parser.parseFromString(html, "text/html")
+                    // Parse the text
+                    const imitatio_christi = parser.parseFromString(html, "text/html")
 
-                console.log(imitatio_christi)
+                    console.log(imitatio_christi)
 
-                let all_divs = imitatio_christi.getElementsByTagName("div");
+                    let all_divs = imitatio_christi.getElementsByTagName("div");
 
-                // Get random
-                const myArray = new Uint8Array(10);
-                let random_val = crypto.getRandomValues(myArray)[0] / 256;
-                let random_index = Math.floor(all_divs.length * random_val);
+                    // Get random
+                    const myArray = new Uint8Array(10);
+                    let random_val = crypto.getRandomValues(myArray)[0] / 256;
+                    let random_index = Math.floor(all_divs.length * random_val);
 
-                let page =  all_divs[random_index]
+                    let page = all_divs[random_index]
 
-                console.log(page.innerHTML)
-                document.getElementById("hagio_announcement").innerHTML = "Step 6: Imitatio Christi"
-                document.getElementById("hagio_reading").innerHTML = page.innerHTML;
+                    console.log(page.innerHTML)
+                    document.getElementById("hagio_announcement").innerHTML = "Step 6: Imitatio Christi"
+                    document.getElementById("hagio_reading").innerHTML = page.innerHTML;
 
-            });        
+                });
         };
 
         // Set gospel reading
 
-        if (gospel_reading == null) {document.getElementById("gospel_reading").innerHTML = "No reading"}
+        if (gospel_reading == null) { document.getElementById("gospel_reading").innerHTML = "No reading" }
         else {
-            
+
             document.getElementById("gospel_title").innerHTML = gospel_reading[0]
             document.getElementById("gospel_reading").innerHTML = gospel_reading[1]
-        
+
         };
 
         document.getElementById("date").innerHTML = text_date;
@@ -303,7 +311,7 @@ fetch('../Data/readings.json')
 
 let angelus_text = ""
 
-if (d >= easter_date && d <= (pentecost_date.addDays(8))){
+if (d >= easter_date && d <= (pentecost_date.addDays(8))) {
 
     liturgical_season = "Eastertide"
     angelus_text = `
@@ -375,7 +383,7 @@ if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
         document.getElementById("diary_block_week1").innerHTML = "Analyse monthly goals"
         document.getElementById("diary_block_week2").innerHTML = "Analyse week"
 
-        
+
 
     }
 
