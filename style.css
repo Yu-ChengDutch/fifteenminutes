@@ -56,13 +56,12 @@ ul {
 
 .main {
 
-    min-width: 100%;
-    text-align: center;
-    font-size: 3vw;
-    font-weight: 500;
-    left: 0;
-
-}
+        min-width: 100%;
+        text-align: center;
+        font-size: 3vw;
+        font-weight: 500;
+        left: 0;
+    }
 
 .main > p {
 
@@ -257,5 +256,297 @@ ul {
     font-size: 1.5vh;
     font-family: "Josefin Slab", serif;
     font-weight: 800;
+
+}
+
+@media only screen and (min-width: 1000px){
+
+    /* General settings */
+
+    h1 {
+        width: calc(40vw - 2vh);
+        padding: 0.5vh;
+        background-color: lightblue;
+        margin-top: 0.5vh;
+        margin-bottom: 0.5vh;
+        border-radius: 0.5vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body {
+        font-family: "Josefin Slab", serif;
+        font-weight: 400;
+        color: rgb(52, 52, 52);
+        padding: 0px;
+        margin: 0px;
+    }
+
+    /* Specific settings */
+
+    .card, .timer, .button-panel {
+
+        width: 40vw;
+        font-size: 3vw;
+        text-align: center;
+        margin-top: 4.5vh;
+        margin-bottom: 4.5vh;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .card > img {
+
+        width: 10vw;
+        height: 10vw;
+        padding: 2.5vw;
+        border: 0.5vw solid black;
+        border-radius: 5vw;
+        box-shadow: 1.25vw 1.25vw 2.5vw rgba(0, 0, 0, 0.5);
+
+    }
+
+    ul {
+        list-style-type: none; /* Remove bullets */
+    }
+
+    .timer > img {
+
+        margin: 0px; 
+        width: 10vw;
+        height: 10vw;
+
+    }
+
+    .main {
+
+            min-width: 50%;
+            text-align: center;
+            font-size: 1.5vw;
+            font-weight: 250;
+            left: 0;
+        }
+
+    .main > p {
+
+        width: 40vw;
+        margin-left: 5vw;
+    }
+
+    #adoration_main > p {
+        font-weight: 300;
+        font-size: 2vw;
+        line-height: 0.75;
+    }
+
+    .block, .introduction {
+
+        width: 45vw;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 2.5vw;
+        
+        font-size: 1.5vw;
+        font-weight: 300;
+        color: #555555;
+
+        margin-bottom: 0.75vh;
+        padding: 1.25vw;
+
+        text-align: left;
+        font-weight: bold;
+
+    }
+
+    #angelus_block, #angelus_block_2, #angelus_block_2 > img, #angelus_block > img {
+
+        width: 45vw;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .block > .introduction {
+        margin: auto;
+    }
+
+    #date {
+
+        max-width: 45%;
+        margin-left:auto;
+        margin-right: auto;
+
+    }
+
+    .introduction {
+        text-align: center;
+        width: 36vw;
+        background-color: lightblue;
+        margin-bottom: 2.25vh;
+    }
+
+    .timer-text {
+        display: inline-block;
+        width: 22.5vw;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .on-timer {
+        font-size: 1.5vw;
+        background-color: rgba(62, 133, 62, 0.537);
+        padding: 0.5vw;
+        border-radius: 0.5vw;
+        margin: 0px;
+    }
+
+    .off-timer {
+        font-size: 1.5vw;
+        background-color: rgba(133, 62, 62, 0.537);
+        padding: 0.5vw;    
+        border-radius: 0.5vw;
+        margin: 0px;
+    }
+
+    .active-block {
+        border: 0.5vw solid black;
+    }
+
+    .cue {
+        padding-top: 1vh;
+        margin-top: 1vh;
+        border-top: 0.5vw solid lightgrey;
+        color: lightgrey;
+    }
+
+    .active-block > .cue {
+        color: rgb(52, 52, 52);
+        border-top: 0.5vw solid darkgrey;
+    }
+
+    .solfege-button, .solfege-button:active {
+
+        width: 3vw;
+        height: 3vw;
+        font-size: 2.5vw;
+        display: inline-block;
+        padding: 1.25vw;
+        margin: 1.25vw;
+        border: 0.5vw solid black;
+        border-radius: 0.5vw;
+        transition-duration: 0.5s;
+
+    }
+
+    .level-button {
+        padding-top: 0.5vw;
+        padding-bottom: 0.5vw;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        border: 0.5vw solid black;
+        border-radius: 0.5vw;
+        transition-duration: 0.5s;
+
+    }
+
+    .active-button {
+
+        background-color: lightgrey;
+        transition-duration: 0.5s;
+
+    }
+
+    .right-button {
+
+        background-color: lightgreen;
+        transition-duration: 0.5s;
+
+    }
+
+    /* Style the button that is used to open and close the collapsible content */
+    .collapsible {
+        cursor: pointer;
+        border: none;
+        text-align: center;
+        outline: none;
+        width: 50%;
+        background-color: white;
+        font-family: "Josefin Slab", serif;
+        font-weight: 400;
+        color: rgb(52, 52, 52);
+        font-size: 2vw;
+        margin-top: 4vh;
+        margin-bottom:auto;
+    }
+
+    .collapsible > h1 {
+        background-color: lightblue;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+    }
+
+    .collapsible:hover > h1 {
+        background-color: aquamarine;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+    }
+
+    /* Style the collapsible content. Note: hidden by default */
+    .content {
+        padding: 0 9px;
+        display: none;
+        overflow: hidden;
+    }
+    /* N-back task */
+
+    .container {
+        width: 40vw;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40vw;
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .container > div {
+        background-color: lightgray;
+        border: 1vw solid white;
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    #check_button {
+
+        width: 30vw;
+        height: 5vw;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        background-color: aquamarine;
+        border-radius: 1vh;
+        border-style: none;
+        font-size: 0.75vh;
+        font-family: "Josefin Slab", serif;
+        font-weight: 400;
+
+    }
+
+    .text_card {
+
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 600;
+        line-height: 4vh;
+        color: black;
+
+    }
+
+    .particular-examination {
+
+        margin-top: 2.5vh;
+
+    }
+
 
 }
