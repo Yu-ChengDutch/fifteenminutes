@@ -851,6 +851,55 @@
             "Remark": "",
             "Reading": null,
             "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Saint Giles, abbot",
+            "Remark": "The Twelve Holy Brothers, martyrs",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Stephen, king and confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Pius X, pope and confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Laurence Justinian, bishop and confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Blessed Virgin Mary on Saturday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Thirteenth Sunday after Pentecost",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
         }
 
     ]
