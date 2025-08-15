@@ -5,6 +5,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
+    
+    <script src="../Scripts/routine.js"></script>
 
 </head>
 
@@ -12,9 +14,15 @@
 
     <div id="adoration_main" class="main">
 
-        <h1>Welcome back!</h1>
+        <h1>Morning</h1>
 
-        <h2 id="date"></h2>
+        <div id="date_buttons">
+
+            <input type="button" value=">" id="btnNext" onclick="pastDate()"/>
+            <strong id="date"></strong>
+            <input type="button" value="<" id="btnPrevious" onclick="nextDate()"/>
+
+        </div>
 
         <button type="button" class="collapsible">
             <h1>Morning</h1>
@@ -96,7 +104,7 @@
 
             <h2>Step 8: Morning prayer</h2>
 
-            <div class="introduction">
+            <div class="introduction" id="morning-prayer">
 
                 In de Naam van de Vader en de Zoon en de heilige Geest. <br>Amen.<br><br>
                 Mijn Heer en mijn God, ik kniel voor U neer en aanbid uw opperste Majesteit.<br>
@@ -360,110 +368,112 @@
 
             <h2>Step 7: Evening prayer</h2>
 
-            <div class="introduction">
+            <div id="evening-prayer">
+                <div class="introduction">
 
-                In de naam van de Vader en de Zoon en de heilige Geest. <br>Amen.<br><br>
-                Mijn Heer en mijn God, ik kniel voor U neer
-                en aanbid uw opperste Majesteit.<br>
-                Ik bedank U voor alle weldaden,
-                bijzonder dat Gij mij deze dag hebt bewaard.<br>
-                Kom, Heilige Geest, verlicht mijn verstand,
-                om mijn zonden te kennen
-                en geef mij de genade van een oprecht berouw.<br><br>
+                    In de naam van de Vader en de Zoon en de heilige Geest. <br>Amen.<br><br>
+                    Mijn Heer en mijn God, ik kniel voor U neer
+                    en aanbid uw opperste Majesteit.<br>
+                    Ik bedank U voor alle weldaden,
+                    bijzonder dat Gij mij deze dag hebt bewaard.<br>
+                    Kom, Heilige Geest, verlicht mijn verstand,
+                    om mijn zonden te kennen
+                    en geef mij de genade van een oprecht berouw.<br><br>
 
-            </div>
+                </div>
 
-            <h3>General examination of conscience</h3>
+                <h3>General examination of conscience</h3>
 
-            <div>
+                <div>
 
-                Have I prayed today? (15-20 mins)<br><br>
-                Have I read the Bible? Have I let the word of God become part of my being?<br><br>
-                Have I consciously dedicated myself and my day to God?<br><br>
-                Do I hold any resentment toward God?<br><br>
-                Have I recognised my need for Jesus and His Salvation?<br><br>
-                Have I sought the help of the Holy Spirit?<br><br>
-                Have I been financially and temporally generous to the Church?<br><br>
-                Have I held resentments towards the Church or Church authorities?<br><br>
-                +++<br><br>
-                Have I been rebellious, disobedient or disrespectful to anyone in authority?<br><br>
-                Have I lied or deceived others - friends, boss, or coworkers?<br><br>
-                Have I been arrogant or stubborn?<br><br>
-                Have I gotten angry or nurtured and held grudges and resentments?<br><br>
-                Have I refused to forgive others? Have I cultivated hatred?<br><br>
-                Have I felt sorry for myself or nurtured self-pity?<br><br>
-                Have I engaged in sexual fantasies? Have I looked at others lustfully?<br><br>
-                Have I read pornographic literature or looked at pornograpphic pictures, shows or movies?<br><br>
-                Have I masturbated?<br><br>
-                Have I lustfully kissed or touched someone? Have I had sex?<br><br>
-                Have I gossiped about others? Have I slandered anyone? Have I told lies about others?<br><br>
-                Have I mocked or made fun of others?<br><br>
-                +++<br><br>
-                Have I been a Christian witness to those with whom I work or associate? Have I spoken to anyone about
-                the Gospel and Christ?<br><br>
-                Have I allowed the Gospel to influence my political and social opinions?<br><br>
-                Have I had a proper Christian concern for the poor and needy?<br><br>
-                Have I paid my taxes?<br><br>
-                Have I fostered or nurtured hatred toward my political opponents - local, national, or
-                international?<br><br>
-                Have I been prejudiced toward others?<br><br>
+                    Have I prayed today? (15-20 mins)<br><br>
+                    Have I read the Bible? Have I let the word of God become part of my being?<br><br>
+                    Have I consciously dedicated myself and my day to God?<br><br>
+                    Do I hold any resentment toward God?<br><br>
+                    Have I recognised my need for Jesus and His Salvation?<br><br>
+                    Have I sought the help of the Holy Spirit?<br><br>
+                    Have I been financially and temporally generous to the Church?<br><br>
+                    Have I held resentments towards the Church or Church authorities?<br><br>
+                    +++<br><br>
+                    Have I been rebellious, disobedient or disrespectful to anyone in authority?<br><br>
+                    Have I lied or deceived others - friends, boss, or coworkers?<br><br>
+                    Have I been arrogant or stubborn?<br><br>
+                    Have I gotten angry or nurtured and held grudges and resentments?<br><br>
+                    Have I refused to forgive others? Have I cultivated hatred?<br><br>
+                    Have I felt sorry for myself or nurtured self-pity?<br><br>
+                    Have I engaged in sexual fantasies? Have I looked at others lustfully?<br><br>
+                    Have I read pornographic literature or looked at pornograpphic pictures, shows or movies?<br><br>
+                    Have I masturbated?<br><br>
+                    Have I lustfully kissed or touched someone? Have I had sex?<br><br>
+                    Have I gossiped about others? Have I slandered anyone? Have I told lies about others?<br><br>
+                    Have I mocked or made fun of others?<br><br>
+                    +++<br><br>
+                    Have I been a Christian witness to those with whom I work or associate? Have I spoken to anyone about
+                    the Gospel and Christ?<br><br>
+                    Have I allowed the Gospel to influence my political and social opinions?<br><br>
+                    Have I had a proper Christian concern for the poor and needy?<br><br>
+                    Have I paid my taxes?<br><br>
+                    Have I fostered or nurtured hatred toward my political opponents - local, national, or
+                    international?<br><br>
+                    Have I been prejudiced toward others?<br><br>
 
-            </div>
-            <h3>Particular examination of conscience</h3>
-            <div class="particular-examination"></div>
+                </div>
+                <h3>Particular examination of conscience</h3>
+                <div class="particular-examination"></div>
 
-            <h3>Plan of action</h3>
+                <h3>Plan of action</h3>
 
-            <div>
+                <div>
 
-                What sin will I work on tomorrow?<br><br>
+                    What sin will I work on tomorrow?<br><br>
 
-                A: What led to it today?<br>
-                B: What happened?<br>
-                C: What reinforced it?<br><br>
+                    A: What led to it today?<br>
+                    B: What happened?<br>
+                    C: What reinforced it?<br><br>
 
-                Where does it come from?<br><br>
-                What will I do about it?<br><br>
+                    Where does it come from?<br><br>
+                    What will I do about it?<br><br>
 
-            </div>
+                </div>
 
-            <div class="introduction">
-                Barmhartige God,
-                ik heb spijt over mijn zonden,
-                omdat ik uw straffen heb verdiend;<br>
-                maar vooral, omdat ik U,
-                mijn grootste Weldoener en het hoogste Goed,
-                heb beledigd.<br>
-                Ik verfoei al mijn zonden
-                en beloof, met de hulp van uw genade,
-                mijn leven te beteren en niet meer te zondigen
-                Heer, wees mij zondaar genadig!<br>
-                Amen.<br><br>
+                <div class="introduction">
+                    Barmhartige God,
+                    ik heb spijt over mijn zonden,
+                    omdat ik uw straffen heb verdiend;<br>
+                    maar vooral, omdat ik U,
+                    mijn grootste Weldoener en het hoogste Goed,
+                    heb beledigd.<br>
+                    Ik verfoei al mijn zonden
+                    en beloof, met de hulp van uw genade,
+                    mijn leven te beteren en niet meer te zondigen
+                    Heer, wees mij zondaar genadig!<br>
+                    Amen.<br><br>
 
-                Engel van God die mijn bewaarder zijt,
-                aan wie de goddelijke goedheid mij heeft toevertrouwd,
-                verlicht, bewaar en geleid en bestuur mij.<br>
-                Amen.<br><br>
+                    Engel van God die mijn bewaarder zijt,
+                    aan wie de goddelijke goedheid mij heeft toevertrouwd,
+                    verlicht, bewaar en geleid en bestuur mij.<br>
+                    Amen.<br><br>
 
-                Wees gegroet...<br>
-                Door uw onbevlekte ontvangenis, o Maria,
-                zuiver mijn lichaam en heilig mijn ziel. (Driemaal)<br><br>
+                    Wees gegroet...<br>
+                    Door uw onbevlekte ontvangenis, o Maria,
+                    zuiver mijn lichaam en heilig mijn ziel. (Driemaal)<br><br>
 
-                Geef mij, Heer, uw zegen, bescherm mij tegen alle kwaad en geleid mij tot het eeuwig
-                leven.<br>Amen.<br><br>
+                    Geef mij, Heer, uw zegen, bescherm mij tegen alle kwaad en geleid mij tot het eeuwig
+                    leven.<br>Amen.<br><br>
 
-                Dat de zielen van de overleden gelovigen
-                door de barmhartigheid van God rusten in vrede.<br>
-                Amen.<br><br>
+                    Dat de zielen van de overleden gelovigen
+                    door de barmhartigheid van God rusten in vrede.<br>
+                    Amen.<br><br>
 
-                Mijn Heer en mijn God, ik dank U voor alles dat U bent en dat U heeft geschapen. Vandaag dank ik U
-                speciaal voor...<br><br>
+                    Mijn Heer en mijn God, ik dank U voor alles dat U bent en dat U heeft geschapen. Vandaag dank ik U
+                    speciaal voor...<br><br>
 
-                Eer zij aan de Vader, en aan de Zoon, en aan de Heilige Geest, zoals het was den beginne en nu en
-                altijd, tot in de eeuwen der eeuwen.<br>Amen. <br><br>
+                    Eer zij aan de Vader, en aan de Zoon, en aan de Heilige Geest, zoals het was den beginne en nu en
+                    altijd, tot in de eeuwen der eeuwen.<br>Amen. <br><br>
 
-                In de Naam van de Vader en de Zoon en de heilige Geest. <br>Amen.<br><br>
+                    In de Naam van de Vader en de Zoon en de heilige Geest. <br>Amen.<br><br>
 
+                </div>
             </div>
 
             <h2>Step 8: Write diary</h2>

@@ -647,8 +647,8 @@
             "Gospel": null
         },
         {
-            "Class": "Eighth Sunday after Pentecost",
-            "Name": "",
+            "Class": 2,
+            "Name": "Eighth Sunday after Pentecost",
             "Remark": "",
             "Reading": null,
             "Gospel": null
@@ -897,6 +897,153 @@
         {
             "Class": 2,
             "Name": "Thirteenth Sunday after Pentecost",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "The Nativity of the Blessed Virgin Mary",
+            "Remark": "Saint Adrian, martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Saint Gorgonius",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Nicholas of Tolentino, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Saints Protus and Hyacinth, martyrs",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "The most Holy Name of Mary",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Blessed Virgin Mary on Saturday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "The Exaltation of the Holy Cross",
+            "Remark": "The fourteenth Sunday after Pentecost",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "The Seven Sorrows of the Blessed Virgin Mary",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saints Cornelius, pope, and Cyprian, bishop, martyrs",
+            "Remark": "Saints Euphemia, virgin, Lucy and Gemianianus, martyrs",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Imprinting of the Holy Stigmata on Saint Francis, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Joseph of cupertino, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Januarius, bishop, and his companions, martyrs",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Blessed Virgin Mary on Saturday",
+            "Remark": "Saints Eustace and his companions, martyrs",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Fifteenth Sunday after Pentecost",
+            "Remark": "Saint Matthew, apostle and evangelist",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Thomas of Villanova, bishop and confessor",
+            "Remark": "Saints Maurice and his companions, martyrs",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Linus, pope and martyr",
+            "Remark": "Saint Thecia, virgin and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Wednesday",
+            "Remark": "Our Lady of Ransom",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Friday",
+            "Remark": "Saints Cyprian, and Justina, virgin, martyrs",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Saturday",
+            "Remark": "Saints Cosmas and Damian, martyrs",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Sixteenth Sunday after Pentecost",
             "Remark": "",
             "Reading": null,
             "Gospel": null
