@@ -111,16 +111,21 @@ function set_up() {
                         console.log("ATTENTION")
                         console.log(current_examination)
 
-                        for (let i = 1; i < current_questions.length; i++) {
+                        if (current_examination.innerHTML == "placeholder"){
 
-                            let new_block = document.createElement('div');
-                            //new_block.setAttribute("class", "block");
-                            new_block.innerHTML = current_questions[i] + "<br><br>"
-                            current_examination.appendChild(new_block);
+                            current_examination.innerHTML = ""
 
-                        };
+                            for (let i = 1; i < current_questions.length; i++) {
 
+                                let new_block = document.createElement('div');
+                                //new_block.setAttribute("class", "block");
+                                new_block.innerHTML = current_questions[i] + "<br><br>"
+                                current_examination.appendChild(new_block);
 
+                            };
+
+                        }
+                        
                     }
 
 
