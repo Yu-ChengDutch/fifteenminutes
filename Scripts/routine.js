@@ -317,13 +317,21 @@ function set_up() {
 
                 console.log("Important day!")
 
-                document.getElementById("morning-prayer").innerHTML = "Pray matins"
-                document.getElementById("angelus_block_2").innerHTML = "Pray midday prayer"
-                document.getElementById("angelus_block_2").className = "introduction";
-                document.getElementById("angelus_block").innerHTML = "Pray vespers"
-                document.getElementById("angelus_block").className = "introduction";
-                document.getElementById("evening-prayer").innerHTML = "Pray completes"
-                document.getElementById("evening-prayer").className = "introduction"
+                document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray matins</a>';
+                document.getElementById("morning-prayer").className = "make-button";
+                document.getElementById("morning-prayer").classList.add("introduction");
+
+                document.getElementById("angelus_block_2").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray sext</a>';
+                document.getElementById("angelus_block_2").className = "make-button";
+                document.getElementById("angelus_block_2").classList.add("introduction");
+
+                document.getElementById("angelus_block").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray vespers</a>';
+                document.getElementById("angelus_block").className = "make-button";
+                document.getElementById("angelus_block").classList.add("introduction");
+
+                document.getElementById("evening-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray completes</a>';
+                document.getElementById("evening-prayer").className = "make-button";
+                document.getElementById("evening-prayer").classList.add("introduction");
 
             }
 

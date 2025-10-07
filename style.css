@@ -18,6 +18,33 @@ body {
     margin: 0px;
 }
 
+#morning-prayer > a, #evening-prayer > a, #angelus_block > a, #angelus_block_2 > a{
+    text-decoration: none;
+    color: rgb(52, 52, 52);
+}
+
+.make-button {
+
+    box-shadow: 0 1vw 2vw lightgrey;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    background-color: lightblue;
+    text-align: center;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.make-button:hover {
+
+    box-shadow: 0 2vw 4vw lightgrey;
+    background-color: aquamarine;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+
 /* Specific settings */
 
 .card, .timer, .button-panel {
