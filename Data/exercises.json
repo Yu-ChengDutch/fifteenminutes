@@ -1,0 +1,78 @@
+{
+
+    "exercise_sets" : {
+
+        "terrestrial_campaign": {
+
+            "introduction": "«The dawn breaks over the Pyrenees, mist curling along the forested valleys below. Your monastery sits perched on a rocky outcrop, silent but for the chants of the brothers in the chapel. Today begins the first stage of a journey few dare to imagine: the ascent to the mountain fortress that guards the relic of Santiago. Your body must be sharpened, your spirit strengthened. Each movement, each effort in the training yard, is not simply for strength, but for readiness—the readiness to carry hope up treacherous slopes and face whatever darkness awaits. Remember the abbot’s words: ‘Conquer yourself and you conquer the world.’ This is not merely exercise. It is preparation for the climb, the trial, the battle, and the redemption that awaits beyond.»",
+            "training": {
+
+                "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
+                "exercises": ["Deadlifts: 3x5 (120kg)", "Bench press: 3x5 (70kg)", "Narrow lat PD: 3x5 (2x38.5kg)"],
+                "texts": [  "«You approach the heavy iron before you, a reminder of the burdens you will bear. As you lift, imagine the weight of chainmail, of provisions, of hope itself, climbing each step toward the fortress. Every pull teaches patience and discipline. Feel the strength in your legs and back; it is the foundation on which courage is built. Even the smallest victories in the training yard echo far beyond it. The abbot’s voice returns to you: ‘Man must strive not for comfort, but for virtue.’ Each repetition brings you closer to the summit, each breath a prayer to endure the trials ahead.»",
+                            "«Lying beneath the bar, you press upward against resistance. Your arms and chest remember the swing of swords and the push of shields. Each lift is a rehearsal for holding your ground when the enemy strikes. Imagine the fortress walls looming above, the dawn mist swirling, and you strong enough to meet what waits. Strength is not only physical, but moral, rooted in purpose and resolve. As you push the bar higher, recall: ‘It is in the testing of the body that the soul finds courage.’ The climb demands stamina, and so you prepare—pressing, rising, never yielding.»",
+                            "«You grasp the bar and draw it toward yourself, feeling the muscles of your back engage as if hauling yourself up a sheer cliff face. The fortress’s gates are distant, but each pull brings them closer in resolve. Visualise your hands gripping the rough stones, your heart steady, your mind focused. The enemy may seek to push you back, but you pull yourself upward, unwavering. ‘He who perseveres finds grace,’ murmurs your inner voice. Each motion reinforces the link between effort and purpose: the stronger your body, the steadier your spirit for the ascent to come.»"]
+            },
+            "transport": {
+
+                "music": "2gQ41uDk1rTcZtBCu0BDnk?si=ab18e82cbdc240c3",
+                "exercises": ["5 km/h @ 15 degree incline walk"],
+                "texts": ["«The path ahead rises gradually, a hint of the mountain you will one day scale. Each step on this incline is more than exercise; it is the beginning of the pilgrimage. The abbey’s stones fade behind you, replaced by whispering pines and the distant call of birds. With each footfall, you feel the weight of your journey: not just the relic you seek, but the discipline, courage, and endurance that must be forged within. Imagine the fortress above, its walls jagged against the morning sky, waiting for those strong enough to ascend. The abbot’s words echo softly: ‘My help is from the Lord, who made heaven and earth.’ Let each step be a prayer, each breath a vow to persevere. Even as your legs tire, know that this steady ascent trains not only your body, but your will. The mountain tests all who dare, and today, with every incline, you begin to answer its call.»"]
+            },
+            "walls": {
+                
+                "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
+                "exercises": ["PU-to-CU: 3x10", "Dips: 3x5 (25kg)"],
+                "texts": [  "«The fortress walls rise before you, jagged and cold under the rising sun. Your hands find purchase on the rough stone, your fingers aching as you pull yourself upward. Each motion is deliberate, a test of both strength and will. The wind whips at your cloak, and you hear the distant echo of bells from the valley below, calling you onward. With every upward pull, you remember the abbot’s words: ‘Virtue stands in the mean between fear and recklessness.’ Fear tempts you to hesitate; pride tempts you to rush. Instead, you climb steadily, trusting in your preparation, feeling the sinew of your back and arms carry not just your weight, but the hope of reclaiming what was lost. The summit may still be far, but each pull brings you closer, each breath a quiet prayer that your resolve will not falter.»",
+                            "«Perched on the edge of a crumbling battlement, you lower yourself carefully, your arms straining as you descend into the void below, then push back up with controlled force. This is no mere exercise—it is the careful negotiation of peril, the measured courage required when every misstep could be fatal. You imagine the enemy above, the archers and sentinels, yet your mind remains calm, disciplined, focused. ‘He who perseveres finds grace,’ you whisper to yourself, echoing the teachings that have guided you since the monastery. Each dip strengthens the muscles that will hold your sword, steady your shield, and anchor your feet on treacherous stone. With every rise, you rise also in courage; with every controlled fall, you learn patience. The fortress does not yield to recklessness—it demands mastery of body, mind, and spirit.»"]
+            },
+            "combat": {
+
+                "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
+                "exercises": ["LM press: 3x10 (25kg)", "Ball throws: 3x10 (???)", "KB swing: 3x30 (24kg)"],
+                "texts": [  "«The battle has begun. Smoke curls from the walls, and the clash of steel rings in the morning air. You brace yourself, gripping the heavy pole as if it were a spear, and thrust it forward with all your strength. Each press sends force into the enemy lines, a measure of your resolve as much as your muscle. Around you, comrades push and strike, yet your mind remains steady. ‘Man must strive not for comfort, but for virtue,’ echoes the abbot in your memory. This is no mindless fight; it is a test of focus, timing, and endurance. With each forward drive, you feel the pulse of the battle, the rhythm of survival. Your arms are heavy, but your will is heavier. The fortress will not yield to hesitation, and neither will you.»",
+                            "«Rocks and debris fly across the courtyard, and you seize a heavy stone, hurling it with all the strength your training has forged. Each throw arcs through the air, knocking down gates, scattering foes, clearing a path for your comrades. You measure the distance, the angle, the force, and push beyond what you thought possible. ‘The spirit indeed is willing, but the flesh is weak,’ comes to mind, yet you rise above weakness with every motion. The enemy falters before your determination, but you know the fight is far from over. Each toss is not just a strike, but a declaration: you will not yield, you will ascend to the heights, you will claim what is rightfully yours.»",
+                            "«You lift the heavy iron and swing it with controlled force, feeling the momentum surge through your body as if you were hurling it into the ranks of the enemy. The courtyard is chaos, yet every motion is precise, every swing deliberate. You draw power from the legs, the hips, the core—everything your training has built—and channel it outward. ‘He who perseveres finds grace,’ you whisper, repeating it like a prayer with every swing. The fortress walls quake under your persistence, the soldiers hesitate before your fury. The battle tests not just strength, but endurance, timing, and courage. Each swing brings you closer to victory, closer to the summit, closer to the moment when the fight is done and the relic is yours.»"]
+
+            },
+            "recovery": {
+                
+                "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
+                "exercises": ["Lateral raises: 3x10 (14kg)", "Preacher curls: 3x10 (14kg)"],
+                "texts": [  "«The fortress behind you stands reclaimed, silent now, smoke curling from its battered battlements. You descend the mountain path, the relic secure, and your shoulders bear not just the weight of gear, but the memory of the trial. As you lift your arms to the sides, feeling the stretch and tension, imagine balancing the burdens you have carried: the fear, the courage, the responsibility. Each controlled raise strengthens more than muscle; it steadies the heart and mind. ‘Our hearts are restless until they rest in Thee,’ comes softly to your thoughts, Augustine’s words a quiet echo in the still air. You move deliberately, knowing the descent demands care as much as the climb, that recovery is as vital as combat. With each lift, you reclaim calm, poise, and clarity, preparing both body and spirit for the journey home.»",
+                            "«At the edge of the trail, you pause and lift the weight before you, drawing it toward yourself with measured control. Each curl is a remembrance: of friends fallen, of the fortress taken, of the trials endured. The muscles strain, but your mind is lightened by reflection. The abbot’s words come back gently: ‘He who perseveres finds grace.’ As your arms bend and straighten, imagine drawing in the lessons of the climb, the combat, and the victory. You are not only restoring strength but absorbing wisdom, carrying it with you like the relic itself. Each repetition anchors you in the present, reminding you that the journey shapes both body and soul, and that returning home is as much about peace and contemplation as it was about conquest.»"]
+            }
+
+        },
+        "naval_campaign": {
+
+            "training": {
+
+                "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
+                "exercises": ["Deadlifts: 3x5 (120kg)", "Bench press: 3x5 (70kg)", "Narrow lat PD: 3x5 (2x38.5kg)"]
+            },
+            "transport": {
+
+                "music": "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045",
+                "exercises": ["15 minutes rowing @ setting 3"]
+            },
+            "walls": {
+                
+                "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
+                "exercises": ["PU-to-CU: 3x10", "Dips: 3x5 (25kg)"]
+            },
+            "combat": {
+
+                "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
+                "exercises": ["LM press: 3x10 (25kg)", "Ball throws: 3x10 (???)", "KB swing: 3x30 (24kg)"]
+
+            },
+            "recovery": {
+                
+                "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
+                "exercises": ["Lateral raises: 3x10 (14kg)", "Preacher curls: 3x10 (14kg)"]
+            }
+
+        }
+
+}}
