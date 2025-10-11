@@ -448,9 +448,7 @@ function set_up() {
     // d = d.addDays(8);
 
     if (d.getDay() == 6 || d.getDay() == 0) {
-
-        document.getElementById("weekend").innerHTML = "Extra step: Abs & cardio"
-        document.getElementById("gym-clothes").innerHTML = "Change into gym clothes"
+        
         document.getElementById("pre-gym-clothes").innerHTML = "Undress & log myself"
 
     }

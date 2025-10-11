@@ -1292,7 +1292,196 @@
             "Remark": "",
             "Reading": null,
             "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "All Souls",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Charles, bishop and confessor",
+            "Remark": "Saints Vitalis and Agricola, martyrs; daily Mass for the dead",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Daily Mass for the dead",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Daily Mass for the dead",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Daily Mass for the dead",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Blessed Virgin Mary on Saturday",
+            "Remark": "The Four Holy Crowned Martyrs; daily Mass for the dead",
+            "Reading": null,
+            "Gospel": null,
+            "Hagiography": ["The Four Holy Crowned Martyrs", "Two separate groups who suffered for the faith, called Sancti Quatuor Coronati, 'the Four Holy Crowned Ones.' Castorius, Claudius, Nicostratus, and Symphorian were tortured and slain in Pannonia, having been carvers from Sirmium. They refused to carve a pagan statue and were martyred by retired co-Emperor Diocletian. A martyr named Simplicius died with them. The second group of Four Holy Crowned Ones died at Albano, Italy. They were Carpophorus, Secundius, Severian, and Victorinus. A basilica was erected in honor of these martyrs in Rome."]
+        },
+        {
+            "Class": 2,
+            "Name": "Twenty-second Sunday after Pentecost",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Andrew Avellino, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Martin, bishop and confessor",
+            "Remark": "Saint Mennas, martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Martin I, pope and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Didacus, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Josaphat, bishop and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Albert the Great, bishop, confessor, and doctor of the Church",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Twenty-third Sunday after Pentecost",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Gregory Thaumaturgus, bishop and confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "The Dedication of the Basilicas of Saints Peter and Paul",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Elizabeth, widow",
+            "Remark": "Saint Pontianus, pope and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Felix of Valois, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "The Presentation of the Blessed Virgin Mary",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Cecilia, virgin and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Last (twenty-fourth) Sunday after Pentecost",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint John of the Cross, confessor, and doctor of the Church",
+            "Remark": "Saint Chrysogonus, martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Catherine, virgin and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Sylvester, abbot",
+            "Remark": "Saint Peter of Alexandria, bishop and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: Last Sunday after Pentecost",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: Last Sunday after Pentecost",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Blessed Virgin Mary on Saturday",
+            "Remark": "Saint Saturninus, martyr",
+            "Reading": null,
+            "Gospel": null
         }
-
     ]
 }

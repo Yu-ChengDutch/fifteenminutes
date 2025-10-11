@@ -23,6 +23,11 @@ body {
     color: rgb(52, 52, 52);
 }
 
+#morning-prayer, #evening-prayer{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .make-button {
 
     box-shadow: 0 1vw 2vw lightgrey;
@@ -42,6 +47,8 @@ body {
     background-color: aquamarine;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -125,7 +132,8 @@ ul {
 .block, .introduction {
 
     width: 70vw;
-    margin-left: 10vw;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5vw;
     
     font-size: 5vw;
@@ -141,7 +149,8 @@ ul {
 #angelus_block, #angelus_block_2, #angelus_block_2 > img, #angelus_block > img {
 
     width: 90vw;
-    margin-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -166,6 +175,8 @@ ul {
     width: 72vw;
     background-color: lightblue;
     margin-bottom: 4.5vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .exercise-block {
@@ -501,6 +512,8 @@ ul {
         width: 36vw;
         background-color: lightblue;
         margin-bottom: 2.25vh;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .timer-text {
