@@ -3,24 +3,24 @@
    "training": {
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
-        "exercises": [  "Deadlifts: 3x5 (120kg)", 
+        "exercises": [  "Deadlifts: 3x5 (125kg)", 
                         "Bench press: 3x5 (70kg)", 
                         "Narrow lat PD: 3x5 (2x38.5kg)",
                         "Incline press: 3x6 (32.5kg)",
                         "Wide lat PD: 3x8 (33.5kg)",
                         "High cable row: 3x8 (38.5kg)",
                         "Military press: 3x8 (37.5kg)",
-                        "Barbell row: 3x8 (60kg)"]
+                        "Barbell row: 3x10 (65kg)"]
     },
     "transport": {
         
-        "exercises": [  ["15 minutes rowing @ setting 3", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
+        "exercises": [  ["15 minutes rowing @ setting 7", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
                         ["15 minutes incline walking @ 15 degrees, 5.5km/h", ["Invasion by land", "Marching up the mountains"], "2gQ41uDk1rTcZtBCu0BDnk?si=aa2d0814f29c4f0c"]]
     },
     "walls": {
         
         "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
-        "exercises": [  "Pull-ups: 3x10 (bodyweight)", 
+        "exercises": [  "Pull-ups: 3x5 (good ones!)", 
                         "Weighted dips: 3x5 (25kg)",
                         "Sled-pulls (rope): 3x50m (50kg)",
                         "Farmer carry: 3x50m (2x24kg)",
@@ -30,7 +30,7 @@
     "combat": {
 
         "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
-        "exercises": [  "LM press: 3x10 (25kg)", 
+        "exercises": [  "LM press (upstairs): 3x10 (30kg)", 
                         "Ball throws: 3x10 (???)", 
                         "KB swing: 3x30 (24kg)",
                         "KB clean, press, split squat: 3x2x10 (24kg)"]
