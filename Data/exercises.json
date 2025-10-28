@@ -9,12 +9,12 @@
                         "Incline press: 3x6 (32.5kg)",
                         "Wide lat PD: 3x8 (33.5kg)",
                         "High cable row: 3x8 (38.5kg)",
-                        "Military press: 3x8 (37.5kg)",
+                        "Military press: 3x5 (50kg)",
                         "Barbell row: 3x10 (65kg)"]
     },
     "transport": {
         
-        "exercises": [  ["15 minutes rowing @ setting 7", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
+        "exercises": [  ["7.7 minutes rowing @ setting 7", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
                         ["15 minutes incline walking @ 15 degrees, 5.5km/h", ["Invasion by land", "Marching up the mountains"], "2gQ41uDk1rTcZtBCu0BDnk?si=aa2d0814f29c4f0c"]]
     },
     "walls": {
@@ -24,7 +24,7 @@
                         "Weighted dips: 3x5 (25kg)",
                         "Sled-pulls (rope): 3x50m (50kg)",
                         "Farmer carry: 3x50m (2x24kg)",
-                        "Sled pushes: 3x50m (75kg)",
+                        "Sled pushes: 3x30m (75kg)",
                         "Suitcase carry: 3x50m (24kg)"]
     },
     "combat": {
