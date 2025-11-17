@@ -1482,6 +1482,63 @@
             "Remark": "Saint Saturninus, martyr",
             "Reading": null,
             "Gospel": null
+        }],
+    "Advent": [
+        {
+            "Class": 1,
+            "Name": "First Sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: first sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Bibiana, virgin and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Francis Xavier, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Peter Chrysologus, bishop, confessor, and doctor of the Church",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: first sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Nicholas, bishop and confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Second sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
         }
     ]
 }

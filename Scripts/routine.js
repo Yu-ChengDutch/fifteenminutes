@@ -57,9 +57,11 @@ function set_up() {
     let ascension_date = new Date(easter_date.addDays(39));
     let pentecost_date = new Date(easter_date.addDays(49));
     let christmas_date = new Date(d.getFullYear(), 11, 25)
-    let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay()) - 28))
+    let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay()) - 21))
     let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
     let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
+
+    console.log("Advent date: " + advent_date);
 
     // Handles setting the prayers
 
@@ -155,6 +157,8 @@ function set_up() {
             if (liturgical_season == "Eastertide") { base = easter_date; }
             else if (liturgical_season == "Ascensiontide") { base = ascension_date; }
             else if (liturgical_season == "Time after Pentecost") { base = pentecost_date; }
+            else if (liturgical_season == "Advent") { base = advent_date; }
+            else if (liturgical_season == "Christmastide") { base = christmas_date; }
 
             let difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
 
