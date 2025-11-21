@@ -116,11 +116,11 @@ fetch('../Data/exercises.json')
 
       // Select exercises
 
-      let training_exercises = training.slice(0, 2);
+      let training_exercises = training.slice(0, 3);
       let transport_exercises = transport[0];
-      let walls_exercises = walls.slice(0, 2);
-      let combat_exercises = combat.slice(0, 2);
-      let recovery_exercises = recovery.slice(0, 1);
+      let walls_exercises = walls.slice(0, 1);
+      let combat_exercises = combat.slice(0, 1);
+      let recovery_exercises = recovery.slice(0, 2);
 
       // Set title
 
