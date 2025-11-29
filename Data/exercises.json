@@ -4,13 +4,13 @@
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
         "exercises": [  "Deadlifts: 3x5 (125kg)", 
-                        "Bench press: 3x5 (70kg)", 
-                        "Narrow lat PD: 3x8 (2x38.5kg)",
+                        "Bench press: 3x7 (70kg)", 
+                        "Narrow lat PD: 3x6 (2x38.5kg)",
                         "Incline press: 3x7 (32.5kg)",
                         "Wide lat PD: 3x3 (2x38.5kg)",
-                        "Neutral grip, elbow up, CB row: 3x8 (2x38.5kg)",
+                        "Neutral grip, elbow up, CB row: 3x8 (2x43.5kg)",
                         "Military press: 3x5 (50kg)",
-                        "Barbell row: 3x3 (70kg)"]
+                        "Barbell row: 3x5 (80kg)"]
     },
     "transport": {
         
@@ -20,18 +20,18 @@
     "walls": {
         
         "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
-        "exercises": [  "Pull-ups: 3x6 (good form)", 
+        "exercises": [  "Pull-ups: 3x7 (good form)", 
                         "Weighted dips: 3x5 (25kg)",
                         "Sled-pulls (rope): 3x50m (50kg)",
                         "Farmer carry: 3x50m (2x24kg)",
-                        "Sled pushes: 3x30m (75kg)",
+                        "Sled pushes: 3x40m (75kg)",
                         "Suitcase carry: 3x50m (24kg)"]
     },
     "combat": {
 
         "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
         "exercises": [  "LM press (upstairs): 3x10 (bar + 30kg)", 
-                        "Ball throws: 3x10 (???)", 
+                        "Ball throws: 3x10 (5kg)", 
                         "KB swing: 3x30 (24kg)",
                         "KB clean, press, split squat: 3x2x10 (24kg)"]
 
@@ -40,12 +40,12 @@
         
         "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
         "exercises": [  "Lateral raises: 3x10 (14kg)", 
-                        "Preacher curls: 3x10 (14kg)",
-                        "Tricep overhead extensions: 3x10 (14kg)",
+                        "Preacher curls: 3x8 (14kg)",
+                        "Tricep overhead extensions: 3x8 (14kg)",
                         "Seated, bentover DB reverse flyes: 3x8 (6kg)",
-                        "Hammer curls: 3x10 (14kg)",
+                        "Hammer curls: 3x8 (16kg)",
                         "Incline dumbbell curls: 3x10 (14kg)",
                         "Dumbbell pullover: 3x10 (20kg)",
-                        "Dumbbell flyes: 3x10 (18kg)"]
+                        "Dumbbell flyes: 3x8 (12kg)"]
     }
 }
