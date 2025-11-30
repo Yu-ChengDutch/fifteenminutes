@@ -4,10 +4,10 @@
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
         "exercises": [  "Deadlifts: 3x5 (125kg)", 
-                        "Bench press: 3x7 (70kg)", 
+                        "Bench press: 3x3 (80kg)", 
                         "Narrow lat PD: 3x6 (2x38.5kg)",
                         "Incline press: 3x7 (32.5kg)",
-                        "Wide lat PD: 3x3 (2x38.5kg)",
+                        "Wide lat PD: 3x6 (2x38.5kg)",
                         "Neutral grip, elbow up, CB row: 3x8 (2x43.5kg)",
                         "Military press: 3x5 (50kg)",
                         "Barbell row: 3x5 (80kg)"]
@@ -39,13 +39,13 @@
     "recovery": {
         
         "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
-        "exercises": [  "Lateral raises: 3x10 (14kg)", 
+        "exercises": [  "Lateral raises: 3x11 (14kg)", 
                         "Preacher curls: 3x8 (14kg)",
                         "Tricep overhead extensions: 3x8 (14kg)",
                         "Seated, bentover DB reverse flyes: 3x8 (6kg)",
                         "Hammer curls: 3x8 (16kg)",
                         "Incline dumbbell curls: 3x10 (14kg)",
                         "Dumbbell pullover: 3x10 (20kg)",
-                        "Dumbbell flyes: 3x8 (12kg)"]
+                        "Dumbbell flyes: 3x12 (12kg)"]
     }
 }
