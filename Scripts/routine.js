@@ -61,8 +61,6 @@ function set_up() {
     let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
     let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
 
-    console.log("Advent date: " + advent_date);
-
     // Handles setting the prayers
 
     fetch('../Data/virtues-and-vices.json')
@@ -101,17 +99,12 @@ function set_up() {
                     title_block_2.innerHTML = current_virtue + " / " + current_vice
                     virtue_block.innerHTML = "How did I work on " + current_virtue + " and avoid " + current_vice + " today?"
 
-                    console.log(current_virtue);
-
                     let current_questions = question_file[current_virtue]
                     let examinations = document.getElementsByClassName("particular-examination")
 
                     for (let x = 0; x < examinations.length; x++) {
 
                         let current_examination = examinations[x]
-
-                        console.log("ATTENTION")
-                        console.log(current_examination)
 
                         if (current_examination.innerHTML == "placeholder"){
 
@@ -146,26 +139,47 @@ function set_up() {
         .then((response) => response.json())
         .then((readings_file) => {
 
-            console.log("Check")
-
-            console.log(liturgical_season);
-
             let source = readings_file[liturgical_season]
 
             let base = 0;
+            let difference = 0;
+            let extra_difference = -1;
 
             if (liturgical_season == "Eastertide") { base = easter_date; }
             else if (liturgical_season == "Ascensiontide") { base = ascension_date; }
             else if (liturgical_season == "Time after Pentecost") { base = pentecost_date; }
             else if (liturgical_season == "Advent") { base = advent_date; }
-            else if (liturgical_season == "Christmastide") { base = christmas_date; }
+            else if (liturgical_season == "Christmastide") { 
+                
+                if (d.getMonth() == 11) { base = christmas_date; }
+                else {
 
-            let difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
+                    // Find day in source where name is "Octave day of the Nativity of the Lord"
 
-            console.log(liturgical_season);
+                    for (let i = 0; i < source.length; i++) {
+
+                        let name = source[i]["Name"];
+                        if (name == "Octave day of the Nativity of the Lord") { 
+
+                            extra_difference = i;
+                            break;
+                        }
+
+                    };
+
+                    base = new Date(d.getFullYear(), 0, 1);
+
+                }
+            
+            }
+
+            difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
+
+            if (extra_difference != -1) { difference = extra_difference + difference; }
+
+            console.log("Difference is: " + difference + " in " + liturgical_season);
+
             let day_source = source[difference];
-
-            console.log(difference);
 
             let name = day_source["Name"];
             let remark = day_source["Remark"];
@@ -182,7 +196,6 @@ function set_up() {
             } else {
                 text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + (difference + 1) + "th day in " + liturgical_season + ": <br>" + name + "<br><br>Also: " + remark;
             }
-            console.log(text_date);
 
             // Set first reading
 
@@ -242,7 +255,6 @@ function set_up() {
 
                 } else {
 
-                    console.log("More than one, namely: " + hagio_reading.length);
                     let reading_length = hagio_reading.length;
 
                     document.getElementById("hagio_title").innerHTML = hagio_reading[0][0];
@@ -285,8 +297,6 @@ function set_up() {
                         // Parse the text
                         const imitatio_christi = parser.parseFromString(html, "text/html")
 
-                        console.log(imitatio_christi)
-
                         let all_divs = imitatio_christi.getElementsByTagName("div");
 
                         // Get random
@@ -296,7 +306,6 @@ function set_up() {
 
                         let page = all_divs[random_index]
 
-                        console.log(page.innerHTML)
                         document.getElementById("hagio_announcement").innerHTML = "Step 6: Imitatio Christi"
                         document.getElementById("hagio_reading").innerHTML = page.innerHTML;
 
@@ -318,8 +327,6 @@ function set_up() {
             // Set prayers
 
             if (liturgical_class <= 2) {
-
-                console.log("Important day!")
 
                 document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray matins</a>';
                 document.getElementById("morning-prayer").className = "make-button";
@@ -370,36 +377,31 @@ function set_up() {
     
     </div
     `
-        console.log("It is indeed easter. Ascension is on: " + ascension_date + ". It is now: " + d);
 
         if (d >= ascension_date && d < pentecost_date) {
 
-            console.log("It is Ascensiontide")
             liturgical_season = "Ascensiontide"
 
         } else if (d >= pentecost_date) {
 
-            console.log("It is Octave of Pentecost")
             liturgical_season = "Time after Pentecost"
 
         }
 
     } else {
 
-        console.log("Not eastertide")
         angelus_text = "<img src='../Images/IMAGE_Angelus_1.png'>"
         liturgical_season = "Time after Pentecost"
 
-        // Marian hymns
-
-        if (d <= candlemass_date || d >= advent_date) {
+        if (d < christmas_date && d >= advent_date) {
             liturgical_season = "Advent"
             //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Alma_Redemptoris.png'>"
-        } else if (d > candlemass_date && d <= holy_saturday_date) {
+        } else if (d => christmas_date || d <= new Date(d.getFullYear(), 0, 13)) {
+            console.log("Christmastide")
             liturgical_season = "Christmastide"
             //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
         } else {
-            liturgical_season = "Time after Pentecost"
+            liturgical_season = "Time after Epiphany"
             //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
         }
 

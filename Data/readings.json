@@ -1539,6 +1539,266 @@
             "Remark": "",
             "Reading": null,
             "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "The Immaculate Conception of the Blessed Virgin Mary",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: second sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: second sunday of Advent",
+            "Remark": "Saint Melchiades, pope and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Damasus I, pope and confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: second sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Lucy, virgin and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Third sunday of Advent",
+            "Remark": "Gaudete Sunday",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: third sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Eusebius, bishop and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Wednesday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: third sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Friday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Saturday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Fourth Sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: fourth sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Feria: fourth sunday of Advent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Vigil of the Nativity of the Lord",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        }],
+    "Christmastide": [
+        {
+            "Class": 1,
+            "Name": "The Nativity of our Lord",
+            "Remark": "St. Anastasia, martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Saint Stephen, protomartyr",
+            "Remark": "Day in the Octave of Christmas",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Saint John, apostle and evangelist",
+            "Remark": "Day in the Octave of Christmas",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Sunday in the Octave of Christmas",
+            "Remark": "The Holy Innocents, martyrs",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Saint Thomas Becket, bishop and martyr",
+            "Remark": "Day in the Octave of Christmas",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Day in the Octave of Christmas",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "St. Sylvester I, pope and confessor",
+            "Remark": "Day in the Octave of Christmas",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Octave day of the Nativity of the Lord",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: the Octave day of the Nativity of the Lord",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Blessed Virgin Mary on Saturday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "The Most Holy Name of Jesus",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Saint Telesphorus, pope and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "The Epiphany of the Lord",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: The Epiphany of the Lord",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: The Epiphany of the Lord",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: The Epiphany of the Lord",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "The Blessed Virgin Mary on Saturday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "The Holy Family of Jesus, Mary, and Joseph",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: first Sunday after Epiphany",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "The Baptism of Our Lord Jesus Christ",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
         }
     ]
 }
