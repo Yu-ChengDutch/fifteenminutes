@@ -187,7 +187,69 @@ function set_up() {
             let gospel_reading = day_source["Gospel"];
             let liturgical_class = day_source["Class"];
 
+            let feast = null;
+
             const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            // Check if readings are null, in which case set from commons
+
+            if (first_reading == null && gospel_reading == null) {
+
+                if (name.includes("martyr")) {
+
+                    if (name.includes("bishop")) { feast = "Bishop & Martyr" }
+                    else if (name.includes("virgin")) { feast = "Virgin & Martyr" }
+                    else { feast = "Martyr" }
+
+                }
+                else if (name.includes("doctor")) { feast = "Doctor of the Church" }
+                else if (name.includes("pope")) { feast = "Pope" }
+                else if (name.includes("abbot")) { feast = "Abbot" }
+                else if (name.includes("bishop")) { feast = "Bishop" }
+                else if (name.includes("confessor")) { feast = "Confessor" }
+                else if (name.includes("virgin")) { feast = "Virgin" }
+                else if (name.toLowerCase().includes("saturday")) { feast = "BVM" }
+
+                // Set readings for feria to previous Sunday
+
+                else if (name.toLowerCase().includes("feria")) {
+
+                    while (first_reading == null && gospel_reading == null) {
+
+                        difference = difference - 1;
+                        new_source = source[difference];
+
+                        if (new_source["Name"].toLowerCase().includes("sunday")) {
+
+                            first_reading = new_source["Reading"];
+                            gospel_reading = new_source["Gospel"];
+
+                        };
+
+                    };
+                };
+
+            }
+
+            // Set reading to commons if feast isn't null
+
+            if (feast != null) {
+
+                if (feast != "BVM") {
+                    first_reading = readings_file["Common readings"][feast]["Reading"];
+                    gospel_reading = readings_file["Common readings"][feast]["Gospel"];
+                } else {
+
+                    first_reading = readings_file["Common readings"]["BVM"][liturgical_season]["Reading"];
+                    gospel_reading = readings_file["Common readings"]["BVM"][liturgical_season]["Gospel"];
+
+                    console.log("Set BVM reading for " + liturgical_season);
+                    console.log(first_reading);
+                    console.log(gospel_reading);
+
+                };
+            };
+
 
             let text_date = "";
 
@@ -390,7 +452,37 @@ function set_up() {
 
     } else {
 
-        angelus_text = "<img src='../Images/IMAGE_Angelus_1.png'>"
+        // angelus_text = "<img src='../Images/IMAGE_Angelus_1.png'>"
+
+        angelus_text = `
+
+            <div class="introduction"> 
+            
+            Angelus Domini nuntiavit Mariae, et concepit de Spiritu Sancto.<br><br>
+
+            R. Ave Maria, ... <br><br>
+            
+            Ecce ancilla Domini, fiat mihi secundum verbum tuum.<br><br>
+
+            R. Ave Maria, ... <br><br>
+
+            Et Verbum caro factum est, et habitavit in nobis.<br><br>
+
+            R. Ave Maria, ... <br><br>
+
+            Ora pro nobis, sancta Dei Genitrix.<br>
+            Ut digni efficiamur promissionibus Christi. <br><br>
+
+            Oremus.<br>
+            Gratiam tuam, quaesumus, Domine, mentibus nostris infunde; ut qui, Angelo nuntiante, Christi Filii tui incarnationem cognovimus, per passionem eius et crucem ad resurrectionis gloriam perducamur. Per eundem Christum Dominum nostrum. Amen<br><br>
+
+            Gloria Patri et Filio et Spiritui Sancto, sicut erat in principo et nunc et semper, et in saecula
+            saeculorum. Amen. <br><br>
+
+            In nomine Patris, et Filii, et Spiritus Sancti. Amen. 
+            </div
+            `
+
         liturgical_season = "Time after Pentecost"
 
         if (d < christmas_date && d >= advent_date) {
