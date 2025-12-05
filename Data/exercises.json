@@ -7,9 +7,9 @@
                         "Bench press: 3x5 (80kg)", 
                         "Narrow lat PD: 3x6 (2x38.5kg)",
                         "Incline press: 3x7 (32.5kg)",
-                        "Wide lat PD: 3x6 (2x38.5kg)",
+                        "Wide lat PD: 3x8 (2x38.5kg)",
                         "Neutral grip, elbow up, CB row: 3x8 (2x43.5kg)",
-                        "Military press: 3x3 (55kg)",
+                        "Military press: 3x5 (55kg)",
                         "Barbell row: 3x5 (80kg)"]
     },
     "transport": {
@@ -21,7 +21,7 @@
         
         "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
         "exercises": [  "Pull-ups: 3x7 (good form)", 
-                        "Weighted dips: 3x8 (25kg)",
+                        "Weighted dips: 3x7 (25kg)",
                         "Sled-pulls (rope): 3x50m (50kg)",
                         "Farmer carry: 3x50m (2x24kg)",
                         "Sled pushes: 3x40m (75kg)",
@@ -33,7 +33,7 @@
         "exercises": [  "LM press (upstairs): 3x10 (bar + 30kg)", 
                         "Ball throws: 3x10 (6kg)", 
                         "KB swing: 3x30 (24kg)",
-                        "KB clean, press, split squat: 3x2x10 (24kg)"]
+                        "DB clean, press, split squat: 3x2x10 (20kg)"]
 
     },
     "recovery": {
@@ -41,11 +41,11 @@
         "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
         "exercises": [  "Lateral raises: 3x11 (14kg)", 
                         "Preacher curls: 3x8 (14kg)",
-                        "Tricep overhead extensions: 3x8 (14kg)",
+                        "Tricep overhead extensions: 3x10 (14kg)",
                         "Seated, bentover DB reverse flyes: 3x10 (6kg)",
                         "Hammer curls: 3x8 (16kg)",
                         "Incline dumbbell curls: 3x10 (14kg)",
                         "Dumbbell pullover: 3x10 (20kg)",
-                        "Dumbbell flyes: 3x12 (12kg)"]
+                        "Dumbbell flyes: 3x10 (14kg)"]
     }
 }
