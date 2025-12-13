@@ -1945,5 +1945,135 @@
             "Reading": ["Isa 60:1-6", "Sta op en schitter, want uw licht is gekomen, de glorie van Jahwe gaat over u op,  2En zie, de duisternis bedekt de aarde en donkerte de volken, maar over u gaat Jahwe lichtend op, zijn glorie verschijnt over u.  3En volkeren komen naar uw licht, koningen naar de glans van uw dageraad.  4Sla uw ogen op en zie om u heen, allen verzamelen zich en komen naar u toe: uw zonen komen aan uit de verte, uw dochters worden op de heup aangedragen.  5Gij zult het zien en stralen van vreugde, uw hart zal trillen en zwellen: de schatten der zee worden naar u gebracht, de rijkdom der volken komt naar u toe.  6Een vloed van kamelen zal u bedekken, dromedarissen van Midjan en Efa; alle bewoners komen uit Seba, met goud en wierook beladen; zij verkondigen de lof van Jahwe."],
             "Gospel": ["John 1:29-34", "De volgende dag zag hij Jezus naar zich toekomen en zei: “Zie, het Lam Gods, dat de zonden van de wereld wegneemt.  30Deze is het van wie ik zei: Achter mij komt een man die voor mij is, want Hij was eerder dan ik.  31Ook ik kende Hem niet, maar opdat Hij aan Israël geopenbaard zou worden, daarom kwam ik met water dopen.”  32Verder getuigde Johannes: “Ik heb de Geest als een duif uit de hemel zien neerdalen en Hij bleef op Hem rusten.  33Ook ik kende Hem niet, maar die mij gezonden had om met water te dopen, Hij had tot mij gesproken: Op wie gij de Geest zult zien neerdalen en blijven rusten, Hij is het die doopt met de heilige Geest.  34Ik heb het zelf gezien en ik heb getuigd: Deze is de Zoon van God.” "]
         }
+    ],
+    "Time after Epiphany": [
+
+        {
+            "Class": 3,
+            "Name": "Saint Hilary, bishop and doctor of the Church",
+            "Remark": "Saint Felix, confessor and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Paul the First Hermit, confessor",
+            "Remark": "Saint Maurus, abbot",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Marcellus I, pope and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Anthony, abbot",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Second sunday after Epiphany",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Saints Marius, Martha, Audifax and Abachum, martyrs",
+            "Remark": "Saint Canute, king and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saints Fabian, pope and martyr; and Sebastian, martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Agnes, virgin and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saints Vincent and Anastasius, martyrs",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Raymond of Pennafort, confessor",
+            "Remark": "Saint Emerentiana, virgin and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Timothy, bishop and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Third Sunday after Epiphany",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Polycarp, bishop and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint John Chrysostom, bishop, confessor and doctor of the Church",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Peter Nolasco, confessor",
+            "Remark": "Saint Agnes, virgin and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Francis de Sales, bishop, confessor, and doctor of the Church",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Martina, virgin and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint John Bosco, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        }
+
     ]
 }
