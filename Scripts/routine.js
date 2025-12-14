@@ -390,19 +390,19 @@ function set_up() {
 
             if (liturgical_class <= 2) {
 
-                document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray matins</a>';
+                document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray matins</a>';
                 document.getElementById("morning-prayer").className = "make-button";
                 document.getElementById("morning-prayer").classList.add("introduction");
 
-                document.getElementById("angelus_block_2").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray sext</a>';
+                document.getElementById("angelus_block_2").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray sext</a>';
                 document.getElementById("angelus_block_2").className = "make-button";
                 document.getElementById("angelus_block_2").classList.add("introduction");
 
-                document.getElementById("angelus_block").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray vespers</a>';
+                document.getElementById("angelus_block").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray vespers</a>';
                 document.getElementById("angelus_block").className = "make-button";
                 document.getElementById("angelus_block").classList.add("introduction");
 
-                document.getElementById("evening-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" target="_blank">Pray completes</a>';
+                document.getElementById("evening-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" >Pray completes</a>';
                 document.getElementById("evening-prayer").className = "make-button";
                 document.getElementById("evening-prayer").classList.add("introduction");
 
