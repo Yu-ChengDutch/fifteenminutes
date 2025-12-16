@@ -4,17 +4,19 @@
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
         "exercises": [  "Deadlifts: 3x5 (130kg)", 
-                        "Bench press: 3x6 (80kg)", 
-                        "Narrow lat PD: 3x6 (2x38.5kg)",
-                        "Incline press: 3x7 (32.5kg)",
-                        "Wide lat PD: 3x8 (2x38.5kg)",
-                        "Neutral grip, elbow up, CB row: 3x8 (2x43.5kg)",
+                        "BB bench press: 3x7 (80kg)", 
+                        "DB bench press: 3x8 (2x32.5kg)",
+                        "Narrow lat. PD: 3x6 (2x38.5kg)",
+                        "DB incline press: 3x7 (32.5kg)",
+                        "BB incline press: 3x5 (60kg)",
+                        "Wide lat. PD: 3x8 (2x38.5kg)",
+                        "Cable row: 3x8 (2x43.5kg)",
                         "Military press: 3x5 (55kg)",
                         "Barbell row: 3x5 (80kg)"]
     },
     "transport": {
         
-        "exercises": [  ["7.7 minutes rowing @ setting 7", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
+        "exercises": [  ["7.5 minutes rowing @ setting 7", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
                         ["15 minutes incline walking @ 15 degrees, 5.5km/h", ["Invasion by land", "Marching up the mountains"], "2gQ41uDk1rTcZtBCu0BDnk?si=aa2d0814f29c4f0c"]]
     },
     "walls": {
@@ -25,16 +27,21 @@
                         "Sled-pulls (rope): 3x50m (50kg)",
                         "Farmer carry: 3x50m (2x24kg)",
                         "Sled pushes: 3x50m (75kg)",
-                        "Suitcase carry: 3x50m (24kg)"]
+                        "Suitcase carry: 3x50m (24kg)",
+                        "Squat walks: 3x20m (20kg Bulgarian bag)",
+                        "Turkish get-ups: 3x3 (12kg)"]
     },
     "combat": {
 
         "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
         "exercises": [  "LM press (upstairs): 3x10 (bar + 30kg)", 
-                        "Ball throws: 3x10 (6kg)", 
+                        "LM rotations (upstairs): 3x10 (bar + 20kg)",
+                        "MB ball throws: 3x10 (6kg)", 
+                        "MB slams: 3x10 (6kg)",
                         "KB swing: 3x30 (24kg)",
                         "DB clean, press, split squat: 3x2x6 (20kg)",
-"Box jumps: 3x5 (short side, bodyweight)"]
+                        "Box jumps: 3x5 (short side, bodyweight)",
+                        "Battle ropes: 3x30s (bodyweight)"]
 
     },
     "recovery": {
@@ -44,7 +51,7 @@
                         "Preacher curls: 3x8 (14kg)",
                         "Tricep overhead extensions: 3x10 (14kg)",
                         "Seated, bentover DB reverse flyes: 3x10 (6kg)",
-                        "Hammer curls: 3x10 (16kg)",
+                        "Hammer curls: 3x12 (16kg)",
                         "Incline dumbbell curls: 3x10 (14kg)",
                         "Dumbbell pullover: 3x10 (20kg)",
                         "Dumbbell flyes: 3x12 (14kg)"]

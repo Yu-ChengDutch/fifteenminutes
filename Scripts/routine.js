@@ -238,6 +238,22 @@ function set_up() {
                 if (feast != "BVM") {
                     first_reading = readings_file["Common readings"][feast]["Reading"];
                     gospel_reading = readings_file["Common readings"][feast]["Gospel"];
+
+                    if (feast.includes("Martyr")) {
+
+                        if (liturgical_season == "Eastertide") {
+
+                            first_reading = readings_file["Common readings"][feast]["Eastertide"]["Reading"];
+                            gospel_reading = readings_file["Common readings"][feast]["Eastertide"]["Gospel"];                            
+
+                        } else {
+
+                            first_reading = readings_file["Common readings"][feast]["Not Eastertide"]["Reading"];
+                            gospel_reading = readings_file["Common readings"][feast]["Not Eastertide"]["Gospel"];
+                        }
+
+                    };
+
                 } else {
 
                     first_reading = readings_file["Common readings"]["BVM"][liturgical_season]["Reading"];
@@ -499,8 +515,9 @@ function set_up() {
 
     }
 
-    document.getElementById("angelus_block_2").innerHTML = angelus_text
+    
     document.getElementById("angelus_block").innerHTML = angelus_text
+    document.getElementById("angelus_block_2").innerHTML = angelus_text
 
     if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
 
