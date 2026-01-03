@@ -1,3 +1,7 @@
+// Constants
+const rand_array = new Uint8Array(50);
+self.crypto.getRandomValues(rand_array);
+
 // Function library
 
 function toggle_song(section) {
@@ -38,7 +42,7 @@ function up_counter(el) {
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor((rand_array[i] / 255) * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
