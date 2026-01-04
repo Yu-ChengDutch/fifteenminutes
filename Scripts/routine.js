@@ -58,8 +58,12 @@ function set_up() {
     let pentecost_date = new Date(easter_date.addDays(49));
     let christmas_date = new Date(d.getFullYear(), 11, 25)
     let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay()) - 21))
-    let candlemass_date = (new Date(d.getFullYear() - 1, 11, 25)).addDays(39)
-    let holy_saturday_date = new Date(d.getFullYear(), easter_date.getMonth(), easter_date.getDate() - 1)
+    let baptism_lord_date = new Date(d.getFullYear(), 0, 13)
+    let septuagesima_date = new Date(easter_date.addDays(-63))
+    let ash_wednesday_date = new Date(easter_date.addDays(-46))
+
+    console.log("Baptism: " + baptism_lord_date);
+    console.log(d)
 
     // Handles setting the prayers
 
@@ -171,7 +175,10 @@ function set_up() {
 
                 }
             
-            }
+            } 
+            else if (liturgical_season == "Time after Epiphany") { extra_difference = -1; base = baptism_lord_date.addDays(1); }
+            else if (liturgical_season == "Septuagesimatide") { extra_difference = -1; base = septuagesima_date; }
+            else if (liturgical_season == "Lent") { extra_difference = -1; base = ash_wednesday_date; }
 
             difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
 
@@ -504,13 +511,18 @@ function set_up() {
         if (d < christmas_date && d >= advent_date) {
             liturgical_season = "Advent"
             //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Alma_Redemptoris.png'>"
-        } else if (d => christmas_date || d <= new Date(d.getFullYear(), 0, 13)) {
+        } else if (d >= christmas_date || d < baptism_lord_date.addDays(1)) {
             console.log("Christmastide")
             liturgical_season = "Christmastide"
             //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
-        } else {
+        } else if (d > baptism_lord_date && d < septuagesima_date) {
+            console.log("Time after Epiphany")
             liturgical_season = "Time after Epiphany"
             //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
+        } else if (d >= septuagesima_date && d < ash_wednesday_date) {
+            liturgical_season = "Septuagesimatide"
+        } else if (d >= ash_wednesday_date && d < easter_date) {
+            liturgical_season = "Lent"
         }
 
     }
