@@ -3,8 +3,8 @@
    "training": {
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
-        "exercises": [  "Deadlifts: 3x5 (130kg)", 
-                        "BB bench press: 3x7 (80kg)", 
+        "exercises": [  "BB deadlifts: 3x5 (135kg)", 
+                        "BB bench press: 3x8 (80kg)", 
                         "DB bench press: 3x8 (2x34kg)",
                         "CB wide lat. PD: 3x8 (2x38.5kg)",
                         "CB narrow lat. PD: 3x7 (2x38.5kg)",
@@ -18,7 +18,7 @@
     },
     "transport": {
         
-        "exercises": [  ["5 minutes rowing @ setting 7", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
+        "exercises": [  ["7,5 minutes rowing @ setting 7", ["Invasion by water", "Rowing up the river"], "7byPSFx8IsUdbbzyXbwWCz?si=12f5537085164045"],
                         ["15 minutes incline walking @ max. degrees, 4 km/h", ["Invasion by land", "Marching up the mountains"], "2gQ41uDk1rTcZtBCu0BDnk?si=aa2d0814f29c4f0c"]]
     },
     "walls": {
@@ -26,7 +26,7 @@
         "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
         "exercises": [  "Pull-ups: 3x7 (good form)", 
                         "Weighted dips: 3x7 (25kg)",
-                        "Sled-pulls (rope): 3x50m (50kg)",
+                        "Sled-pulls (rope on top): 3x30m (50kg)",
                         "Farmer carry: 3x50m (2x24kg)",
                         "Sled pushes: 3x60m (75kg)",
                         "Suitcase carry: 3x50m (24kg)",
@@ -38,7 +38,7 @@
         "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
         "exercises": [  "LM press (upstairs): 3x10 (bar + 30kg)", 
                         "LM rotations (upstairs): 3x10 (bar + 20kg)",
-                        "MB ball throws: 3x10 (6kg)", 
+                        "MB ball throws: 3x15 (6kg)", 
                         "MB slams: 3x10 (6kg)",
                         "KB swing: 3x30 (24kg)",
                         "DB clean, press, split squat: 3x2x6 (1x20kg)",
