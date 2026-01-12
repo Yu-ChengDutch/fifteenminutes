@@ -97,6 +97,38 @@ function run_timer(element) {
   
 };
 
+function select_exercises(exercise_list, number) {
+
+  // Avoid selecting more than one exercise where the final word overlaps
+
+  let selected_exercises = [exercise_list[0]];
+
+  for (let i = 1; selected_exercises.length < number; i++) {
+
+    let candidate = exercise_list[i];
+    let overlap = false;
+
+    for (let j = 0; j < selected_exercises.length; j++) {
+
+      let selected_words = selected_exercises[j].split(":")[0].split(" ");
+      let candidate_words = candidate.split(":")[0].split(" ");
+
+      if (selected_words[selected_words.length - 1] === candidate_words[candidate_words.length - 1]) {
+        overlap = true;
+        break;
+      }
+    }
+
+    if (!overlap) {
+      selected_exercises.push(candidate);
+    }
+
+  }
+
+  return selected_exercises;
+
+};
+
 // Set up the random exercises  
 
 fetch('../Data/exercises.json')
@@ -120,11 +152,11 @@ fetch('../Data/exercises.json')
 
       // Select exercises
 
-      let training_exercises = training.slice(0, 3);
+      let training_exercises = select_exercises(training, 3);
       let transport_exercises = transport[0];
       let walls_exercises = walls.slice(0, 1);
-      let combat_exercises = combat.slice(0, 1);
-      let recovery_exercises = recovery.slice(0, 2);
+      let combat_exercises = combat.slice(0,1); 
+      let recovery_exercises = select_exercises(recovery, 2);
 
       // Set title
 

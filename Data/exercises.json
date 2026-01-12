@@ -7,13 +7,13 @@
                         "BB bench press: 3x8 (80kg)", 
                         "DB bench press: 3x8 (2x34kg)",
                         "CB wide lat. PD: 3x8 (2x38.5kg)",
-                        "CB narrow lat. PD: 3x7 (2x38.5kg)",
+                        "CB narrow lat. PD: 3x8 (2x38.5kg)",
                         "DB incline press: 3x5 (2x35kg)",
                         "BB incline press: 3x8 (60kg)",                        
                         "CB row: 3x5 (2x43.5kg)",
                         "BB military press: 3x6 (55kg)",
                         "BB row: 3x6 (80kg)",
-                        "BB back squats: 3x8 (80kg)",
+                        "BB back squats: 3x3 (90kg)",
                         "BB front squats: 3x5 (60kg)"]
     },
     "transport": {
@@ -38,7 +38,7 @@
         "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
         "exercises": [  "LM press (upstairs): 3x8 (bar + 35kg)", 
                         "LM rotations (upstairs): 3x10 (bar + 20kg)",
-                        "MB ball throws: 3x15 (6kg)", 
+                        "MB ball throws: 3x10 (9kg)", 
                         "MB slams: 3x10 (6kg)",
                         "KB swing: 3x30 (24kg)",
                         "DB clean, press, split squat: 3x2x6 (1x20kg)",
@@ -51,11 +51,11 @@
         "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
         "exercises": [  "DB lateral raises: 3x10 (2x16kg)", 
                         "DB preacher curls: 3x8 (1x14kg)",
-                        "DB tricep overhead extensions: 3x10 (1x14kg)",
+                        "DB tricep overhead extensions: 3x8 (1x16kg)",
                         "DB seated, bentover reverse flyes: 3x10 (2x6kg)",
                         "DB hammer curls: 3x10 (2x18kg)",
                         "DB incline curls: 3x8 (2x16kg)",
                         "DB pullover: 3x12 (1x20kg)",
-                        "DB flyes: 3x12 (2x14kg)"]
+                        "DB flyes: 3x8 (2x16kg)"]
     }
 }
