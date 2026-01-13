@@ -1,0 +1,16 @@
+{
+    "4-01-2026": {
+        "weight": 84.4,
+        "circumference": 96,
+        "bench_press": 70,
+        "deadlift": 120,
+        "squat": 80
+    },
+    "11-01-2026": {
+        "weight": 85.4,
+        "circumference": 95,
+        "bench_press": 80,
+        "deadlift": 135,
+        "squat": 90
+    }
+}

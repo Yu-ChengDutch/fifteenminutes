@@ -173,3 +173,98 @@ fetch('../Data/exercises.json')
     
   });
 
+// Chart setup
+
+fetch('../Data/history.json')
+  .then((response) => response.json())
+  .then(data => {
+
+    const labels = Object.keys(data);
+    const weightData = labels.map(date => data[date].weight);
+    const circumferenceData = labels.map(date => data[date].circumference);
+    const benchPressData = labels.map(date => data[date].bench_press);
+    const deadliftData = labels.map(date => data[date].deadlift);
+    const squatData = labels.map(date => data[date].squat);
+    const ctx = document.getElementById("myChart").getContext("2d");
+
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: { 
+        labels: labels,
+        datasets: [
+          {
+            label: 'Waist circ. (cm)',
+            data: circumferenceData, 
+            borderColor: 'rgba(153, 102, 255, 1)',
+            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+            yAxisID: 'y',
+          },
+          {
+            label: 'Bodyweight (kg)',
+            data: weightData,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            yAxisID: 'y1',
+          },
+          {
+            label: 'Bench press (kg)',
+            data: benchPressData,
+            borderColor: 'rgba(255, 159, 64, 1)',
+            backgroundColor: 'rgba(255, 159, 64, 0.2)',
+            yAxisID: 'y1',
+          },
+          {
+            label: 'Deadlift (kg)',
+            data: deadliftData,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            yAxisID: 'y1',
+          },
+          {
+            label: 'Squat (kg)',
+            data: squatData,  
+            borderColor: 'rgba(255, 206, 86, 1)',
+            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+            yAxisID: 'y1',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        }, 
+        stacked: false,
+        scales: {
+          y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+            suggestedMin: 50,
+            suggestedMax: 100,
+            title: {
+              display: true,
+              text: 'Waist circumference (cm)'
+            }
+          },  
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            suggestedMin: 50,
+            suggestedMax: 200,
+            title: {
+              display: true,
+              text: 'Lifting weights and bodyweight (kg)'
+            },
+            grid: {
+              drawOnChartArea: false,
+            },
+          },
+        }
+      }
+    });
+  });
+  
+
