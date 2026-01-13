@@ -114,7 +114,7 @@ function set_up() {
 
                             current_examination.innerHTML = ""
 
-                            for (let i = 1; i < current_questions.length; i++) {
+                            for (let i = 0; i < current_questions.length; i++) {
 
                                 let new_block = document.createElement('div');
                                 //new_block.setAttribute("class", "block");
