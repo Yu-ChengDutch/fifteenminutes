@@ -1,11 +1,9 @@
 {
-   "bodyweight": 85.4,
-   "circumference": 95,
    "training": {
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
         "exercises": [  "BB deadlifts: 3x5 (135kg)", 
-                        "BB bench press: 3x8 (80kg)", 
+                        "BB bench press: 3x5 (85kg)", 
                         "DB bench press: 3x8 (2x34kg)",
                         "CB wide lat. PD: 3x8 (2x38.5kg)",
                         "CB narrow lat. PD: 3x8 (2x38.5kg)",
@@ -14,7 +12,7 @@
                         "CB row: 3x5 (2x43.5kg)",
                         "BB military press: 3x6 (55kg)",
                         "BB row: 3x6 (80kg)",
-                        "BB back squats: 3x3 (90kg)",
+                        "BB back squats: 3x3 (110kg)",
                         "BB front squats: 3x5 (60kg)"]
     },
     "transport": {
@@ -26,7 +24,7 @@
         
         "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
         "exercises": [  "Pull-ups: 3x8 (good form)", 
-                        "Weighted dips: 3x7 (25kg)",
+                        "Weighted dips: 3x3 (30kg)",
                         "Sled-pulls (rope on top): 3x30m (50kg)",
                         "Farmer carry: 3x50m (2x24kg)",
                         "Sled pushes: 3x60m (75kg)",
@@ -56,7 +54,7 @@
                         "DB seated, bentover reverse flyes: 3x10 (2x6kg)",
                         "DB hammer curls: 3x10 (2x18kg)",
                         "DB incline curls: 3x8 (2x16kg)",
-                        "DB pullover: 3x12 (1x20kg)",
+                        "DB pullover: 3x8 (1x25kg)",
                         "DB flyes: 3x8 (2x16kg)"]
     }
 }
