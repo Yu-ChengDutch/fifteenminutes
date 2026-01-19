@@ -327,43 +327,54 @@ function set_up() {
 
             };
 
+            console.log(text_date);
+
             // Set hagiography
 
             if (Object.keys(day_source).includes("Hagiography")) {
 
                 let hagio_reading = day_source["Hagiography"];
 
-                if (!Array.isArray(hagio_reading[0])) {
+                document.getElementById("hagio_title").innerHTML = hagio_reading[0];
+                document.getElementById("hagio_reading").innerHTML = hagio_reading[1];
 
-                    document.getElementById("hagio_title").innerHTML = hagio_reading[0];
-                    document.getElementById("hagio_reading").innerHTML = hagio_reading[1];
-
-                } else {
+                if (Array.isArray(hagio_reading[0])) {
 
                     let reading_length = hagio_reading.length;
 
                     document.getElementById("hagio_title").innerHTML = hagio_reading[0][0];
                     document.getElementById("hagio_reading").innerHTML = hagio_reading[0][1];
 
-                    let at_one = document.getElementById("at_one");
+                    let routine_at_six = document.getElementById("six_oclock_routine");
 
                     for (let i = 1; i < reading_length; i++) {
 
                         let hagio_title = document.createElement("h4");
                         let hagio_reading_card = document.createElement("div");
 
+
                         // Set classes and ids
-                        hagio_title.id = "hagio_title";
-                        hagio_reading_card.id = "hagio_reading";
+                        hagio_title.id = "hagio_title_" + i;
+                        hagio_reading_card.id = "hagio_card_" + i;
                         hagio_reading_card.className = "text_card";
 
                         // Set content
                         hagio_title.innerHTML = hagio_reading[i][0];
                         hagio_reading_card.innerHTML = hagio_reading[i][1];
 
-                        // Set in page
-                        at_one.parentNode.insertBefore(hagio_title, at_one);
-                        at_one.parentNode.insertBefore(hagio_reading_card, at_one);
+                        console.log(routine_at_six.childNodes);
+                        console.log(hagio_title);
+
+                        if (document.getElementById(hagio_title.id) != null){ console.log("Caught it!")} 
+                        else {
+
+                            // Set in page
+                            routine_at_six.insertBefore(hagio_reading_card, document.getElementById("hagio_title"));
+                            routine_at_six.insertBefore(hagio_title, hagio_reading_card);
+
+                            console.log(i);
+
+                        };
 
                     }
 
@@ -407,6 +418,7 @@ function set_up() {
 
             };
 
+            console.log(text_date);
             document.getElementById("date").innerHTML = text_date;
 
             // Set prayers
