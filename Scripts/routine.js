@@ -62,8 +62,8 @@ function set_up() {
     let septuagesima_date = new Date(easter_date.addDays(-63))
     let ash_wednesday_date = new Date(easter_date.addDays(-46))
 
-    console.log("Baptism: " + baptism_lord_date);
-    console.log(d)
+    // console.log("Baptism: " + baptism_lord_date);
+    // console.log(d)
 
     // Handles setting the prayers
 
@@ -184,7 +184,7 @@ function set_up() {
 
             if (extra_difference != -1) { difference = extra_difference + difference; }
 
-            console.log("Difference is: " + difference + " in " + liturgical_season);
+            console.log("Today is day " + (difference + 1) + " in " + liturgical_season);
 
             let day_source = source[difference];
 
@@ -193,6 +193,9 @@ function set_up() {
             let first_reading = day_source["Reading"];
             let gospel_reading = day_source["Gospel"];
             let liturgical_class = day_source["Class"];
+
+            console.log("Name: " + name)
+            console.log("Remark: " + remark)
 
             let feast = null;
 
@@ -238,6 +241,8 @@ function set_up() {
 
             }
 
+            console.log("It is a feast of a: " + feast)
+
             // Set reading to commons if feast isn't null
 
             if (feast != null) {
@@ -246,7 +251,7 @@ function set_up() {
                     first_reading = readings_file["Common readings"][feast]["Reading"];
                     gospel_reading = readings_file["Common readings"][feast]["Gospel"];
 
-                    if (feast.includes("Martyr")) {
+                    if (feast == "Martyr" || feast == "Bishop & Martyr") {
 
                         if (liturgical_season == "Eastertide") {
 
@@ -266,9 +271,9 @@ function set_up() {
                     first_reading = readings_file["Common readings"]["BVM"][liturgical_season]["Reading"];
                     gospel_reading = readings_file["Common readings"]["BVM"][liturgical_season]["Gospel"];
 
-                    console.log("Set BVM reading for " + liturgical_season);
-                    console.log(first_reading);
-                    console.log(gospel_reading);
+                    // console.log("Set BVM reading for " + liturgical_season);
+                    // console.log(first_reading);
+                    // console.log(gospel_reading);
 
                 };
             };
@@ -327,8 +332,6 @@ function set_up() {
 
             };
 
-            console.log(text_date);
-
             // Set hagiography
 
             if (Object.keys(day_source).includes("Hagiography")) {
@@ -362,8 +365,8 @@ function set_up() {
                         hagio_title.innerHTML = hagio_reading[i][0];
                         hagio_reading_card.innerHTML = hagio_reading[i][1];
 
-                        console.log(routine_at_six.childNodes);
-                        console.log(hagio_title);
+                        // console.log(routine_at_six.childNodes);
+                        // console.log(hagio_title);
 
                         if (document.getElementById(hagio_title.id) != null){ console.log("Caught it!")} 
                         else {
@@ -372,7 +375,7 @@ function set_up() {
                             routine_at_six.insertBefore(hagio_reading_card, document.getElementById("hagio_title"));
                             routine_at_six.insertBefore(hagio_title, hagio_reading_card);
 
-                            console.log(i);
+                            // console.log(i);
 
                         };
 
@@ -418,7 +421,7 @@ function set_up() {
 
             };
 
-            console.log(text_date);
+            // console.log(text_date);
             document.getElementById("date").innerHTML = text_date;
 
             // Set prayers
