@@ -4,7 +4,7 @@ let max = 9;
 let min = 1;
 let number = 0;
 
-let n = 4;
+let n = 1;
 
 let correct = 0;
 let wrong = 0;
@@ -19,6 +19,16 @@ let random_numbers = [];
 let n_backs = new Array(n + 1).fill(0);
 
 document.getElementById("n_intro").innerHTML = `Currently doing: ${n}\-back task`;
+
+let info_block = document.getElementById("information");
+
+if (n == 1) {
+    info_block.innerHTML = "That means twice the same!";
+} else if (n == 2) {
+    info_block.innerHTML = "That means that the one block BEFORE the previous one is the same as the CURRENT one!";
+} else {
+    info_block.innerHTML = `That means that the ${n-1} blocks BEFORE the previous one is the same as the CURRENT one!`;
+}
 
 for (let i = 0; i < 100; i++) {
 
