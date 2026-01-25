@@ -180,12 +180,13 @@ fetch('../Data/history.json')
   .then(data => {
 
     const labels = Object.keys(data);
-    const weightData = labels.map(date => data[date].weight);
-    const circumferenceData = labels.map(date => data[date].circumference);
-    const benchPressData = labels.map(date => data[date].bench_press);
-    const deadliftData = labels.map(date => data[date].deadlift);
-    const squatData = labels.map(date => data[date].squat);
+    const body_compositionData = labels.map(date => ((((100 - data[date].circumference) / 29) + (55 / (100 - data[date].arm_circ)))/2) * 100);
+    const benchPressData = labels.map(date => (data[date].bench_press / (1.75 * data[date].weight)) * 100);
+    const squatData = labels.map(date => (data[date].squat / (2.25 * data[date].weight)) * 100);
+    const deadliftData = labels.map(date => (data[date].deadlift / (2.5 * data[date].weight)) * 100);
     const ctx = document.getElementById("myChart").getContext("2d");
+
+    console.log(benchPressData);
 
     const myChart = new Chart(ctx, {
       type: 'line',
@@ -193,39 +194,32 @@ fetch('../Data/history.json')
         labels: labels,
         datasets: [
           {
-            label: 'Waist circ. (cm)',
-            data: circumferenceData, 
-            borderColor: 'rgba(153, 102, 255, 1)',
-            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+            label: 'Body composition (waist and arm circumference)',
+            data: body_compositionData, 
+            borderColor: 'rgb(114, 46, 250)',
+            backgroundColor: 'rgba(115, 45, 255, 0.2)',
             yAxisID: 'y',
           },
           {
-            label: 'Bodyweight (kg)',
-            data: weightData,
-            borderColor: 'rgba(75, 192, 192, 1)',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            yAxisID: 'y1',
-          },
-          {
-            label: 'Bench press (kg)',
+            label: 'Bench press (% of goal)',
             data: benchPressData,
-            borderColor: 'rgba(255, 159, 64, 1)',
-            backgroundColor: 'rgba(255, 159, 64, 0.2)',
-            yAxisID: 'y1',
+            borderColor: 'rgb(255, 196, 137)',
+            backgroundColor: 'rgba(250, 197, 144, 0.2)',
+            yAxisID: 'y',
           },
           {
-            label: 'Deadlift (kg)',
+            label: 'Deadlift (% of goal)',
             data: deadliftData,
-            borderColor: 'rgba(54, 162, 235, 1)',
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            yAxisID: 'y1',
+            borderColor: 'rgb(133, 192, 231)',
+            backgroundColor: 'rgba(144, 198, 235, 0.2)',
+            yAxisID: 'y',
           },
           {
-            label: 'Squat (kg)',
+            label: 'Squat (% of goal)',
             data: squatData,  
-            borderColor: 'rgba(255, 206, 86, 1)',
-            backgroundColor: 'rgba(255, 206, 86, 0.2)',
-            yAxisID: 'y1',
+            borderColor: 'rgb(253, 226, 157)',
+            backgroundColor: 'rgba(253, 227, 161, 0.2)',
+            yAxisID: 'y',
           }
         ]
       },
@@ -241,26 +235,12 @@ fetch('../Data/history.json')
             type: 'linear',
             display: true,
             position: 'left',
-            suggestedMin: 50,
+            suggestedMin: 0,
             suggestedMax: 100,
             title: {
               display: true,
-              text: 'Waist circumference (cm)'
+              text: '% of goal'
             }
-          },  
-          y1: {
-            type: 'linear',
-            display: true,
-            position: 'right',
-            suggestedMin: 50,
-            suggestedMax: 200,
-            title: {
-              display: true,
-              text: 'Lifting weights and bodyweight (kg)'
-            },
-            grid: {
-              drawOnChartArea: false,
-            },
           },
         }
       }

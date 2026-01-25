@@ -2,6 +2,7 @@
     "4-01-2026": {
         "weight": 84.4,
         "circumference": 96,
+        "arm_circ": 39,
         "bench_press": 70,
         "deadlift": 120,
         "squat": 80
@@ -9,6 +10,7 @@
     "11-01-2026": {
         "weight": 85.4,
         "circumference": 95,
+        "arm_circ": 39,
         "bench_press": 80,
         "deadlift": 135,
         "squat": 90
@@ -16,6 +18,15 @@
     "18-01-2026": {
         "weight": 86.0,
         "circumference": 96,
+        "arm_circ": 39,
+        "bench_press": 85,
+        "deadlift": 135,
+        "squat": 110
+    },
+    "25-01-2026": {
+        "weight": 84.3,
+        "circumference": 94.5,
+        "arm_circ": 39.5,
         "bench_press": 85,
         "deadlift": 135,
         "squat": 110
