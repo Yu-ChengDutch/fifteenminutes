@@ -2096,6 +2096,126 @@
         }
 
     ],
-    "Septuagesimatide": [],
+    "Septuagesimatide": [
+        {
+            "Class": 2,
+            "Name": "Septuagesima Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "The Purification of the Blessed Virgin Mary",
+            "Remark": "Candlemass / Maria Lichtmis",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Saint Blaise, bishop and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Andrew Corsini, bishop and confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Agatha, virgin and martyr",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Titus, bishop and confessor",
+            "Remark": "Saint Dorothy, virgin and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Romuald, abbot",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Sexagesima Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Cyril, bishop of Alexandria, confessor and doctor of the Church",
+            "Remark": "Saint Apollonia, virgin and martyr",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Scholastica, virgin",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "The Apparition of the Immaculate Virgin Mary",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "The Seven Holy Founders of the Servite Order, confessor",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: Sexagesima Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Saint Valentine, priest and martyr",
+            "Remark": "The Blessed Virgin Mary on Saturday",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Quinquagesima Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: Quinquagesima Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 4,
+            "Name": "Feria: Quinquagesima Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        }
+    ],
     "Lent": []
 }
