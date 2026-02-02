@@ -30,5 +30,13 @@
         "bench_press": 85,
         "deadlift": 135,
         "squat": 110
+    },
+    "01-02-2026": {
+        "weight": 84.3,
+        "circumference": 94.5,
+        "arm_circ": 39.5,
+        "bench_press": 85,
+        "deadlift": 135,
+        "squat": 110
     }
 }
