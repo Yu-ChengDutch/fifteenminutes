@@ -179,6 +179,7 @@ function set_up() {
             else if (liturgical_season == "Time after Epiphany") { extra_difference = -1; base = baptism_lord_date.addDays(1); }
             else if (liturgical_season == "Septuagesimatide") { extra_difference = -1; base = septuagesima_date; }
             else if (liturgical_season == "Lent") { extra_difference = -1; base = ash_wednesday_date; }
+            else if (liturgical_season == "Passiontide") { extra_difference = -1; base = easter_date.addDays(-14); }
 
             difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
 
@@ -536,9 +537,13 @@ function set_up() {
             //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
         } else if (d >= septuagesima_date && d < ash_wednesday_date) {
             liturgical_season = "Septuagesimatide"
-        } else if (d >= ash_wednesday_date && d < easter_date) {
+        } else if (d >= ash_wednesday_date && d < easter_date.addDays(-14)) {
             liturgical_season = "Lent"
+        } else if (d >= easter_date.addDays(-14) && d < easter_date) {
+            liturgical_season = "Passiontide"
         }
+
+        console.log("Easter Date:" + easter_date)
 
     }
 
@@ -573,16 +578,6 @@ function set_up() {
         document.getElementById("cut_block").innerHTML = "";
         document.getElementById("diary_block_week1").innerHTML = "";
         document.getElementById("diary_block_week2").innerHTML = "";
-
-    }
-
-    if (d.getMonth() >= 3 && d.getMonth() <= 8) {
-
-        document.getElementById("spirulina_block").innerHTML = "6pcs Spirulina"
-    } else {
-
-        document.getElementById("lipbalm_1").innerHTML = "Lipbalm"
-        document.getElementById("lipbalm_2").innerHTML = "Winter step: Lipbalm"
 
     }
 

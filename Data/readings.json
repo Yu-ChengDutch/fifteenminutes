@@ -135,8 +135,13 @@
 
     },
     "Eastertide": [
-
-        {},
+        {
+            "Class": 1,
+            "Name": "Easter Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
         {},
         {},
         {},
@@ -2217,5 +2222,331 @@
             "Gospel": null
         }
     ],
-    "Lent": []
+    "Lent": [
+        {
+            "Class": 1,
+            "Name": "Ash Wednesday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Thursday after Ash Wednesday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Friday after Ash Wednesday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saturday after Ash Wednesday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "1st Sunday after Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Peter Damian, bishop, confessor, and doctor of the Church",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Saint Matthias, apostle",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Wednesday of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Thursday in the 1st week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Friday of Lent",
+            "Remark": "Saint Gabriel of Our Lady of Sorrows, confessor",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 2,
+            "Name": "Ember Saturday of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "2nd Sunday of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Monday in the 2nd week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Tuesday in the 2nd week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Casimir, confessor; Saint Lucius I, pope and martyr",
+            "Remark": "Wednesday in the 2nd week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Thursday in the 2nd week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Perpetua and Felicity, martyrs",
+            "Remark": "Friday in the 2nd week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Thomas Aquinas, confessor and doctor of the Church",
+            "Remark": "Saturday in the 2nd week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "3rd Sunday of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Frances of Rome, widow",
+            "Remark": "Monday in the 3rd week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "The Forty Holy Martyrs",
+            "Remark": "Tuesday in the 3rd week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Wednesday in the 3rd week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Gregory I, pope, confessor, and doctor of the Church",
+            "Remark": "Thursday in the 3rd week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Friday in the 3rd week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saturday in the 3rd week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "4th Sunday of Lent",
+            "Remark": "Laetare Sunday",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Monday in the 4th week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Patrick, bishop, and confessor",
+            "Remark": "Tuesday in the 4th week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint Cyril, bishop of Jerusalem, confessor, and doctor of the Church",
+            "Remark": "Wednesday in the 4th week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Saint Joseph, spouse of the Blessed Virgin Mary, confessor",
+            "Remark": "Thursday in the 4th week of Lent",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Friday in the 4th week of Lent",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "St. Benedict, abbot",
+            "Remark": "Saturday in the 4th week of Lent",
+            "Reading": null,
+            "Gospel": null
+        }
+
+    ],
+    "Passiontide": [
+        {
+            "Class": 1,
+            "Name": "Passion Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Monday of Passion Week",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Tuesday of Passion Week",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "The Annunciation of the Blessed Virgin Mary",
+            "Remark": "Wednesday of Passion Week",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Thursday of Passion Week",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "The Seven Sorrows of the Blessed Virgin Mary; Saint John Damascene, confessor and doctor of the Church",
+            "Remark": "Friday of Passion Week",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 3,
+            "Name": "Saint John Capistran, confessor",
+            "Remark": "Saturday of Passion Week",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Palm Sunday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Monday of Holy Week",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Tuesday of Holy week",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Wednesday of Holy Week",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Holy Thursday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Good Friday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        },
+        {
+            "Class": 1,
+            "Name": "Easter Vigil; Holy Saturday",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null
+        }
+    ]
 }
