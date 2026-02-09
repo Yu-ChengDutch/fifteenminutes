@@ -1,0 +1,2488 @@
+{
+    "Sources": {
+        "Vocabulary": "https://www.tanos.co.uk/hsk/skills/vocab/hsk1/trad/"
+    },
+    "Vocabulary": [
+        {
+            "Level": "Pre-HSK (Radicals)",
+            "Words": [
+                {
+                    "Character": "一",
+                    "Pinyin": "yī",
+                    "Translation": "one",
+                    "Radical": null
+                },
+                {
+                    "Character": "丨",
+                    "Pinyin": "shù",
+                    "Translation": "line",
+                    "Radical": null
+                },
+                {
+                    "Character": "丶",
+                    "Pinyin": "diǎn",
+                    "Translation": "dot",
+                    "Radical": null
+                },
+                {
+                    "Character": "丿",
+                    "Pinyin": "piě",
+                    "Translation": "slash",
+                    "Radical": null
+                },
+                {
+                    "Character": "乙",
+                    "Pinyin": "yǐ",
+                    "Translation": "second",
+                    "Radical": null
+                },
+                {
+                    "Character": "亅",
+                    "Pinyin": "gōu",
+                    "Translation": "hook",
+                    "Radical": null
+                },
+                {
+                    "Character": "二",
+                    "Pinyin": "èr",
+                    "Translation": "two",
+                    "Radical": null
+                },
+                {
+                    "Character": "亠",
+                    "Pinyin": "tóu",
+                    "Translation": "lid",
+                    "Radical": null
+                },
+                {
+                    "Character": "人",
+                    "Pinyin": "rén",
+                    "Translation": "person",
+                    "Radical": null
+                },
+                {
+                    "Character": "儿",
+                    "Pinyin": "ér",
+                    "Translation": "legs",
+                    "Radical": null
+                },
+                {
+                    "Character": "入",
+                    "Pinyin": "rù",
+                    "Translation": "enter",
+                    "Radical": null
+                },
+                {
+                    "Character": "八",
+                    "Pinyin": "bā",
+                    "Translation": "eight",
+                    "Radical": null
+                },
+                {
+                    "Character": "冂",
+                    "Pinyin": "jiǒng",
+                    "Translation": "down box",
+                    "Radical": null
+                },
+                {
+                    "Character": "冖",
+                    "Pinyin": "mì",
+                    "Translation": "cover",
+                    "Radical": null
+                },
+                {
+                    "Character": "冫",
+                    "Pinyin": "bīng",
+                    "Translation": "ice",
+                    "Radical": null
+                },
+                {
+                    "Character": "几",
+                    "Pinyin": "jī, jǐ",
+                    "Translation": "table",
+                    "Radical": null
+                },
+                {
+                    "Character": "凵",
+                    "Pinyin": "qǔ",
+                    "Translation": "open box",
+                    "Radical": null
+                },
+                {
+                    "Character": "刀",
+                    "Pinyin": "dāo",
+                    "Translation": "knife",
+                    "Radical": null
+                },
+                {
+                    "Character": "力",
+                    "Pinyin": "lì",
+                    "Translation": "power",
+                    "Radical": null
+                },
+                {
+                    "Character": "勹",
+                    "Pinyin": "bāo",
+                    "Translation": "wrap",
+                    "Radical": null
+                },
+                {
+                    "Character": "匕",
+                    "Pinyin": "bǐ",
+                    "Translation": "ladle",
+                    "Radical": null
+                },
+                {
+                    "Character": "匚",
+                    "Pinyin": "fāng",
+                    "Translation": "right open box",
+                    "Radical": null
+                },
+                {
+                    "Character": "匸",
+                    "Pinyin": "xǐ",
+                    "Translation": "hiding enclosure",
+                    "Radical": null
+                },
+                {
+                    "Character": "十",
+                    "Pinyin": "shí",
+                    "Translation": "ten",
+                    "Radical": null
+                },
+                {
+                    "Character": "卜",
+                    "Pinyin": "bǔ",
+                    "Translation": "divination",
+                    "Radical": null
+                },
+                {
+                    "Character": "卩",
+                    "Pinyin": "jié",
+                    "Translation": "seal",
+                    "Radical": null
+                },
+                {
+                    "Character": "厂",
+                    "Pinyin": "hàn",
+                    "Translation": "cliff",
+                    "Radical": null
+                },
+                {
+                    "Character": "厶",
+                    "Pinyin": "sī",
+                    "Translation": "private",
+                    "Radical": null
+                },
+                {
+                    "Character": "又",
+                    "Pinyin": "yòu",
+                    "Translation": "again",
+                    "Radical": null
+                },
+                {
+                    "Character": "口",
+                    "Pinyin": "kǒu",
+                    "Translation": "mouth",
+                    "Radical": null
+                },
+                {
+                    "Character": "囗",
+                    "Pinyin": "wéi",
+                    "Translation": "enclosure",
+                    "Radical": null
+                },
+                {
+                    "Character": "土",
+                    "Pinyin": "tǔ",
+                    "Translation": "earth",
+                    "Radical": null
+                },
+                {
+                    "Character": "士",
+                    "Pinyin": "shì",
+                    "Translation": "scholar",
+                    "Radical": null
+                },
+                {
+                    "Character": "夂",
+                    "Pinyin": "zhī",
+                    "Translation": "go",
+                    "Radical": null
+                },
+                {
+                    "Character": "夊",
+                    "Pinyin": "suī",
+                    "Translation": "go slowly",
+                    "Radical": null
+                },
+                {
+                    "Character": "夕",
+                    "Pinyin": "xī",
+                    "Translation": "night",
+                    "Radical": null
+                },
+                {
+                    "Character": "大",
+                    "Pinyin": "dà",
+                    "Translation": "big",
+                    "Radical": null
+                },
+                {
+                    "Character": "女",
+                    "Pinyin": "nǚ",
+                    "Translation": "woman",
+                    "Radical": null
+                },
+                {
+                    "Character": "子",
+                    "Pinyin": "zǐ",
+                    "Translation": "child",
+                    "Radical": null
+                },
+                {
+                    "Character": "宀",
+                    "Pinyin": "mián",
+                    "Translation": "roof",
+                    "Radical": null
+                },
+                {
+                    "Character": "寸",
+                    "Pinyin": "cùn",
+                    "Translation": "inch",
+                    "Radical": null
+                },
+                {
+                    "Character": "小",
+                    "Pinyin": "xiǎo",
+                    "Translation": "small",
+                    "Radical": null
+                },
+                {
+                    "Character": "尢",
+                    "Pinyin": "yóu",
+                    "Translation": "lame",
+                    "Radical": null
+                },
+                {
+                    "Character": "尸",
+                    "Pinyin": "shī",
+                    "Translation": "corpse",
+                    "Radical": null
+                },
+                {
+                    "Character": "屮",
+                    "Pinyin": "chè",
+                    "Translation": "sprout",
+                    "Radical": null
+                },
+                {
+                    "Character": "山",
+                    "Pinyin": "shān",
+                    "Translation": "mountain",
+                    "Radical": null
+                },
+                {
+                    "Character": "川",
+                    "Pinyin": "chuān",
+                    "Translation": "river",
+                    "Radical": null
+                },
+                {
+                    "Character": "工",
+                    "Pinyin": "gōng",
+                    "Translation": "work",
+                    "Radical": null
+                },
+                {
+                    "Character": "己",
+                    "Pinyin": "jǐ",
+                    "Translation": "oneself",
+                    "Radical": null
+                },
+                {
+                    "Character": "巾",
+                    "Pinyin": "jīn",
+                    "Translation": "towel",
+                    "Radical": null
+                },
+                {
+                    "Character": "干",
+                    "Pinyin": "gān",
+                    "Translation": "dry",
+                    "Radical": null
+                },
+                {
+                    "Character": "幺",
+                    "Pinyin": "yāo",
+                    "Translation": "thread",
+                    "Radical": null
+                },
+                {
+                    "Character": "广",
+                    "Pinyin": "guǎng",
+                    "Translation": "shelter",
+                    "Radical": null
+                },
+                {
+                    "Character": "廴",
+                    "Pinyin": "yǐn",
+                    "Translation": "stride",
+                    "Radical": null
+                },
+                {
+                    "Character": "廾",
+                    "Pinyin": "gǒng",
+                    "Translation": "hands joined",
+                    "Radical": null
+                },
+                {
+                    "Character": "弋",
+                    "Pinyin": "yì",
+                    "Translation": "shoot with a bow",
+                    "Radical": null
+                },
+                {
+                    "Character": "弓",
+                    "Pinyin": "gōng",
+                    "Translation": "bow",
+                    "Radical": null
+                },
+                {
+                    "Character": "彐",
+                    "Pinyin": "jì",
+                    "Translation": "snout",
+                    "Radical": null
+                },
+                {
+                    "Character": "彡",
+                    "Pinyin": "shān",
+                    "Translation": "hair",
+                    "Radical": null
+                },
+                {
+                    "Character": "彳",
+                    "Pinyin": "chì",
+                    "Translation": "step",
+                    "Radical": null
+                },
+                {
+                    "Character": "心",
+                    "Pinyin": "xīn",
+                    "Translation": "heart",
+                    "Radical": null
+                },
+                {
+                    "Character": "戈",
+                    "Pinyin": "gē",
+                    "Translation": "spear",
+                    "Radical": null
+                },
+                {
+                    "Character": "户",
+                    "Pinyin": "hù",
+                    "Translation": "door",
+                    "Radical": null
+                },
+                {
+                    "Character": "手",
+                    "Pinyin": "shǒu",
+                    "Translation": "hand",
+                    "Radical": null
+                },
+                {
+                    "Character": "支",
+                    "Pinyin": "zhī",
+                    "Translation": "branch",
+                    "Radical": null
+                },
+                {
+                    "Character": "攴",
+                    "Pinyin": "pū",
+                    "Translation": "rap",
+                    "Radical": null
+                },
+                {
+                    "Character": "文",
+                    "Pinyin": "wén",
+                    "Translation": "script",
+                    "Radical": null
+                },
+                {
+                    "Character": "斗",
+                    "Pinyin": "dǒu",
+                    "Translation": "dipper",
+                    "Radical": null
+                },
+                {
+                    "Character": "斤",
+                    "Pinyin": "jīn",
+                    "Translation": "axe",
+                    "Radical": null
+                },
+                {
+                    "Character": "方",
+                    "Pinyin": "fāng",
+                    "Translation": "square",
+                    "Radical": null
+                },
+                {
+                    "Character": "无",
+                    "Pinyin": "wú",
+                    "Translation": "not",
+                    "Radical": null
+                },
+                {
+                    "Character": "日",
+                    "Pinyin": "rì",
+                    "Translation": "sun",
+                    "Radical": null
+                },
+                {
+                    "Character": "曰",
+                    "Pinyin": "yuē",
+                    "Translation": "say",
+                    "Radical": null
+                },
+                {
+                    "Character": "月",
+                    "Pinyin": "yuè",
+                    "Translation": "moon",
+                    "Radical": null
+                },
+                {
+                    "Character": "木",
+                    "Pinyin": "mù",
+                    "Translation": "tree",
+                    "Radical": null
+                },
+                {
+                    "Character": "欠",
+                    "Pinyin": "qiàn",
+                    "Translation": "lack",
+                    "Radical": null
+                },
+                {
+                    "Character": "止",
+                    "Pinyin": "zhǐ",
+                    "Translation": "stop",
+                    "Radical": null
+                },
+                {
+                    "Character": "歹",
+                    "Pinyin": "dǎi",
+                    "Translation": "death",
+                    "Radical": null
+                },
+                {
+                    "Character": "殳",
+                    "Pinyin": "shū",
+                    "Translation": "weapon",
+                    "Radical": null
+                },
+                {
+                    "Character": "毋",
+                    "Pinyin": "mǔ",
+                    "Translation": "mother",
+                    "Radical": null
+                },
+                {
+                    "Character": "比",
+                    "Pinyin": "bǐ",
+                    "Translation": "compare",
+                    "Radical": null
+                },
+                {
+                    "Character": "毛",
+                    "Pinyin": "máo",
+                    "Translation": "fur",
+                    "Radical": null
+                },
+                {
+                    "Character": "氏",
+                    "Pinyin": "shì",
+                    "Translation": "clan",
+                    "Radical": null
+                },
+                {
+                    "Character": "气",
+                    "Pinyin": "qì",
+                    "Translation": "steam",
+                    "Radical": null
+                },
+                {
+                    "Character": "水",
+                    "Pinyin": "shuǐ",
+                    "Translation": "water",
+                    "Radical": null
+                },
+                {
+                    "Character": "火",
+                    "Pinyin": "huǒ",
+                    "Translation": "fire",
+                    "Radical": null
+                },
+                {
+                    "Character": "爪",
+                    "Pinyin": "zhǎo",
+                    "Translation": "claw",
+                    "Radical": null
+                },
+                {
+                    "Character": "父",
+                    "Pinyin": "fù",
+                    "Translation": "father",
+                    "Radical": null
+                },
+                {
+                    "Character": "爻",
+                    "Pinyin": "yáo",
+                    "Translation": "lines on a trigram",
+                    "Radical": null
+                },
+                {
+                    "Character": "爿",
+                    "Pinyin": "qiáng",
+                    "Translation": "half of a tree trunk",
+                    "Radical": null
+                },
+                {
+                    "Character": "片",
+                    "Pinyin": "piàn",
+                    "Translation": "slice",
+                    "Radical": null
+                },
+                {
+                    "Character": "牙",
+                    "Pinyin": "yá",
+                    "Translation": "tooth",
+                    "Radical": null
+                },
+                {
+                    "Character": "牛",
+                    "Pinyin": "niú",
+                    "Translation": "cow",
+                    "Radical": null
+                },
+                {
+                    "Character": "犬",
+                    "Pinyin": "quǎn",
+                    "Translation": "dog",
+                    "Radical": null
+                },
+                {
+                    "Character": "玄",
+                    "Pinyin": "xuán",
+                    "Translation": "profound",
+                    "Radical": null
+                },
+                {
+                    "Character": "玉",
+                    "Pinyin": "yù",
+                    "Translation": "jade",
+                    "Radical": null
+                },
+                {
+                    "Character": "瓜",
+                    "Pinyin": "guā",
+                    "Translation": "melon",
+                    "Radical": null
+                },
+                {
+                    "Character": "瓦",
+                    "Pinyin": "wǎ",
+                    "Translation": "tile",
+                    "Radical": null
+                },
+                {
+                    "Character": "甘",
+                    "Pinyin": "gān",
+                    "Translation": "sweet",
+                    "Radical": null
+                },
+                {
+                    "Character": "生",
+                    "Pinyin": "shēng",
+                    "Translation": "life",
+                    "Radical": null
+                },
+                {
+                    "Character": "用",
+                    "Pinyin": "yòng",
+                    "Translation": "use",
+                    "Radical": null
+                },
+                {
+                    "Character": "田",
+                    "Pinyin": "tián",
+                    "Translation": "field",
+                    "Radical": null
+                },
+                {
+                    "Character": "疋",
+                    "Pinyin": "pǐ",
+                    "Translation": "cloth",
+                    "Radical": null
+                },
+                {
+                    "Character": "疒",
+                    "Pinyin": "bìng",
+                    "Translation": "ill",
+                    "Radical": null
+                },
+                {
+                    "Character": "癶",
+                    "Pinyin": "bō",
+                    "Translation": "foot steps",
+                    "Radical": null
+                },
+                {
+                    "Character": "白",
+                    "Pinyin": "bái",
+                    "Translation": "white",
+                    "Radical": null
+                },
+                {
+                    "Character": "皮",
+                    "Pinyin": "pí",
+                    "Translation": "skin",
+                    "Radical": null
+                },
+                {
+                    "Character": "皿",
+                    "Pinyin": "mǐn",
+                    "Translation": "dish",
+                    "Radical": null
+                },
+                {
+                    "Character": "目",
+                    "Pinyin": "mù",
+                    "Translation": "eye",
+                    "Radical": null
+                },
+                {
+                    "Character": "矛",
+                    "Pinyin": "máo",
+                    "Translation": "spear",
+                    "Radical": null
+                },
+                {
+                    "Character": "矢",
+                    "Pinyin": "shǐ",
+                    "Translation": "arrow",
+                    "Radical": null
+                },
+                {
+                    "Character": "石",
+                    "Pinyin": "shí",
+                    "Translation": "stone",
+                    "Radical": null
+                },
+                {
+                    "Character": "示",
+                    "Pinyin": "shì",
+                    "Translation": "spirit",
+                    "Radical": null
+                },
+                {
+                    "Character": "禸",
+                    "Pinyin": "róu",
+                    "Translation": "track",
+                    "Radical": null
+                },
+                {
+                    "Character": "禾",
+                    "Pinyin": "hé",
+                    "Translation": "grain",
+                    "Radical": null
+                },
+                {
+                    "Character": "穴",
+                    "Pinyin": "xuè",
+                    "Translation": "cave",
+                    "Radical": null
+                },
+                {
+                    "Character": "立",
+                    "Pinyin": "lì",
+                    "Translation": "stand",
+                    "Radical": null
+                },
+                {
+                    "Character": "竹",
+                    "Pinyin": "zhú",
+                    "Translation": "bamboo",
+                    "Radical": null
+                },
+                {
+                    "Character": "米",
+                    "Pinyin": "mǐ",
+                    "Translation": "rice",
+                    "Radical": null
+                },
+                {
+                    "Character": "糸",
+                    "Pinyin": "sī",
+                    "Translation": "silk",
+                    "Radical": null
+                },
+                {
+                    "Character": "缶",
+                    "Pinyin": "fǒu",
+                    "Translation": "jar",
+                    "Radical": null
+                },
+                {
+                    "Character": "网",
+                    "Pinyin": "wǎng",
+                    "Translation": "net",
+                    "Radical": null
+                },
+                {
+                    "Character": "羊",
+                    "Pinyin": "yáng",
+                    "Translation": "sheep",
+                    "Radical": null
+                },
+                {
+                    "Character": "羽",
+                    "Pinyin": "yǔ",
+                    "Translation": "feather",
+                    "Radical": null
+                },
+                {
+                    "Character": "老",
+                    "Pinyin": "lǎo",
+                    "Translation": "old",
+                    "Radical": null
+                },
+                {
+                    "Character": "而",
+                    "Pinyin": "ér",
+                    "Translation": "and",
+                    "Radical": null
+                },
+                {
+                    "Character": "耒",
+                    "Pinyin": "lěi",
+                    "Translation": "plow",
+                    "Radical": null
+                },
+                {
+                    "Character": "耳",
+                    "Pinyin": "ěr",
+                    "Translation": "ear",
+                    "Radical": null
+                },
+                {
+                    "Character": "聿",
+                    "Pinyin": "yù",
+                    "Translation": "brush",
+                    "Radical": null
+                },
+                {
+                    "Character": "肉",
+                    "Pinyin": "ròu",
+                    "Translation": "meat",
+                    "Radical": null
+                },
+                {
+                    "Character": "臣",
+                    "Pinyin": "chén",
+                    "Translation": "minister",
+                    "Radical": null
+                },
+                {
+                    "Character": "自",
+                    "Pinyin": "zì",
+                    "Translation": "oneself",
+                    "Radical": null
+                },
+                {
+                    "Character": "至",
+                    "Pinyin": "zhì",
+                    "Translation": "arrive",
+                    "Radical": null
+                },
+                {
+                    "Character": "臼",
+                    "Pinyin": "jiù",
+                    "Translation": "mortar",
+                    "Radical": null
+                },
+                {
+                    "Character": "舌",
+                    "Pinyin": "shé",
+                    "Translation": "tongue",
+                    "Radical": null
+                },
+                {
+                    "Character": "舛",
+                    "Pinyin": "chuǎn",
+                    "Translation": "contrary",
+                    "Radical": null
+                },
+                {
+                    "Character": "舟",
+                    "Pinyin": "zhōu",
+                    "Translation": "boat",
+                    "Radical": null
+                },
+                {
+                    "Character": "艮",
+                    "Pinyin": "gèn",
+                    "Translation": "mountain",
+                    "Radical": null
+                },
+                {
+                    "Character": "色",
+                    "Pinyin": "sè",
+                    "Translation": "color",
+                    "Radical": null
+                },
+                {
+                    "Character": "艸",
+                    "Pinyin": "cǎo",
+                    "Translation": "grass",
+                    "Radical": null
+                },
+                {
+                    "Character": "虍",
+                    "Pinyin": "hǔ",
+                    "Translation": "tiger",
+                    "Radical": null
+                },
+                {
+                    "Character": "虫",
+                    "Pinyin": "chóng",
+                    "Translation": "insect",
+                    "Radical": null
+                },
+                {
+                    "Character": "血",
+                    "Pinyin": "xuè",
+                    "Translation": "blood",
+                    "Radical": null
+                },
+                {
+                    "Character": "行",
+                    "Pinyin": "xíng",
+                    "Translation": "walk",
+                    "Radical": null
+                },
+                {
+                    "Character": "衣",
+                    "Pinyin": "yī",
+                    "Translation": "clothes",
+                    "Radical": null
+                },
+                {
+                    "Character": "西",
+                    "Pinyin": "xī",
+                    "Translation": "west",
+                    "Radical": null
+                },
+                {
+                    "Character": "見",
+                    "Pinyin": "jiàn",
+                    "Translation": "see",
+                    "Radical": null
+                },
+                {
+                    "Character": "角",
+                    "Pinyin": "jiǎo",
+                    "Translation": "horn",
+                    "Radical": null
+                },
+                {
+                    "Character": "言",
+                    "Pinyin": "yán",
+                    "Translation": "speech",
+                    "Radical": null
+                },
+                {
+                    "Character": "谷",
+                    "Pinyin": "gǔ",
+                    "Translation": "valley",
+                    "Radical": null
+                },
+                {
+                    "Character": "豆",
+                    "Pinyin": "dòu",
+                    "Translation": "bean",
+                    "Radical": null
+                },
+                {
+                    "Character": "豕",
+                    "Pinyin": "shǐ",
+                    "Translation": "pig",
+                    "Radical": null
+                },
+                {
+                    "Character": "豸",
+                    "Pinyin": "zhì",
+                    "Translation": "badger",
+                    "Radical": null
+                },
+                {
+                    "Character": "貝",
+                    "Pinyin": "bèi",
+                    "Translation": "shell",
+                    "Radical": null
+                },
+                {
+                    "Character": "赤",
+                    "Pinyin": "chì",
+                    "Translation": "red",
+                    "Radical": null
+                },
+                {
+                    "Character": "走",
+                    "Pinyin": "zǒu",
+                    "Translation": "walk",
+                    "Radical": null
+                },
+                {
+                    "Character": "足",
+                    "Pinyin": "zú",
+                    "Translation": "foot",
+                    "Radical": null
+                },
+                {
+                    "Character": "身",
+                    "Pinyin": "shēn",
+                    "Translation": "body",
+                    "Radical": null
+                },
+                {
+                    "Character": "車",
+                    "Pinyin": "chē",
+                    "Translation": "cart",
+                    "Radical": null
+                },
+                {
+                    "Character": "辛",
+                    "Pinyin": "xīn",
+                    "Translation": "bitter",
+                    "Radical": null
+                },
+                {
+                    "Character": "辰",
+                    "Pinyin": "chén",
+                    "Translation": "morning",
+                    "Radical": null
+                },
+                {
+                    "Character": "辶",
+                    "Pinyin": "chuò",
+                    "Translation": "walk",
+                    "Radical": null
+                },
+                {
+                    "Character": "邑",
+                    "Pinyin": "yì",
+                    "Translation": "city",
+                    "Radical": null
+                },
+                {
+                    "Character": "酉",
+                    "Pinyin": "yǒu",
+                    "Translation": "wine",
+                    "Radical": null
+                },
+                {
+                    "Character": "釆",
+                    "Pinyin": "biàn",
+                    "Translation": "distinguish",
+                    "Radical": null
+                },
+                {
+                    "Character": "里",
+                    "Pinyin": "lǐ",
+                    "Translation": "village",
+                    "Radical": null
+                },
+                {
+                    "Character": "金",
+                    "Pinyin": "jīn",
+                    "Translation": "metal",
+                    "Radical": null
+                },
+                {
+                    "Character": "長",
+                    "Pinyin": "cháng",
+                    "Translation": "long",
+                    "Radical": null
+                },
+                {
+                    "Character": "門",
+                    "Pinyin": "mén",
+                    "Translation": "gate",
+                    "Radical": null
+                },
+                {
+                    "Character": "阜",
+                    "Pinyin": "fù",
+                    "Translation": "mound",
+                    "Radical": null
+                },
+                {
+                    "Character": "隶",
+                    "Pinyin": "lì",
+                    "Translation": "slave",
+                    "Radical": null
+                },
+                {
+                    "Character": "隹",
+                    "Pinyin": "zhuī",
+                    "Translation": "short-tailed bird",
+                    "Radical": null
+                },
+                {
+                    "Character": "雨",
+                    "Pinyin": "yǔ",
+                    "Translation": "rain",
+                    "Radical": null
+                },
+                {
+                    "Character": "青",
+                    "Pinyin": "qīng",
+                    "Translation": "blue",
+                    "Radical": null
+                },
+                {
+                    "Character": "非",
+                    "Pinyin": "fēi",
+                    "Translation": "wrong",
+                    "Radical": null
+                },
+                {
+                    "Character": "面",
+                    "Pinyin": "miàn",
+                    "Translation": "face",
+                    "Radical": null
+                },
+                {
+                    "Character": "革",
+                    "Pinyin": "gé",
+                    "Translation": "leather",
+                    "Radical": null
+                },
+                {
+                    "Character": "韋",
+                    "Pinyin": "wěi",
+                    "Translation": "soft leather",
+                    "Radical": null
+                },
+                {
+                    "Character": "韭",
+                    "Pinyin": "jiǔ",
+                    "Translation": "leek",
+                    "Radical": null
+                },
+                {
+                    "Character": "音",
+                    "Pinyin": "yīn",
+                    "Translation": "sound",
+                    "Radical": null
+                },
+                {
+                    "Character": "頁",
+                    "Pinyin": "yè",
+                    "Translation": "page",
+                    "Radical": null
+                },
+                {
+                    "Character": "風",
+                    "Pinyin": "fēng",
+                    "Translation": "wind",
+                    "Radical": null
+                },
+                {
+                    "Character": "飛",
+                    "Pinyin": "fēi",
+                    "Translation": "fly",
+                    "Radical": null
+                },
+                {
+                    "Character": "食",
+                    "Pinyin": "shí",
+                    "Translation": "eat",
+                    "Radical": null
+                },
+                {
+                    "Character": "首",
+                    "Pinyin": "shǒu",
+                    "Translation": "head",
+                    "Radical": null
+                },
+                {
+                    "Character": "香",
+                    "Pinyin": "xiāng",
+                    "Translation": "fragrant",
+                    "Radical": null
+                },
+                {
+                    "Character": "馬",
+                    "Pinyin": "mǎ",
+                    "Translation": "horse",
+                    "Radical": null
+                },
+                {
+                    "Character": "骨",
+                    "Pinyin": "gǔ",
+                    "Translation": "bone",
+                    "Radical": null
+                },
+                {
+                    "Character": "高",
+                    "Pinyin": "gāo",
+                    "Translation": "high",
+                    "Radical": null
+                },
+                {
+                    "Character": "髟",
+                    "Pinyin": "biāo",
+                    "Translation": "long hair",
+                    "Radical": null
+                },
+                {
+                    "Character": "鬥",
+                    "Pinyin": "dòu",
+                    "Translation": "fight",
+                    "Radical": null
+                },
+                {
+                    "Character": "鬯",
+                    "Pinyin": "chàng",
+                    "Translation": "sacrificial wine",
+                    "Radical": null
+                },
+                {
+                    "Character": "鬲",
+                    "Pinyin": "lì",
+                    "Translation": "cauldron",
+                    "Radical": null
+                },
+                {
+                    "Character": "鬼",
+                    "Pinyin": "guǐ",
+                    "Translation": "ghost",
+                    "Radical": null
+                },
+                {
+                    "Character": "魚",
+                    "Pinyin": "yú",
+                    "Translation": "fish",
+                    "Radical": null
+                },
+                {
+                    "Character": "鳥",
+                    "Pinyin": "niǎo",
+                    "Translation": "bird",
+                    "Radical": null
+                },
+                {
+                    "Character": "鹵",
+                    "Pinyin": "lǔ",
+                    "Translation": "salty",
+                    "Radical": null
+                },
+                {
+                    "Character": "鹿",
+                    "Pinyin": "lù",
+                    "Translation": "deer",
+                    "Radical": null
+                },
+                {
+                    "Character": "麥",
+                    "Pinyin": "mài",
+                    "Translation": "wheat",
+                    "Radical": null
+                },
+                {
+                    "Character": "麻",
+                    "Pinyin": "má",
+                    "Translation": "hemp",
+                    "Radical": null
+                },
+                {
+                    "Character": "黄",
+                    "Pinyin": "huáng",
+                    "Translation": "yellow",
+                    "Radical": null
+                },
+                {
+                    "Character": "黍",
+                    "Pinyin": "shǔ",
+                    "Translation": "millet",
+                    "Radical": null
+                },
+                {
+                    "Character": "黑",
+                    "Pinyin": "hēi",
+                    "Translation": "black",
+                    "Radical": null
+                },
+                {
+                    "Character": "黹",
+                    "Pinyin": "zhǐ",
+                    "Translation": "embroidery",
+                    "Radical": null
+                },
+                {
+                    "Character": "黽",
+                    "Pinyin": "mǐn",
+                    "Translation": "frog",
+                    "Radical": null
+                },
+                {
+                    "Character": "鼎",
+                    "Pinyin": "dǐng",
+                    "Translation": "tripod",
+                    "Radical": null
+                },
+                {
+                    "Character": "鼓",
+                    "Pinyin": "gǔ",
+                    "Translation": "drum",
+                    "Radical": null
+                },
+                {
+                    "Character": "鼠",
+                    "Pinyin": "shǔ",
+                    "Translation": "rat",
+                    "Radical": null
+                },
+                {
+                    "Character": "鼻",
+                    "Pinyin": "bí",
+                    "Translation": "nose",
+                    "Radical": null
+                },
+                {
+                    "Character": "齊",
+                    "Pinyin": "qí",
+                    "Translation": "even",
+                    "Radical": null
+                },
+                {
+                    "Character": "齒",
+                    "Pinyin": "chǐ",
+                    "Translation": "tooth",
+                    "Radical": null
+                },
+                {
+                    "Character": "龍",
+                    "Pinyin": "lóng",
+                    "Translation": "dragon",
+                    "Radical": null
+                },
+                {
+                    "Character": "龜",
+                    "Pinyin": "guī",
+                    "Translation": "turtle",
+                    "Radical": null
+                },
+                {
+                    "Character": "龠",
+                    "Pinyin": "yuè",
+                    "Translation": "flute",
+                    "Radical": null
+                }
+            ]
+        },
+        {
+            "Level": "Pre-HSK (names)",
+            "Words": [
+                {
+                    "Character": "王",
+                    "Pinyin": "Wáng",
+                    "Translation": "Wáng (name)",
+                    "Radical": "玉"
+                },
+                {
+                    "Character": "李",
+                    "Pinyin": "Lǐ",
+                    "Translation": "Lǐ (name)",
+                    "Radical": "木"
+                },
+                {
+                    "Character": "張",
+                    "Pinyin": "Zhāng",
+                    "Translation": "Zhāng (name)",
+                    "Radical": "弓"
+                },
+                {
+                    "Character": "劉",
+                    "Pinyin": "Liú",
+                    "Translation": "Liú (name)",
+                    "Radical": "刀"
+                },
+                {
+                    "Character": "陳",
+                    "Pinyin": "Chén",
+                    "Translation": "Chén (name)",
+                    "Radical": "阜"
+                },
+                {
+                    "Character": "楊",
+                    "Pinyin": "Yáng",
+                    "Translation": "Yáng (name)",
+                    "Radical": "木"
+                },
+                {
+                    "Character": "黃",
+                    "Pinyin": "Huáng",
+                    "Translation": "Huáng (name)",
+                    "Radical": "黃"
+                },
+                {
+                    "Character": "趙",
+                    "Pinyin": "Zhào",
+                    "Translation": "Zhào (name)",
+                    "Radical": "走"
+                },
+                {
+                    "Character": "吳",
+                    "Pinyin": "Wú",
+                    "Translation": "Wú (name)",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "周",
+                    "Pinyin": "Zhōu",
+                    "Translation": "Zhōu (name)",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "徐",
+                    "Pinyin": "Xú",
+                    "Translation": "Xú (name)",
+                    "Radical": "彳"
+                },
+                {
+                    "Character": "孫",
+                    "Pinyin": "Sūn",
+                    "Translation": "Sūn (name)",
+                    "Radical": "子"
+                },
+                {
+                    "Character": "馬",
+                    "Pinyin": "Mǎ",
+                    "Translation": "Mǎ (name)",
+                    "Radical": "馬"
+                },
+                {
+                    "Character": "朱",
+                    "Pinyin": "Zhū",
+                    "Translation": "Zhū (name)",
+                    "Radical": "木"
+                },
+                {
+                    "Character": "胡",
+                    "Pinyin": "Hú",
+                    "Translation": "Hú (name)",
+                    "Radical": "肉"
+                },
+                {
+                    "Character": "郭",
+                    "Pinyin": "Guō",
+                    "Translation": "Guō (name)",
+                    "Radical": "邑"
+                },
+                {
+                    "Character": "何",
+                    "Pinyin": "Hé",
+                    "Translation": "Hé (name)",
+                    "Radical": "人"
+                },
+                {
+                    "Character": "林",
+                    "Pinyin": "Lín",
+                    "Translation": "Lín (name)",
+                    "Radical": "木"
+                },
+                {
+                    "Character": "高",
+                    "Pinyin": "Gāo",
+                    "Translation": "Gāo (name)",
+                    "Radical": "高"
+                },
+                {
+                    "Character": "羅",
+                    "Pinyin": "Luó",
+                    "Translation": "Luó (name)",
+                    "Radical": "网"
+                },
+                {
+                    "Character": "鄭",
+                    "Pinyin": "Zhèng",
+                    "Translation": "Zhèng (name)",
+                    "Radical": "邑"
+                },
+                {
+                    "Character": "梁",
+                    "Pinyin": "Liáng",
+                    "Translation": "Liáng (name)",
+                    "Radical": "木"
+                },
+                {
+                    "Character": "謝",
+                    "Pinyin": "Xiè",
+                    "Translation": "Xiè (name)",
+                    "Radical": "言"
+                },
+                {
+                    "Character": "宋",
+                    "Pinyin": "Sòng",
+                    "Translation": "Sòng (name)",
+                    "Radical": "宀"
+                },
+                {
+                    "Character": "唐",
+                    "Pinyin": "Táng",
+                    "Translation": "Táng (name)",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "許",
+                    "Pinyin": "Xǔ",
+                    "Translation": "Xǔ (name)",
+                    "Radical": "言"
+                },
+                {
+                    "Character": "鄧",
+                    "Pinyin": "Dèng",
+                    "Translation": "Dèng (name)",
+                    "Radical": "邑"
+                },
+                {
+                    "Character": "韓",
+                    "Pinyin": "Hán",
+                    "Translation": "Hán (name)",
+                    "Radical": "韋"
+                },
+                {
+                    "Character": "馮",
+                    "Pinyin": "Féng",
+                    "Translation": "Féng (name)",
+                    "Radical": "馬"
+                },
+                {
+                    "Character": "曹",
+                    "Pinyin": "Cáo",
+                    "Translation": "Cáo (name)",
+                    "Radical": "曰"
+                },
+                {
+                    "Character": "曾",
+                    "Pinyin": "Zēng",
+                    "Translation": "Zēng (name)",
+                    "Radical": "曰"
+                },
+                {
+                    "Character": "彭",
+                    "Pinyin": "Péng",
+                    "Translation": "Péng (name)",
+                    "Radical": "彡"
+                },
+                {
+                    "Character": "蕭",
+                    "Pinyin": "Xiāo",
+                    "Translation": "Xiāo (name)",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "蔡",
+                    "Pinyin": "Cài",
+                    "Translation": "Cài (name)",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "潘",
+                    "Pinyin": "Pān",
+                    "Translation": "Pān (name)",
+                    "Radical": "水"
+                },
+                {
+                    "Character": "田",
+                    "Pinyin": "Tián",
+                    "Translation": "Tián (name)",
+                    "Radical": "田"
+                },
+                {
+                    "Character": "董",
+                    "Pinyin": "Dǒng",
+                    "Translation": "Dǒng (name)",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "袁",
+                    "Pinyin": "Yuán",
+                    "Translation": "Yuán (name)",
+                    "Radical": "衣"
+                },
+                {
+                    "Character": "蔡",
+                    "Pinyin": "Cài",
+                    "Translation": "Cài (name)",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "蔣",
+                    "Pinyin": "Jiǎng",
+                    "Translation": "Jiǎng (name)",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "余",
+                    "Pinyin": "Yú",
+                    "Translation": "Yú (name)",
+                    "Radical": "人"
+                },
+                {
+                    "Character": "于",
+                    "Pinyin": "Yú",
+                    "Translation": "Yú (name)",
+                    "Radical": "二"
+                },
+                {
+                    "Character": "杜",
+                    "Pinyin": "Dù",
+                    "Translation": "Dù (name)",
+                    "Radical": "木"
+                },
+                {
+                    "Character": "葉",
+                    "Pinyin": "Yè",
+                    "Translation": "Yè (name)",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "程",
+                    "Pinyin": "Chéng",
+                    "Translation": "Chéng (name)",
+                    "Radical": "禾"
+                },
+                {
+                    "Character": "魏",
+                    "Pinyin": "Wèi",
+                    "Translation": "Wèi (name)",
+                    "Radical": "鬼"
+                },
+                {
+                    "Character": "蘇",
+                    "Pinyin": "Sū",
+                    "Translation": "Sū (name)",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "呂",
+                    "Pinyin": "Lǚ",
+                    "Translation": "Lǚ (name)",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "丁",
+                    "Pinyin": "Dīng",
+                    "Translation": "Dīng (name)",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "任",
+                    "Pinyin": "Rén",
+                    "Translation": "Rén (name)",
+                    "Radical": "人"
+                }
+            ]
+        },
+        {
+            "Level": "HSK 1",
+            "Words": [
+                {
+                    "Character": "我",
+                    "Pinyin": "wǒ",
+                    "Translation": "I, me",
+                    "Radical": "戈"
+                },
+                {
+                    "Character": "我們",
+                    "Pinyin": "wǒmen",
+                    "Translation": "we, us (pl.)",
+                    "Radical": null
+                },
+                {
+                    "Character": "你",
+                    "Pinyin": "nǐ",
+                    "Translation": "you",
+                    "Radical": "亻"
+                },
+                {
+                    "Character": "他",
+                    "Pinyin": "tā",
+                    "Translation": "he, him",
+                    "Radical": "亻"
+                },
+                {
+                    "Character": "她",
+                    "Pinyin": "tā",
+                    "Translation": "she, her",
+                    "Radical": "女"
+                },
+                {
+                    "Character": "這",
+                    "Pinyin": "zhè",
+                    "Translation": "this",
+                    "Radical": "辶"
+                },
+                {
+                    "Character": "那",
+                    "Pinyin": "nà",
+                    "Translation": "that",
+                    "Radical": "阝"
+                },
+                {
+                    "Character": "哪",
+                    "Pinyin": "nǎ",
+                    "Translation": "which",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "誰",
+                    "Pinyin": "shéi",
+                    "Translation": "who",
+                    "Radical": "言"
+                },
+                {
+                    "Character": "什麼",
+                    "Pinyin": "shénme",
+                    "Translation": "what",
+                    "Radical": null
+                },
+                {
+                    "Character": "多少",
+                    "Pinyin": "duōshǎo",
+                    "Translation": "how many, how much",
+                    "Radical": null
+                },
+                {
+                    "Character": "幾",
+                    "Pinyin": "jǐ",
+                    "Translation": "how many, a few",
+                    "Radical": "幾"
+                },
+                {
+                    "Character": "怎麼",
+                    "Pinyin": "zěnme",
+                    "Translation": "how",
+                    "Radical": null
+                },
+                {
+                    "Character": "怎麼樣",
+                    "Pinyin": "zěnmeyàng",
+                    "Translation": "how about",
+                    "Radical": null
+                },
+                {
+                    "Character": "一",
+                    "Pinyin": "yī",
+                    "Translation": "one",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "二",
+                    "Pinyin": "èr",
+                    "Translation": "two",
+                    "Radical": "二"
+                },
+                {
+                    "Character": "三",
+                    "Pinyin": "sān",
+                    "Translation": "three",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "四",
+                    "Pinyin": "sì",
+                    "Translation": "four",
+                    "Radical": "囗"
+                },
+                {
+                    "Character": "五",
+                    "Pinyin": "wǔ",
+                    "Translation": "five",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "六",
+                    "Pinyin": "liù",
+                    "Translation": "six",
+                    "Radical": "八"
+                },
+                {
+                    "Character": "七",
+                    "Pinyin": "qī",
+                    "Translation": "seven",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "八",
+                    "Pinyin": "bā",
+                    "Translation": "eight",
+                    "Radical": "八"
+                },
+                {
+                    "Character": "九",
+                    "Pinyin": "jiǔ",
+                    "Translation": "nine",
+                    "Radical": "乙"
+                },
+                {
+                    "Character": "十",
+                    "Pinyin": "shí",
+                    "Translation": "ten",
+                    "Radical": "十"
+                },
+                {
+                    "Character": "個",
+                    "Pinyin": "gè",
+                    "Translation": "classifier (general)",
+                    "Radical": "亻"
+                },
+                {
+                    "Character": "歲",
+                    "Pinyin": "suì",
+                    "Translation": "year (of age)",
+                    "Radical": "止"
+                },
+                {
+                    "Character": "本",
+                    "Pinyin": "běn",
+                    "Translation": "classifier for books",
+                    "Radical": "木"
+                },
+                {
+                    "Character": "些",
+                    "Pinyin": "xiē",
+                    "Translation": "some",
+                    "Radical": "此"
+                },
+                {
+                    "Character": "塊",
+                    "Pinyin": "kuài",
+                    "Translation": "piece, yuan (currency)",
+                    "Radical": "土"
+                },
+                {
+                    "Character": "不",
+                    "Pinyin": "bù",
+                    "Translation": "no, not",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "沒",
+                    "Pinyin": "méi",
+                    "Translation": "no, haven't",
+                    "Radical": "水"
+                },
+                {
+                    "Character": "很",
+                    "Pinyin": "hěn",
+                    "Translation": "very",
+                    "Radical": "彳"
+                },
+                {
+                    "Character": "太",
+                    "Pinyin": "tài",
+                    "Translation": "too",
+                    "Radical": "大"
+                },
+                {
+                    "Character": "都",
+                    "Pinyin": "dōu",
+                    "Translation": "all",
+                    "Radical": "阝"
+                },
+                {
+                    "Character": "和",
+                    "Pinyin": "hé",
+                    "Translation": "and",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "在",
+                    "Pinyin": "zài",
+                    "Translation": "at, in",
+                    "Radical": "土"
+                },
+                {
+                    "Character": "的",
+                    "Pinyin": "de",
+                    "Translation": "possessive particle",
+                    "Radical": "白"
+                },
+                {
+                    "Character": "了",
+                    "Pinyin": "le",
+                    "Translation": "completed action particle",
+                    "Radical": "亅"
+                },
+                {
+                    "Character": "嗎",
+                    "Pinyin": "ma",
+                    "Translation": "question particle",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "呢",
+                    "Pinyin": "ne",
+                    "Translation": "question particle",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "家",
+                    "Pinyin": "jiā",
+                    "Translation": "home, family",
+                    "Radical": "宀"
+                },
+                {
+                    "Character": "學校",
+                    "Pinyin": "xuéxiào",
+                    "Translation": "school",
+                    "Radical": null
+                },
+                {
+                    "Character": "飯店",
+                    "Pinyin": "fàndiàn",
+                    "Translation": "restaurant",
+                    "Radical": null
+                },
+                {
+                    "Character": "商店",
+                    "Pinyin": "shāngdiàn",
+                    "Translation": "store",
+                    "Radical": null
+                },
+                {
+                    "Character": "醫院",
+                    "Pinyin": "yīyuàn",
+                    "Translation": "hospital",
+                    "Radical": null
+                },
+                {
+                    "Character": "中國",
+                    "Pinyin": "Zhōngguó",
+                    "Translation": "China",
+                    "Radical": null
+                },
+                {
+                    "Character": "北京",
+                    "Pinyin": "Běijīng",
+                    "Translation": "Beijing",
+                    "Radical": null
+                },
+                {
+                    "Character": "上",
+                    "Pinyin": "shàng",
+                    "Translation": "up, on",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "下",
+                    "Pinyin": "xià",
+                    "Translation": "down, under",
+                    "Radical": "一"
+                },
+                {
+                    "Character": "前面",
+                    "Pinyin": "qiánmiàn",
+                    "Translation": "front",
+                    "Radical": null
+                },
+                {
+                    "Character": "後面",
+                    "Pinyin": "hòumiàn",
+                    "Translation": "behind",
+                    "Radical": null
+                },
+                {
+                    "Character": "裡面",
+                    "Pinyin": "lǐmiàn",
+                    "Translation": "inside",
+                    "Radical": null
+                },
+                {
+                    "Character": "今天",
+                    "Pinyin": "jīntiān",
+                    "Translation": "today",
+                    "Radical": null
+                },
+                {
+                    "Character": "明天",
+                    "Pinyin": "míngtiān",
+                    "Translation": "tomorrow",
+                    "Radical": null
+                },
+                {
+                    "Character": "昨天",
+                    "Pinyin": "zuótiān",
+                    "Translation": "yesterday",
+                    "Radical": null
+                },
+                {
+                    "Character": "上午",
+                    "Pinyin": "shàngwǔ",
+                    "Translation": "morning",
+                    "Radical": null
+                },
+                {
+                    "Character": "中午",
+                    "Pinyin": "zhōngwǔ",
+                    "Translation": "noon",
+                    "Radical": null
+                },
+                {
+                    "Character": "下午",
+                    "Pinyin": "xiàwǔ",
+                    "Translation": "afternoon",
+                    "Radical": null
+                },
+                {
+                    "Character": "年",
+                    "Pinyin": "nián",
+                    "Translation": "year",
+                    "Radical": "干"
+                },
+                {
+                    "Character": "月",
+                    "Pinyin": "yuè",
+                    "Translation": "month",
+                    "Radical": "月"
+                },
+                {
+                    "Character": "號",
+                    "Pinyin": "hào",
+                    "Translation": "date, number",
+                    "Radical": "虍"
+                },
+                {
+                    "Character": "星期",
+                    "Pinyin": "xīngqī",
+                    "Translation": "week",
+                    "Radical": null
+                },
+                {
+                    "Character": "點",
+                    "Pinyin": "diǎn",
+                    "Translation": "o'clock, point",
+                    "Radical": "黑"
+                },
+                {
+                    "Character": "分鐘",
+                    "Pinyin": "fēnzhōng",
+                    "Translation": "minute",
+                    "Radical": null
+                },
+                {
+                    "Character": "現在",
+                    "Pinyin": "xiànzài",
+                    "Translation": "now",
+                    "Radical": null
+                },
+                {
+                    "Character": "時候",
+                    "Pinyin": "shíhou",
+                    "Translation": "time",
+                    "Radical": null
+                },
+                {
+                    "Character": "爸爸",
+                    "Pinyin": "bàba",
+                    "Translation": "father (dad)",
+                    "Radical": null
+                },
+                {
+                    "Character": "媽媽",
+                    "Pinyin": "māma",
+                    "Translation": "mother (mom)",
+                    "Radical": null
+                },
+                {
+                    "Character": "兒子",
+                    "Pinyin": "érzi",
+                    "Translation": "son",
+                    "Radical": null
+                },
+                {
+                    "Character": "女兒",
+                    "Pinyin": "nǚér",
+                    "Translation": "daughter",
+                    "Radical": null
+                },
+                {
+                    "Character": "老師",
+                    "Pinyin": "lǎoshī",
+                    "Translation": "teacher",
+                    "Radical": null
+                },
+                {
+                    "Character": "學生",
+                    "Pinyin": "xuésheng",
+                    "Translation": "student",
+                    "Radical": null
+                },
+                {
+                    "Character": "同學",
+                    "Pinyin": "tóngxué",
+                    "Translation": "classmate",
+                    "Radical": null
+                },
+                {
+                    "Character": "朋友",
+                    "Pinyin": "péngyou",
+                    "Translation": "friend",
+                    "Radical": null
+                },
+                {
+                    "Character": "醫生",
+                    "Pinyin": "yīshēng",
+                    "Translation": "doctor",
+                    "Radical": null
+                },
+                {
+                    "Character": "先生",
+                    "Pinyin": "xiānsheng",
+                    "Translation": "sir, Mr.",
+                    "Radical": null
+                },
+                {
+                    "Character": "小姐",
+                    "Pinyin": "xiǎojiě",
+                    "Translation": "Miss",
+                    "Radical": null
+                },
+                {
+                    "Character": "衣服",
+                    "Pinyin": "yīfu",
+                    "Translation": "clothes",
+                    "Radical": null
+                },
+                {
+                    "Character": "水",
+                    "Pinyin": "shuǐ",
+                    "Translation": "water",
+                    "Radical": "水"
+                },
+                {
+                    "Character": "菜",
+                    "Pinyin": "cài",
+                    "Translation": "dish, vegetable",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "米飯",
+                    "Pinyin": "mǐfàn",
+                    "Translation": "rice (cooked)",
+                    "Radical": null
+                },
+                {
+                    "Character": "水果",
+                    "Pinyin": "shuǐguǒ",
+                    "Translation": "fruit",
+                    "Radical": null
+                },
+                {
+                    "Character": "蘋果",
+                    "Pinyin": "píngguǒ",
+                    "Translation": "apple",
+                    "Radical": null
+                },
+                {
+                    "Character": "茶",
+                    "Pinyin": "chá",
+                    "Translation": "tea",
+                    "Radical": "艸"
+                },
+                {
+                    "Character": "杯子",
+                    "Pinyin": "bēizi",
+                    "Translation": "cup",
+                    "Radical": null
+                },
+                {
+                    "Character": "錢",
+                    "Pinyin": "qián",
+                    "Translation": "money",
+                    "Radical": "金"
+                },
+                {
+                    "Character": "飛機",
+                    "Pinyin": "fēijī",
+                    "Translation": "airplane",
+                    "Radical": null
+                },
+                {
+                    "Character": "出租車",
+                    "Pinyin": "chūzūchē",
+                    "Translation": "taxi",
+                    "Radical": null
+                },
+                {
+                    "Character": "電視",
+                    "Pinyin": "diànshì",
+                    "Translation": "television",
+                    "Radical": null
+                },
+                {
+                    "Character": "電腦",
+                    "Pinyin": "diànnǎo",
+                    "Translation": "computer",
+                    "Radical": null
+                },
+                {
+                    "Character": "電影",
+                    "Pinyin": "diànyǐng",
+                    "Translation": "movie",
+                    "Radical": null
+                },
+                {
+                    "Character": "天氣",
+                    "Pinyin": "tiānqì",
+                    "Translation": "weather",
+                    "Radical": null
+                },
+                {
+                    "Character": "貓",
+                    "Pinyin": "māo",
+                    "Translation": "cat",
+                    "Radical": "犬"
+                },
+                {
+                    "Character": "狗",
+                    "Pinyin": "gǒu",
+                    "Translation": "dog",
+                    "Radical": "犬"
+                },
+                {
+                    "Character": "東西",
+                    "Pinyin": "dōngxi",
+                    "Translation": "thing",
+                    "Radical": null
+                },
+                {
+                    "Character": "人",
+                    "Pinyin": "rén",
+                    "Translation": "person",
+                    "Radical": "人"
+                },
+                {
+                    "Character": "名字",
+                    "Pinyin": "míngzi",
+                    "Translation": "name",
+                    "Radical": null
+                },
+                {
+                    "Character": "書",
+                    "Pinyin": "shū",
+                    "Translation": "book",
+                    "Radical": "曰"
+                },
+                {
+                    "Character": "漢語",
+                    "Pinyin": "hànyǔ",
+                    "Translation": "Chinese language",
+                    "Radical": null
+                },
+                {
+                    "Character": "字",
+                    "Pinyin": "zì",
+                    "Translation": "character",
+                    "Radical": "子"
+                },
+                {
+                    "Character": "桌子",
+                    "Pinyin": "zhuōzi",
+                    "Translation": "desk",
+                    "Radical": null
+                },
+                {
+                    "Character": "椅子",
+                    "Pinyin": "yǐzi",
+                    "Translation": "chair",
+                    "Radical": null
+                },
+                {
+                    "Character": "謝謝",
+                    "Pinyin": "xièxie",
+                    "Translation": "thank you",
+                    "Radical": null
+                },
+                {
+                    "Character": "不客氣",
+                    "Pinyin": "búkèqi",
+                    "Translation": "you're welcome",
+                    "Radical": null
+                },
+                {
+                    "Character": "再見",
+                    "Pinyin": "zàijiàn",
+                    "Translation": "goodbye",
+                    "Radical": null
+                },
+                {
+                    "Character": "請",
+                    "Pinyin": "qǐng",
+                    "Translation": "please",
+                    "Radical": "言"
+                },
+                {
+                    "Character": "對不起",
+                    "Pinyin": "duìbuqǐ",
+                    "Translation": "sorry",
+                    "Radical": null
+                },
+                {
+                    "Character": "沒關係",
+                    "Pinyin": "méiguānxi",
+                    "Translation": "it doesn't matter",
+                    "Radical": null
+                },
+                {
+                    "Character": "是",
+                    "Pinyin": "shì",
+                    "Translation": "is, to be",
+                    "Radical": "日"
+                },
+                {
+                    "Character": "有",
+                    "Pinyin": "yǒu",
+                    "Translation": "have",
+                    "Radical": "月"
+                },
+                {
+                    "Character": "看",
+                    "Pinyin": "kàn",
+                    "Translation": "look, see",
+                    "Radical": "目"
+                },
+                {
+                    "Character": "聽",
+                    "Pinyin": "tīng",
+                    "Translation": "listen",
+                    "Radical": "耳"
+                },
+                {
+                    "Character": "說",
+                    "Pinyin": "shuō",
+                    "Translation": "speak, say",
+                    "Radical": "言"
+                },
+                {
+                    "Character": "讀",
+                    "Pinyin": "dú",
+                    "Translation": "read",
+                    "Radical": "言"
+                },
+                {
+                    "Character": "寫",
+                    "Pinyin": "xiě",
+                    "Translation": "write",
+                    "Radical": "宀"
+                },
+                {
+                    "Character": "看見",
+                    "Pinyin": "kànjiàn",
+                    "Translation": "see",
+                    "Radical": null
+                },
+                {
+                    "Character": "叫",
+                    "Pinyin": "jiào",
+                    "Translation": "call",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "來",
+                    "Pinyin": "lái",
+                    "Translation": "come",
+                    "Radical": "人"
+                },
+                {
+                    "Character": "回",
+                    "Pinyin": "huí",
+                    "Translation": "return",
+                    "Radical": "囗"
+                },
+                {
+                    "Character": "去",
+                    "Pinyin": "qù",
+                    "Translation": "go",
+                    "Radical": "厶"
+                },
+                {
+                    "Character": "吃",
+                    "Pinyin": "chī",
+                    "Translation": "eat",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "喝",
+                    "Pinyin": "hē",
+                    "Translation": "drink",
+                    "Radical": "口"
+                },
+                {
+                    "Character": "睡覺",
+                    "Pinyin": "shuìjiào",
+                    "Translation": "sleep",
+                    "Radical": null
+                },
+                {
+                    "Character": "打電話",
+                    "Pinyin": "dǎdiànhuà",
+                    "Translation": "make a phone call",
+                    "Radical": null
+                },
+                {
+                    "Character": "做",
+                    "Pinyin": "zuò",
+                    "Translation": "do",
+                    "Radical": "人"
+                },
+                {
+                    "Character": "買",
+                    "Pinyin": "mǎi",
+                    "Translation": "buy",
+                    "Radical": "貝"
+                },
+                {
+                    "Character": "開",
+                    "Pinyin": "kāi",
+                    "Translation": "open",
+                    "Radical": "門"
+                },
+                {
+                    "Character": "坐",
+                    "Pinyin": "zuò",
+                    "Translation": "sit",
+                    "Radical": "土"
+                },
+                {
+                    "Character": "住",
+                    "Pinyin": "zhù",
+                    "Translation": "live",
+                    "Radical": "人"
+                },
+                {
+                    "Character": "學習",
+                    "Pinyin": "xuéxí",
+                    "Translation": "study",
+                    "Radical": null
+                },
+                {
+                    "Character": "工作",
+                    "Pinyin": "gōngzuò",
+                    "Translation": "work",
+                    "Radical": null
+                },
+                {
+                    "Character": "下雨",
+                    "Pinyin": "xiàyǔ",
+                    "Translation": "rain",
+                    "Radical": null
+                },
+                {
+                    "Character": "愛",
+                    "Pinyin": "ài",
+                    "Translation": "love",
+                    "Radical": "心"
+                },
+                {
+                    "Character": "喜歡",
+                    "Pinyin": "xǐhuān",
+                    "Translation": "like",
+                    "Radical": null
+                },
+                {
+                    "Character": "想",
+                    "Pinyin": "xiǎng",
+                    "Translation": "want, think",
+                    "Radical": "心"
+                },
+                {
+                    "Character": "認識",
+                    "Pinyin": "rènshi",
+                    "Translation": "know (person)",
+                    "Radical": null
+                },
+                {
+                    "Character": "會",
+                    "Pinyin": "huì",
+                    "Translation": "can",
+                    "Radical": "人"
+                },
+                {
+                    "Character": "能",
+                    "Pinyin": "néng",
+                    "Translation": "can, able to",
+                    "Radical": "月"
+                },
+                {
+                    "Character": "好",
+                    "Pinyin": "hǎo",
+                    "Translation": "good",
+                    "Radical": "女"
+                },
+                {
+                    "Character": "大",
+                    "Pinyin": "dà",
+                    "Translation": "big",
+                    "Radical": "大"
+                },
+                {
+                    "Character": "小",
+                    "Pinyin": "xiǎo",
+                    "Translation": "small",
+                    "Radical": "小"
+                },
+                {
+                    "Character": "多",
+                    "Pinyin": "duō",
+                    "Translation": "many",
+                    "Radical": "夕"
+                },
+                {
+                    "Character": "少",
+                    "Pinyin": "shǎo",
+                    "Translation": "few",
+                    "Radical": "小"
+                },
+                {
+                    "Character": "冷",
+                    "Pinyin": "lěng",
+                    "Translation": "cold",
+                    "Radical": "冫"
+                },
+                {
+                    "Character": "熱",
+                    "Pinyin": "rè",
+                    "Translation": "hot",
+                    "Radical": "火"
+                },
+                {
+                    "Character": "高興",
+                    "Pinyin": "gāoxìng",
+                    "Translation": "happy",
+                    "Radical": null
+                },
+                {
+                    "Character": "漂亮",
+                    "Pinyin": "piàoliang",
+                    "Translation": "beautiful",
+                    "Radical": null
+                }
+            ]
+        }
+    ]
+}
