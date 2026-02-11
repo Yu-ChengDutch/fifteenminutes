@@ -427,7 +427,7 @@ function set_up() {
 
             // Set prayers
 
-            if (liturgical_class <= 2) {
+            if (liturgical_class <= 2 || liturgical_season == "Lent" || liturgical_season == "Passiontide" || liturgical_season == "Advent") {
 
                 document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray matins</a>';
                 document.getElementById("morning-prayer").className = "make-button";
@@ -448,6 +448,69 @@ function set_up() {
             }
 
         });
+
+    // Set additional devotionals (during Lent & Passiontide, daily rosary yu-chengdutch.github.io/Rosarium, additional readings)
+
+    if (liturgical_season == "Lent" || liturgical_season == "Passiontide") {
+
+        // id = additional_devotionals is a UL, so add LI for each additional devotional
+
+        let additional_devotionals = document.getElementById("additional_devotionals");
+
+        additional_devotionals.innerHTML = "";
+
+        let rosary = document.createElement("li");
+        rosary.innerHTML = '<a href="https://yu-chengdutch.github.io/Rosarium/">Pray the rosary</a>';
+        additional_devotionals.appendChild(rosary);
+
+        let additional_readings = document.createElement("li");
+        additional_readings.innerHTML = 'Additional readings (Acts & Apocalypse)';
+        additional_devotionals.appendChild(additional_readings);
+
+        let shower = document.getElementById("shower");
+        shower.innerHTML = "COLD shower"
+
+        let rules_list = document.getElementById("rules-list");
+
+        let new_rule2 = document.createElement("li");
+        new_rule2.innerHTML = "<br>LENT: GET UP IN 5 MINUTES"
+        rules_list.appendChild(new_rule2);
+
+        let new_rule3 = document.createElement("li");
+        new_rule3.innerHTML = "LENT: DAILY COLD SHOWER";
+        rules_list.appendChild(new_rule3);
+
+        let new_rule4 = document.createElement("li");
+        new_rule4.innerHTML = "LENT: GO OUTSIDE FOR 30 MINUTES";
+        rules_list.appendChild(new_rule4);
+
+        let new_rule5 = document.createElement("li");
+        new_rule5.innerHTML = "LENT: NO MEAT, ALCOHOL, SNACKS";
+        rules_list.appendChild(new_rule5);
+
+        let lunch = document.getElementById("lunch");
+        let dinner = document.getElementById("dinner");
+        let dinner_list = document.getElementById("dinner-list");
+
+        dinner_list.innerHTML = "";
+        
+        if (d.getDay() == 3 || d.getDay() == 5) {
+
+            let new_rule6 = document.createElement("li");
+            new_rule6.innerHTML = "LENT: NO COLLATIONS";
+            rules_list.appendChild(new_rule6);
+
+            lunch.innerHTML = "Step 8: NO LUNCH";
+            dinner.innerHTML = "Step 9: NO DINNER";
+
+        } else {
+
+            lunch.innerHTML = "Step 8: Collation (nuts and protein shake)";
+            dinner.innerHTML = "Step 9: Collation (nuts and protein shake)";
+
+        };
+
+    };
 
     // Handles setting the Angelus
 
