@@ -628,8 +628,7 @@ function set_up() {
 
 
         } else {
-
-            document.getElementById("cut_block").innerHTML = "";
+            
             document.getElementById("diary_block_week1").innerHTML = "";
             document.getElementById("diary_block_week2").innerHTML = "";
         }

@@ -4,7 +4,7 @@
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
         "exercises": [  "BB deadlifts: 3x3 (150kg)", 
                         "BB bench press: 3x3 (90kg)", 
-                        "DB bench press: 3x3 (2x40kg)",
+                        "DB bench press: 3x8 (2x40kg)",
                         "CB wide lat. PD: 3x8 (2x38.5kg)",
                         "CB narrow lat. PD: 3x5 (2x43.5kg)",
                         "DB incline press: 3x5 (2x35kg)",
@@ -12,7 +12,7 @@
                         "CB row: 3x5 (2x48.5kg)",
                         "BB military press: 3x3 (60kg)",
                         "BB row: 3x6 (80kg)",
-                        "BB back squats: 3x3 (120kg)",
+                        "BB back squats: 3x3 (125kg)",
                         "BB front squats: 3x5 (70kg)"]
     },
     "transport": {
@@ -55,6 +55,6 @@
                         "DB hammer curls: 3x10 (2x20kg)",
                         "DB incline curls: 3x8 (2x16kg)",
                         "DB pullover: 3x8 (1x25kg)",
-                        "DB flyes: 3x8 (2x16kg)"]
+                        "DB flyes: 3x12 (2x16kg)"]
     }
 }
