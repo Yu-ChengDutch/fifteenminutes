@@ -110,7 +110,7 @@ function set_up() {
 
                         let current_examination = examinations[x]
 
-                        if (current_examination.innerHTML == "placeholder"){
+                        if (current_examination.innerHTML == "placeholder") {
 
                             current_examination.innerHTML = ""
 
@@ -124,7 +124,7 @@ function set_up() {
                             };
 
                         }
-                        
+
                     }
 
 
@@ -153,8 +153,8 @@ function set_up() {
             else if (liturgical_season == "Ascensiontide") { base = ascension_date; }
             else if (liturgical_season == "Time after Pentecost") { base = pentecost_date; }
             else if (liturgical_season == "Advent") { base = advent_date; }
-            else if (liturgical_season == "Christmastide") { 
-                
+            else if (liturgical_season == "Christmastide") {
+
                 if (d.getMonth() == 11) { base = christmas_date; }
                 else {
 
@@ -163,7 +163,7 @@ function set_up() {
                     for (let i = 0; i < source.length; i++) {
 
                         let name = source[i]["Name"];
-                        if (name == "Octave day of the Nativity of the Lord") { 
+                        if (name == "Octave day of the Nativity of the Lord") {
 
                             extra_difference = i;
                             break;
@@ -174,8 +174,8 @@ function set_up() {
                     base = new Date(d.getFullYear(), 0, 1);
 
                 }
-            
-            } 
+
+            }
             else if (liturgical_season == "Time after Epiphany") { extra_difference = -1; base = baptism_lord_date.addDays(1); }
             else if (liturgical_season == "Septuagesimatide") { extra_difference = -1; base = septuagesima_date; }
             else if (liturgical_season == "Lent") { extra_difference = -1; base = ash_wednesday_date; }
@@ -257,7 +257,7 @@ function set_up() {
                         if (liturgical_season == "Eastertide") {
 
                             first_reading = readings_file["Common readings"][feast]["Eastertide"]["Reading"];
-                            gospel_reading = readings_file["Common readings"][feast]["Eastertide"]["Gospel"];                            
+                            gospel_reading = readings_file["Common readings"][feast]["Eastertide"]["Gospel"];
 
                         } else {
 
@@ -369,7 +369,7 @@ function set_up() {
                         // console.log(routine_at_six.childNodes);
                         // console.log(hagio_title);
 
-                        if (document.getElementById(hagio_title.id) != null){ console.log("Caught it!")} 
+                        if (document.getElementById(hagio_title.id) != null) { console.log("Caught it!") }
                         else {
 
                             // Set in page
@@ -447,70 +447,74 @@ function set_up() {
 
             }
 
+            // Set additional devotionals (during Lent & Passiontide, daily rosary yu-chengdutch.github.io/Rosarium, additional readings)
+            if (liturgical_season == "Lent" || liturgical_season == "Passiontide") {
+
+                console.log("Check")
+
+                // id = additional_devotionals is a UL, so add LI for each additional devotional
+
+                let additional_devotionals = document.getElementById("additional_devotionals");
+
+                additional_devotionals.innerHTML = "";
+
+                let rosary = document.createElement("li");
+                rosary.innerHTML = '<a href="https://yu-chengdutch.github.io/Rosarium/">Pray the rosary</a>';
+                additional_devotionals.appendChild(rosary);
+
+                let additional_readings = document.createElement("li");
+                additional_readings.innerHTML = 'Additional readings (Acts & Apocalypse)';
+                additional_devotionals.appendChild(additional_readings);
+
+                let shower = document.getElementById("shower");
+                shower.innerHTML = "COLD shower"
+
+                // Set list of rules
+                let rules_list = document.getElementById("rules-list");
+
+                let rules_list_HTML = `
+
+                    <li>Don't sleep in</li>
+                    <li>Don't do anything that isn't planned</li>
+                    <li>Don't skip anything that is planned</li>
+                    <li>Don't forget morning and evening exercises</li>
+                    <li>Don't receive the Eucharist unworthily</li>
+                    <li>Don't drink alcohol alone nor order-in</li>
+                    <br>
+                    <li>LENT: GET UP IN 5 MINUTES</li>
+                    <li>LENT: DAILY COLD SHOWER</li>
+                    <li>LENT: GO OUTSIDE FOR 30 MINUTES</li>
+                    <li>LENT: NO MEAT, ALCOHOL, SNACKS</li>
+                
+                `
+
+                rules_list.innerHTML = rules_list_HTML;
+
+                let lunch = document.getElementById("lunch");
+                let dinner = document.getElementById("dinner");
+                let dinner_list = document.getElementById("dinner-list");
+
+                dinner_list.innerHTML = "";
+
+                if (d.getDay() == 3 || d.getDay() == 5) {
+
+                    let new_rule6 = document.createElement("li");
+                    new_rule6.innerHTML = "LENT: NO COLLATIONS";
+                    rules_list.appendChild(new_rule6);
+
+                    lunch.innerHTML = "Step 8: NO LUNCH";
+                    dinner.innerHTML = "Step 9: NO DINNER";
+
+                } else {
+
+                    lunch.innerHTML = "Step 8: Collation (protein shake w/o creatine)";
+                    dinner.innerHTML = "Step 9: Collation (protein shake with creatine)";
+
+                };
+
+            };
+
         });
-
-    // Set additional devotionals (during Lent & Passiontide, daily rosary yu-chengdutch.github.io/Rosarium, additional readings)
-
-    if (liturgical_season == "Lent" || liturgical_season == "Passiontide") {
-
-        // id = additional_devotionals is a UL, so add LI for each additional devotional
-
-        let additional_devotionals = document.getElementById("additional_devotionals");
-
-        additional_devotionals.innerHTML = "";
-
-        let rosary = document.createElement("li");
-        rosary.innerHTML = '<a href="https://yu-chengdutch.github.io/Rosarium/">Pray the rosary</a>';
-        additional_devotionals.appendChild(rosary);
-
-        let additional_readings = document.createElement("li");
-        additional_readings.innerHTML = 'Additional readings (Acts & Apocalypse)';
-        additional_devotionals.appendChild(additional_readings);
-
-        let shower = document.getElementById("shower");
-        shower.innerHTML = "COLD shower"
-
-        let rules_list = document.getElementById("rules-list");
-
-        let new_rule2 = document.createElement("li");
-        new_rule2.innerHTML = "<br>LENT: GET UP IN 5 MINUTES"
-        rules_list.appendChild(new_rule2);
-
-        let new_rule3 = document.createElement("li");
-        new_rule3.innerHTML = "LENT: DAILY COLD SHOWER";
-        rules_list.appendChild(new_rule3);
-
-        let new_rule4 = document.createElement("li");
-        new_rule4.innerHTML = "LENT: GO OUTSIDE FOR 30 MINUTES";
-        rules_list.appendChild(new_rule4);
-
-        let new_rule5 = document.createElement("li");
-        new_rule5.innerHTML = "LENT: NO MEAT, ALCOHOL, SNACKS";
-        rules_list.appendChild(new_rule5);
-
-        let lunch = document.getElementById("lunch");
-        let dinner = document.getElementById("dinner");
-        let dinner_list = document.getElementById("dinner-list");
-
-        dinner_list.innerHTML = "";
-        
-        if (d.getDay() == 3 || d.getDay() == 5) {
-
-            let new_rule6 = document.createElement("li");
-            new_rule6.innerHTML = "LENT: NO COLLATIONS";
-            rules_list.appendChild(new_rule6);
-
-            lunch.innerHTML = "Step 8: NO LUNCH";
-            dinner.innerHTML = "Step 9: NO DINNER";
-
-        } else {
-
-            lunch.innerHTML = "Step 8: Collation (nuts and protein shake)";
-            dinner.innerHTML = "Step 9: Collation (nuts and protein shake)";
-
-        };
-
-    };
 
     // Handles setting the Angelus
 
@@ -610,7 +614,7 @@ function set_up() {
 
     }
 
-    
+
     document.getElementById("angelus_block").innerHTML = angelus_text
     document.getElementById("angelus_block_2").innerHTML = angelus_text
 
@@ -628,7 +632,7 @@ function set_up() {
 
 
         } else {
-            
+
             document.getElementById("diary_block_week1").innerHTML = "";
             document.getElementById("diary_block_week2").innerHTML = "";
         }
@@ -647,7 +651,7 @@ function set_up() {
     // d = d.addDays(8);
 
     if (d.getDay() == 6 || d.getDay() == 0) {
-        
+
         document.getElementById("pre-gym-clothes").innerHTML = "Undress & log myself"
 
     }
