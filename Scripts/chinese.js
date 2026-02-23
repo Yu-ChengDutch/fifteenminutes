@@ -2,6 +2,7 @@
 
 ALL_WORDS = [];
 NAME = "";
+REPEAT_WORDS_PER_DAY = 5;
 
 // Set start and end dates
 
@@ -78,11 +79,17 @@ async function loadAndPrepareVocab() {
         ? allWords.slice((daysSinceStart - 1) * wordsPerDay, startIdx)
         : [];
 
+    // Random words already learned (for repeat practice) (not for first day)
+    randomWords = daysSinceStart > Math.ceil(REPEAT_WORDS_PER_DAY / wordsPerDay)
+        ? allWords.slice(0, startIdx).sort(() => Math.random() - 0.5).slice(0, REPEAT_WORDS_PER_DAY) // 20 random from previous
+        : [];
+
+    console.log("Random words already learned:", randomWords);
     console.log("Yesterday's words:", yesterdayWords);
     console.log("Today's new words:", todaysWords);
 
     // Combine: repeat yesterday → then learn new
-    sessionWords = [...yesterdayWords, ...todaysWords, ...todaysWords];
+    sessionWords = [...randomWords, ...yesterdayWords, ...todaysWords, ...todaysWords];
     todaysTargetCount = sessionWords.length; 
 
     // Shuffle new words? (optional – many prefer fixed order for spaced repetition)
@@ -126,7 +133,7 @@ function showNextWord() {
 
     // Random if yesterdays words, Character -> Pinyin for first pass for today's words, then Character -> English for second pass
 
-    if (currentIndex < yesterdayWords.length) {
+    if (currentIndex < (yesterdayWords.length + randomWords.length)) {
 
         document.getElementById("chinese_intro").textContent = `Currently doing: ${NAME} - Old`;
 
@@ -144,7 +151,7 @@ function showNextWord() {
             distractors = getDistractors(word, answer_mode);
         }
 
-    } else if (currentIndex < yesterdayWords.length + todaysWords.length) {
+    } else if (currentIndex < yesterdayWords.length + randomWords.length + todaysWords.length) {
 
         document.getElementById("chinese_intro").textContent = `Currently doing: ${NAME} - New`;
 
@@ -153,8 +160,7 @@ function showNextWord() {
         correctAnswer = word[answer_mode];
         distractors = getDistractors(word, answer_mode);
 
-    } else if (currentIndex < yesterdayWords.length + todaysWords.length + todaysWords.length) {
-
+    } else if (currentIndex < yesterdayWords.length + randomWords.length + todaysWords.length + todaysWords.length) {
         document.getElementById("chinese_intro").textContent = `Currently doing: ${NAME} - New`;
 
         question = "Chinese: " + word.Character;
@@ -183,6 +189,19 @@ function showNextWord() {
     console.log("Question:", question, "Correct:", correctAnswer, "Distractors:", distractors);
 
     document.getElementById("current_word").textContent = question;
+
+    // Add listener: if "current word" is clicked, read out loud
+
+    document.getElementById("current_word").onclick = () => {
+        window.speechSynthesis.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(`${word.Character} .`);
+        utterance.lang = "zh-CN";
+        utterance.volume = 1; // 0 to 1
+        utterance.rate = 0.8;
+        utterance.pitch = 1; // 0 to 2
+        window.speechSynthesis.speak(utterance);
+    };
 
     // Set MC options (2×2 = 4 options)
     const options = [correctAnswer, ...distractors.slice(0, 3)];
