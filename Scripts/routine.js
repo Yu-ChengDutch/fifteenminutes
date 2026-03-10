@@ -514,6 +514,27 @@ function set_up() {
 
             };
 
+            // Setting affirmations
+
+            let current_time = d.getHours();
+            let morning_affirmations = document.getElementById("morning-affirmations");
+            let evening_affirmations = document.getElementById("evening-affirmations");
+
+            console.log("Current time: " + current_time)
+
+            if (current_time > 0 && current_time < 10 && (d.getDay === 6) || (d.getDay  === 0)) {
+                evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time. </li> <br> <li> I realise that by going to bed this late, I'm throwing away not just one but two days, thus doing a disservice to myself and spitting in the face of God. I NEED to be better </li> <br> <li> I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents proud. I will do what they never had the chance to, and go where they never could. I am their son first and foremost. The world will know our name.</li>"
+            } else if (current_time < 9 || (((d.getDay === 6) || (d.getDay  === 0)) && current_time < 10)) {
+                morning_affirmations.innerHTML = "<li> I am proud of my morning, and I strive to live my entire day like this morning. </li> <br> <li> I am uniquely created, and uniquely loved. I need not compare myself to others. </li>  <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>";
+            } else if ((current_time >= 9 && current_time < 12) || (((d.getDay === 6) || (d.getDay  === 0)) && (current_time >= 10 && current_time < 12))) {
+                morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to me </li>  <br>  <li> I realise I have only one life, and I will make the most of it. </li>  <br>  <li> I am uniquely created, and uniquely loved. I need not compare myself to others. </li> <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>";
+            } else if (current_time >= 12 && current_time < 23) {
+                morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to me </li>  <br>  <li> I realise I life is a gift that I'm throwing away, doing a disservice to myself and spitting in the face of God, and I NEED to be better. </li>  <br>  <li> I am uniquely created, and uniquely loved. I need to make the most of myself. </li> <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>"
+            } else {
+                evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time.</li>  <br>  <li> Still, I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents proud. I will do what they never had the chance to, and go where they never could. I am their son first and foremost. The world will know our name.</li>"
+            };
+        
+        
         });
 
     // Handles setting the Angelus
