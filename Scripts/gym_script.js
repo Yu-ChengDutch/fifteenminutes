@@ -1,4 +1,7 @@
 // Constants
+
+TOTAL_TARGETS = []
+
 const rand_array = new Uint8Array(50);
 self.crypto.getRandomValues(rand_array);
 
@@ -40,12 +43,40 @@ function up_counter(el) {
   counterDiv.textContent = count + 1;
 };
 
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
+function weightedShuffleArray(array) {
+
+  // First weight
+
+  array_length = array.length;
+  duplicate = array.slice();
+
+  for (let i = 0; i < array_length; i++) {
+
+    
+    if (!TOTAL_TARGETS.includes(array[i][1])) {duplicate.push(array[i])};
+
+    if (array[i].length == 3) { 
+      
+      for (let j = 0; j < array[i][2]; j++) {
+        
+        console.log(array[i][2])
+        duplicate.push(array[i])
+      
+      };
+    
+    }; 
+
+  };
+
+  console.log(duplicate.slice());
+
+  // Then shuffle
+
+  for (let i = duplicate.length - 1; i > 0; i--) {
     const j = Math.floor((rand_array[i] / 255) * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    [duplicate[i], duplicate[j]] = [duplicate[j], duplicate[i]];
   }
-  return array;
+  return duplicate;
 };
 
 function add_exercise(exercise_var, song_var, container_id) {
@@ -97,23 +128,31 @@ function run_timer(element) {
   
 };
 
+function moveToLast(arr, item) {
+    arr.push(arr.splice(arr.indexOf(item), 1)[0]);
+    return arr;
+};
+
 function select_exercises(exercise_list, number) {
 
   // Avoid selecting more than one exercise where the final word overlaps
 
-  let selected_exercises = [exercise_list[0]];
+  let selected_exercises = [exercise_list[0][0]];
+  let selected_targets = [exercise_list[0][1]];
+
+  TOTAL_TARGETS.push(exercise_list[0][1])
 
   for (let i = 1; selected_exercises.length < number; i++) {
 
-    let candidate = exercise_list[i];
+    let candidate = exercise_list[i][0];
+    let candidate_target = exercise_list[i][1];
     let overlap = false;
 
     for (let j = 0; j < selected_exercises.length; j++) {
 
-      let selected_words = selected_exercises[j].split(":")[0].split(" ");
-      let candidate_words = candidate.split(":")[0].split(" ");
+      console.log(selected_exercises[j]);
 
-      if (selected_words[selected_words.length - 1] === candidate_words[candidate_words.length - 1]) {
+      if (selected_targets.includes(candidate_target)) {
         overlap = true;
         break;
       }
@@ -121,9 +160,13 @@ function select_exercises(exercise_list, number) {
 
     if (!overlap) {
       selected_exercises.push(candidate);
+      selected_targets.push(candidate_target);
+      TOTAL_TARGETS.push(candidate_target);
     }
 
   }
+
+  console.log(selected_targets)
 
   return selected_exercises;
 
@@ -137,11 +180,11 @@ fetch('../Data/exercises.json')
 
       // Parse the JSON and randomise
 
-      let training = shuffleArray(data.training.exercises);
-      let transport = shuffleArray(data.transport.exercises);
-      let walls = shuffleArray(data.walls.exercises);
-      let combat = shuffleArray(data.combat.exercises);
-      let recovery = shuffleArray(data.recovery.exercises);
+      let training = weightedShuffleArray(data.training.exercises);
+      let transport = weightedShuffleArray(data.transport.exercises);
+      let walls = weightedShuffleArray(data.walls.exercises);
+      let combat = weightedShuffleArray(data.combat.exercises);
+      let recovery = weightedShuffleArray(data.recovery.exercises);
 
       // Parse music
 
@@ -156,7 +199,16 @@ fetch('../Data/exercises.json')
       let transport_exercises = transport[0];
       let walls_exercises = walls.slice(0, 1);
       let combat_exercises = combat.slice(0,1); 
-      let recovery_exercises = select_exercises(recovery, 2);
+      let recovery_exercises = select_exercises(recovery, 3);
+
+      // Order them sensibly
+
+      for  (let i = 0; i < training_exercises.length; i++) {
+
+        if (training_exercises[i].includes("DB")) {moveToLast(training_exercises, training_exercises[i])}
+        if (!recovery_exercises[i].includes("DB")) {moveToLast(recovery_exercises, recovery_exercises[i])}
+
+      };
 
       // Set title
 
@@ -167,8 +219,8 @@ fetch('../Data/exercises.json')
 
       for (x of training_exercises) {add_exercise(x, training_music, "training");};
       add_exercise(transport_exercises[0], transport_exercises[2], "transport");
-      for (x of walls_exercises) {add_exercise(x, walls_music, "walls");}
-      for (x of combat_exercises) {add_exercise(x, combat_music, "combat");};
+      for (x of walls_exercises) {add_exercise(x[0], walls_music, "walls");}
+      for (x of combat_exercises) {add_exercise(x[0], combat_music, "combat");};
       for (x of recovery_exercises) {add_exercise(x, recovery_music, "recovery");};
     
   });
@@ -182,7 +234,6 @@ fetch('../Data/history.json')
     const labels = Object.keys(data);
     const body_compositionData = labels.map(date => ((((100 - data[date].circumference) / 29) + (55 / (100 - data[date].arm_circ)))/2) * 100);
     const benchPressData = labels.map(date => (data[date].bench_press / (1.75 * data[date].weight)) * 100);
-    const squatData = labels.map(date => (data[date].squat / (2.25 * data[date].weight)) * 100);
     const deadliftData = labels.map(date => (data[date].deadlift / (2.5 * data[date].weight)) * 100);
     const ctx = document.getElementById("myChart").getContext("2d");
 
@@ -212,13 +263,6 @@ fetch('../Data/history.json')
             data: deadliftData,
             borderColor: 'rgb(133, 192, 231)',
             backgroundColor: 'rgba(144, 198, 235, 0.2)',
-            yAxisID: 'y',
-          },
-          {
-            label: 'Squat (% of goal)',
-            data: squatData,  
-            borderColor: 'rgb(253, 226, 157)',
-            backgroundColor: 'rgba(253, 227, 161, 0.2)',
             yAxisID: 'y',
           }
         ]

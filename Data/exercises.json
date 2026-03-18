@@ -2,18 +2,19 @@
    "training": {
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
-        "exercises": [  "BB deadlifts: 3x3 (150kg)", 
-                        "BB bench press: 3x3 (90kg)", 
-                        "DB bench press: 3x8 (2x40kg)",
-                        "CB wide lat. PD: 3x8 (2x38.5kg)",
-                        "CB narrow lat. PD: 3x5 (2x43.5kg)",
-                        "DB incline press: 3x5 (2x35kg)",
-                        "BB incline press: 3x5 (70kg)",                        
-                        "CB row: 3x5 (2x48.5kg)",
-                        "BB military press: 3x5 (60kg)",
-                        "BB row: 3x6 (80kg)",
-                        "BB back squats: 3x3 (125kg)",
-                        "BB front squats: 3x5 (80kg)"]
+        "exercises": [  ["BB deadlifts: 3x3 (150kg)", "lower_back", 3],
+                        ["BB hex deadlifts: 3x3 (100kg)", "lower_back", 2], 
+                        ["BB bench press: 3x3 (90kg)", "mid_chest", 2], 
+                        ["DB bench press: 3x8 (2x40kg)", "mid_chest"],
+                        ["CB wide lat. PD: 3x8 (2x38.5kg)", "lower_back"],
+                        ["CB narrow lat. PD: 3x5 (2x43.5kg)", "lower_back"],
+                        ["DB incline press: 3x5 (2x35kg)", "anterior_shoulders"],
+                        ["BB incline press: 3x5 (70kg)", "anterior_shoulders", 2],                        
+                        ["CB row: 3x5 (2x48.5kg)", "mid_back"],
+                        ["BB military press: 3x5 (60kg)", "anterior_shoulders"],
+                        ["BB row: 3x6 (80kg)", "mid_back"],
+                        ["DB row: 3x5 (30kg)", "mid_back"],
+                        ["DB shrugs: 3x5 (30kg)", "upper_back"]]
     },
     "transport": {
         
@@ -23,38 +24,42 @@
     "walls": {
         
         "music": "4Ua5TU2XISF4EYyxnezN2q?si=7761f1a23e1741c9",
-        "exercises": [  "Pull-ups: 3x9 (good form)", 
-                        "Weighted dips: 3x3 (30kg)",
-                        "Sled-push-pulls (rope on top): 3x40m (50kg)",
-                        "Farmer carry: 3x50m (2x24kg)",
-                        "Sled pushes: 3x60m (75kg)",
-                        "Suitcase carry: 3x50m (24kg)",
-                        "Squat walks: 3x20m (20kg Bulgarian bag)",
-                        "Turkish get-ups: 3x3 (12kg)"]
+        "exercises": [  ["Pull-ups: 3x9 (good form)", "lower_back"], 
+                        ["Weighted dips: 3x3 (30kg)", "lower_chest"],
+                        ["Sled-push-pulls (rope on top): 3x40m (50kg)", "mid_back"],
+                        ["Farmer carry: 3x50m (2x24kg)", "upper_back"],
+                        ["Sled pushes: 3x60m (75kg)", "anterior_shoulders"],
+                        ["Suitcase carry: 3x50m (24kg)", "upper_back"],
+                        ["Lunge walks: 3x20m (20kg Bulgarian bag)", "legs"],
+                        ["Turkish get-ups: 3x3 (12kg)", "legs"]]
     },
     "combat": {
 
         "music": "5KD4nqgvTt8gASeB7X8UOr?si=4c4311dcf7ee45ef",
-        "exercises": [  "LM press (upstairs): 3x8 (bar + 35kg)", 
-                        "LM rotations (upstairs): 3x10 (bar + 20kg)",
-                        "MB ball throws: 3x15 (9kg)", 
-                        "MB slams: 3x10 (6kg)",
-                        "KB swing: 3x30 (28kg)",
-                        "DB clean, press, split squat: 3x2x6 (1x20kg)",
-                        "DB goblet squat - box jumps: 3x5 (1x20kg)",
-                        "Battle ropes: 3x30s (bodyweight)"]
+        "exercises": [  ["LM press (upstairs): 3x8 (bar + 35kg)", "anterior_shoulders"], 
+                        ["LM rotations (upstairs): 3x10 (bar + 20kg)", "abdominals"],
+                        ["MB ball throws: 3x15 (9kg)", "anterior_shoulders"], 
+                        ["MB slams: 3x10 (6kg)", "abdominals"],
+                        ["KB swing: 3x30 (28kg)", "legs"],
+                        ["DB clean, press, split squat: 3x2x6 (1x20kg)", "legs"],
+                        ["DB goblet squat - box jumps: 3x5 (1x20kg)", "legs"]]
 
     },
     "recovery": {
         
         "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
-        "exercises": [  "DB lateral raises: 3x10 (2x16kg)", 
-                        "DB preacher curls: 3x12 (1x14kg)",
-                        "DB tricep overhead extensions: 3x10 (1x16kg)",
-                        "DB seated, bentover reverse flyes: 3x12 (2x8kg)",
-                        "DB hammer curls: 3x12 (2x20kg)",
-                        "DB incline curls: 3x10 (2x16kg)",
-                        "DB pullover: 3x8 (1x25kg)",
-                        "DB flyes: 3x10 (2x18kg)"]
+        "exercises": [  ["DB lateral raises: 3x10 (2x16kg)", "lateral_shoulders", 3], 
+                        ["DB preacher curls: 3x12 (1x14kg)", "biceps"],
+                        ["DB tricep overhead extensions: 3x10 (1x16kg)", "triceps"],
+                        ["DB seated, bentover reverse flyes: 3x12 (2x8kg)", "upper_back"],
+                        ["DB hammer curls: 3x12 (2x20kg)", "biceps"],
+                        ["DB incline curls: 3x10 (2x16kg)", "biceps"],
+                        ["DB pullover: 3x8 (1x25kg)", "lower_back"],
+                        ["DB flyes: 3x10 (2x18kg)", "mid_chest"],
+                        ["CB flyes: 3x10 (2x15kg)", "lower_chest"],
+                        ["DB upright row: 3x10 (2x10kg)", "lateral_shoulders", 2],
+                        ["CB facepull: 3x10 (2x10kg)", "upper_back"],
+                        ["CB tricep push-down: 3x10 (20kg)", "triceps"],
+                        ["CB leaning cable lat. raise: 3x10 (10kg)", "lateral_shoulders", 2]]
     }
 }
