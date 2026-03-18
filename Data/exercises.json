@@ -3,14 +3,14 @@
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
         "exercises": [  ["BB deadlifts: 3x3 (150kg)", "lower_back", 3],
-                        ["BB hex deadlifts: 3x3 (100kg)", "lower_back", 2], 
+                        ["BB hex deadlifts: 3x3 (120kg)", "lower_back", 2], 
                         ["BB bench press: 3x3 (90kg)", "mid_chest", 2], 
                         ["DB bench press: 3x8 (2x40kg)", "mid_chest"],
                         ["CB wide lat. PD: 3x8 (2x38.5kg)", "lower_back"],
                         ["CB narrow lat. PD: 3x5 (2x43.5kg)", "lower_back"],
                         ["DB incline press: 3x5 (2x35kg)", "anterior_shoulders"],
-                        ["BB incline press: 3x5 (70kg)", "anterior_shoulders", 2],                        
-                        ["CB row: 3x5 (2x48.5kg)", "mid_back"],
+                        ["BB incline press: 3x3 (80kg)", "anterior_shoulders", 2],                        
+                        ["CB row: 3x5 (2x43.5kg)", "mid_back"],
                         ["BB military press: 3x5 (60kg)", "anterior_shoulders"],
                         ["BB row: 3x6 (80kg)", "mid_back"],
                         ["DB row: 3x5 (30kg)", "mid_back"],
@@ -58,8 +58,8 @@
                         ["DB flyes: 3x10 (2x18kg)", "mid_chest"],
                         ["CB flyes: 3x10 (2x15kg)", "lower_chest"],
                         ["DB upright row: 3x10 (2x10kg)", "lateral_shoulders", 2],
-                        ["CB facepull: 3x10 (2x10kg)", "upper_back"],
-                        ["CB tricep push-down: 3x10 (20kg)", "triceps"],
+                        ["CB facepulls (14): 3x10 (28kg)", "upper_back"],
+                        ["CB tricep push-down: 3x12 (24kg)", "triceps"],
                         ["CB leaning cable lat. raise: 3x10 (10kg)", "lateral_shoulders", 2]]
     }
 }
