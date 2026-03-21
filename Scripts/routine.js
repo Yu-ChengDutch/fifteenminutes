@@ -540,6 +540,8 @@ function set_up() {
 
 													} else {
 
+bedtime.innerHTML = "<b>Active before 10! <br>Don't waste your life!</b>"
+
 if (current_time == 10) {
                     morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to me </li>  <br>  <li> I realise I have only one life, and I will make the most of it. </li>  <br>  <li> I am uniquely created, and uniquely loved. I need not compare myself to others. </li> <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>";
                 } else if (current_time >= 11) {
