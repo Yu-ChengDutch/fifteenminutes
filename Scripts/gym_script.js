@@ -1,6 +1,7 @@
 // Constants
 
 TOTAL_TARGETS = []
+EXCLUSIONS = []
 
 const rand_array = new Uint8Array(50);
 self.crypto.getRandomValues(rand_array);
@@ -52,23 +53,21 @@ function weightedShuffleArray(array) {
 
   for (let i = 0; i < array_length; i++) {
 
-    
-    if (!TOTAL_TARGETS.includes(array[i][1])) {duplicate.push(array[i])};
 
-    if (array[i].length == 3) { 
-      
+    if (!TOTAL_TARGETS.includes(array[i][1])) { duplicate.push(array[i]) };
+
+    if (array[i].length == 3) {
+
       for (let j = 0; j < array[i][2]; j++) {
-        
+
         console.log(array[i][2])
         duplicate.push(array[i])
-      
+
       };
-    
-    }; 
+
+    };
 
   };
-
-  console.log(duplicate.slice());
 
   // Then shuffle
 
@@ -76,11 +75,14 @@ function weightedShuffleArray(array) {
     const j = Math.floor((rand_array[i] / 255) * (i + 1));
     [duplicate[i], duplicate[j]] = [duplicate[j], duplicate[i]];
   }
+
+  console.log(duplicate);
+
   return duplicate;
 };
 
 function add_exercise(exercise_var, song_var, container_id) {
-  
+
   let new_block = document.createElement("div");
   new_block.className = "exercise-block";
   new_block.innerHTML = `<div class="exercise-proper" onclick="toggle_song('${song_var}')">${exercise_var}</div>
@@ -105,7 +107,7 @@ function run_timer(element) {
     const seconds = timeLeft % 60;
 
     element.innerHTML = `Rest: ${minutes}m${seconds.toString().padStart(2, '0')}s`;
-    
+
     // Do something every second here
     // e.g., update DOM, play a tick sound, etc.
 
@@ -125,12 +127,12 @@ function run_timer(element) {
       }
     }
   }, 1000);
-  
+
 };
 
 function moveToLast(arr, item) {
-    arr.push(arr.splice(arr.indexOf(item), 1)[0]);
-    return arr;
+  arr.push(arr.splice(arr.indexOf(item), 1)[0]);
+  return arr;
 };
 
 function select_exercises(exercise_list, number) {
@@ -142,7 +144,7 @@ function select_exercises(exercise_list, number) {
 
   TOTAL_TARGETS.push(exercise_list[0][1])
 
-  for (let i = 1; selected_exercises.length < number; i++) {
+  for (let i = 1; selected_exercises.length < number + 1; i++) {
 
     let candidate = exercise_list[i][0];
     let candidate_target = exercise_list[i][1];
@@ -150,33 +152,48 @@ function select_exercises(exercise_list, number) {
 
     for (let j = 0; j < selected_exercises.length; j++) {
 
-      console.log(selected_exercises[j]);
-
       if (selected_targets.includes(candidate_target)) {
         overlap = true;
         break;
       }
     }
 
-    if (!overlap) {
+    if (!overlap && !EXCLUSIONS.includes(candidate_target)) {
       selected_exercises.push(candidate);
       selected_targets.push(candidate_target);
-      TOTAL_TARGETS.push(candidate_target);
     }
 
   }
 
-  console.log(selected_targets)
+  selected_targets.shift();
+  selected_exercises.shift();
+
+  for (x of selected_targets) { TOTAL_TARGETS.push(x) };
 
   return selected_exercises;
 
 };
 
-// Set up the random exercises  
 
-fetch('../Data/exercises.json')
-  .then((response) => response.json())
-  .then(data => {
+function generate_exercises() {
+
+  // Get exclusions
+
+  if (document.getElementById("chest").checked) { EXCLUSIONS.push("mid_chest", "upper_chest", "lower_chest") };
+  if (document.getElementById("back").checked) { EXCLUSIONS.push("mid_back", "lower_back", "upper_back") };
+  if (document.getElementById("biceps").checked) { EXCLUSIONS.push("biceps") };
+  if (document.getElementById("triceps").checked) { EXCLUSIONS.push("triceps") }
+
+  // Clear previous exercises
+
+  const containers = ["training", "transport", "walls", "combat", "recovery"];
+  for (x of containers) { document.getElementById(x).innerHTML = ""; }
+
+  // Set up the random exercises  
+
+  fetch('../Data/exercises.json')
+    .then((response) => response.json())
+    .then(data => {
 
       // Parse the JSON and randomise
 
@@ -189,7 +206,7 @@ fetch('../Data/exercises.json')
       // Parse music
 
       let training_music = data.training.music;
-      let walls_music = data.walls.music; 
+      let walls_music = data.walls.music;
       let combat_music = data.combat.music;
       let recovery_music = data.recovery.music;
 
@@ -197,16 +214,16 @@ fetch('../Data/exercises.json')
 
       let training_exercises = select_exercises(training, 3);
       let transport_exercises = transport[0];
-      let walls_exercises = walls.slice(0, 1);
-      let combat_exercises = combat.slice(0,1); 
+      let walls_exercises = select_exercises(walls, 1);
+      let combat_exercises = select_exercises(combat, 1);
       let recovery_exercises = select_exercises(recovery, 3);
 
       // Order them sensibly
 
-      for  (let i = 0; i < training_exercises.length; i++) {
+      for (let i = 0; i < training_exercises.length; i++) {
 
-        if (training_exercises[i].includes("DB")) {moveToLast(training_exercises, training_exercises[i])}
-        if (!recovery_exercises[i].includes("DB")) {moveToLast(recovery_exercises, recovery_exercises[i])}
+        if (training_exercises[i].includes("DB")) { moveToLast(training_exercises, training_exercises[i]) }
+        if (!recovery_exercises[i].includes("DB")) { moveToLast(recovery_exercises, recovery_exercises[i]) }
 
       };
 
@@ -217,13 +234,19 @@ fetch('../Data/exercises.json')
 
       // Set exercises
 
-      for (x of training_exercises) {add_exercise(x, training_music, "training");};
+      for (x of training_exercises) { add_exercise(x, training_music, "training"); };
       add_exercise(transport_exercises[0], transport_exercises[2], "transport");
-      for (x of walls_exercises) {add_exercise(x[0], walls_music, "walls");}
-      for (x of combat_exercises) {add_exercise(x[0], combat_music, "combat");};
-      for (x of recovery_exercises) {add_exercise(x, recovery_music, "recovery");};
-    
-  });
+      for (x of walls_exercises) { add_exercise(x, walls_music, "walls"); }
+      for (x of combat_exercises) { add_exercise(x, combat_music, "combat"); };
+      for (x of recovery_exercises) { add_exercise(x, recovery_music, "recovery"); };
+
+    });
+
+};
+
+// set up listener for button with id generate
+
+document.getElementById("generate").addEventListener("click", generate_exercises);
 
 // Chart setup
 
@@ -232,7 +255,7 @@ fetch('../Data/history.json')
   .then(data => {
 
     const labels = Object.keys(data);
-    const body_compositionData = labels.map(date => ((((100 - data[date].circumference) / 29) + (55 / (100 - data[date].arm_circ)))/2) * 100);
+    const body_compositionData = labels.map(date => ((((100 - data[date].circumference) / 29) + (55 / (100 - data[date].arm_circ))) / 2) * 100);
     const benchPressData = labels.map(date => (data[date].bench_press / (1.75 * data[date].weight)) * 100);
     const deadliftData = labels.map(date => (data[date].deadlift / (2.5 * data[date].weight)) * 100);
     const ctx = document.getElementById("myChart").getContext("2d");
@@ -241,12 +264,12 @@ fetch('../Data/history.json')
 
     const myChart = new Chart(ctx, {
       type: 'line',
-      data: { 
+      data: {
         labels: labels,
         datasets: [
           {
             label: 'Body composition (waist and arm circumference)',
-            data: body_compositionData, 
+            data: body_compositionData,
             borderColor: 'rgb(114, 46, 250)',
             backgroundColor: 'rgba(115, 45, 255, 0.2)',
             yAxisID: 'y',
@@ -272,7 +295,7 @@ fetch('../Data/history.json')
         interaction: {
           mode: 'index',
           intersect: false,
-        }, 
+        },
         stacked: false,
         scales: {
           y: {
@@ -290,5 +313,3 @@ fetch('../Data/history.json')
       }
     });
   });
-  
-

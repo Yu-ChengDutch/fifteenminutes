@@ -432,6 +432,65 @@ ul {
     transition-duration: 0.5s;    
 }
 
+#generate {
+
+    width: 50vw;
+    height: 10vw;
+    margin-top: 4vh;
+    background-color: aquamarine;
+    border-radius: 1vh;
+    border-style: none;
+    font-size: 1.5vh;
+    font-family: "Josefin Slab", serif;
+    font-weight: 800;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 0.5s;
+
+}
+
+#generate:hover, #generate:active {
+
+    background-color: lightgreen;
+    transition-duration: 0.25s;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.muscle-group {
+
+    font-size: 3.5vw;
+    text-align: left;
+    text-align: center;
+
+}
+
+#fieldset {
+
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    align-items: left;
+}
+
+#fieldset .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+input[type=checkbox] {
+    margin: 4px 0 0;
+    line-height: normal;
+    width: 4vw;
+    height: 4vw;
+}
+
+
 @media only screen and (min-width: 1000px){
 
     /* General settings */

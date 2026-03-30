@@ -17,12 +17,46 @@
 
         <canvas id="myChart" style="width:100%;max-width:700px; margin-left: auto; margin-right: auto;"></canvas>
 
+        <div id="buttons">
+
+            <fieldset id="fieldset">
+                <legend>What muscle groups to exclude:</legend>
+
+                <div class="options">
+
+                    <div>
+                        <input type="checkbox" id="chest" class="muscle-group" name="chest" />
+                        <label class="muscle-group" for="chest">Chest</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="back" class="muscle-group" name="back" />
+                        <label class="muscle-group" for="back">Back</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="biceps" class="muscle-group" name="biceps" />
+                        <label class="muscle-group"  for="biceps">Biceps</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="triceps" class="muscle-group" name="triceps" />
+                        <label class="muscle-group" for="triceps">Triceps</label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <div>
+                <button id="generate" type="button">Generate workout</button>
+            </div>
+
+        </div>
+
         <button type="button" class="collapsible">
             <h1>Warming up</h1>
         </button>
-        <div class="content">
-
-            
+        <div class="content">            
 
         </div>
 
