@@ -1217,13 +1217,20 @@
             "Gospel": ["John 10:11-16", "11Ik ben de goede herder. De goede herder geeft zijn leven voor zijn schapen.  12Maar de huurling, die geen herder is en geen eigenaar van de schapen, ziet de wolf aankomen, laat de schapen in de steek en vlucht weg; de wolf rooft ze en jaagt ze uiteen.  13Hij is dan ook maar een huurling en heeft geen hart voor de schapen.  14Ik ben de goede herder. Ik ken de mijnen en de mijnen kennen Mij,  15zoals de Vader Mij kent en Ik de Vader ken. Ik geef mijn leven voor de schapen.  16Ik heb nog andere schapen, die niet uit deze schaapsstal zijn. Ook die moet ik leiden en zij zullen naar mijn stem luisteren en het zal worden: één kudde, één herder. "]
         },
         {
-            "Class": 1,
+            "Class": 4,
             "Name": "Feria: Second Sunday after Easter",
             "Remark": "",
             "Reading": null,
             "Gospel": null
         },
-        {},
+        {
+            "Class": 3,
+            "Name": "Saint Anselm, bishop, confessor and doctor of the Church",
+            "Remark": "",
+            "Reading": null,
+            "Gospel": null,
+            "Hagiography": ["Saint Anselm", "Indifferent toward religion as a young man, Anselm became one of the Church’s greatest theologians and leaders. He received the title “Father of Scholasticism” for his attempt to analyze and illumine the truths of faith through the aid of reason. At 15, Saint Anselm wanted to enter a monastery, but was refused acceptance because of his father’s opposition. Twelve years later, after careless disinterest in religion and years of worldly living, he finally fulfilled his desire to be a monk. He entered the monastery of Bec in Normandy, was elected prior three years later, and 15 years later, was unanimously chosen abbot. Considered an original and independent thinker, Anselm was admired for his patience, gentleness, and teaching skill. Under his leadership, the Abbey of Bec became a monastic school, influential in philosophical and theological studies. During these years, at the community’s request, Anselm began publishing his theological works, comparable to those of Saint Augustine. His best-known work is the book Cur Deus Homo (“Why God Became Man”). Against his will, Anselm was appointed archbishop of Canterbury in 1093, at age 60. His appointment was opposed at first by England’s King William Rufus and later accepted. Rufus persistently refused to cooperate with efforts to reform the Church. Saint Anselm finally went into voluntary exile until Rufus died in 1100. He was then recalled to England by Rufus’ brother and successor, Henry I. Disagreeing fearlessly with Henry over the king’s insistence on investing England’s bishops, Anselm spent another three years in exile in Rome. His care and concern extended to the very poorest people. Opposing the slave trade, Anselm obtained from the national council at Westminster the passage of a resolution prohibiting the sale of human beings."]
+        },
         {},
         {},
         {},
