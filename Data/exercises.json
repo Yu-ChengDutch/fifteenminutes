@@ -14,7 +14,7 @@
                         ["BB military press: 3x5 (60kg)", "anterior_shoulders"],
                         ["BB row: 3x6 (80kg)", "mid_back"],
                         ["DB row: 3x5 (30kg)", "mid_back"],
-                        ["DB shrugs: 3x5 (30kg)", "upper_back"]]
+                        ["DB shrugs: 3x5 (35kg)", "upper_back"]]
     },
     "transport": {
         
@@ -60,6 +60,6 @@
                         ["DB upright row: 3x10 (2x16kg)", "lateral_shoulders", 2],
                         ["CB facepulls (14): 3x10 (28kg)", "upper_back"],
                         ["CB tricep push-down: 3x12 (24kg)", "triceps"],
-                        ["CB leaning cable lat. raise: 3x10 (7.5kg)", "lateral_shoulders", 2]]
+                        ["CB leaning cable lat. raise: 3x12 (7.5kg)", "lateral_shoulders", 2]]
     }
 }
