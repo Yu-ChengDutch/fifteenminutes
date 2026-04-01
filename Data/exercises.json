@@ -3,7 +3,7 @@
 
         "music": "6Becd0GADvffmlQnbwZAoq?si=9b8652870d634015",
         "exercises": [  ["BB deadlifts: 3x3 (150kg)", "lower_back", 3],
-                        ["BB hex deadlifts: 3x3 (120kg)", "lower_back", 2], 
+                        ["BB hex deadlifts: 3x3 (140kg)", "lower_back", 2], 
                         ["BB bench press: 3x3 (90kg)", "mid_chest", 2], 
                         ["DB bench press: 3x8 (2x40kg)", "mid_chest"],
                         ["CB wide lat. PD: 3x8 (2x38.5kg)", "lower_back"],
@@ -49,17 +49,17 @@
         
         "music": "3flelRh6X6sqRn8FrtT9ld?si=b7c64873c43b4183",
         "exercises": [  ["DB lateral raises: 3x10 (2x16kg)", "lateral_shoulders", 3], 
-                        ["DB preacher curls: 3x12 (1x14kg)", "biceps"],
-                        ["DB tricep overhead extensions: 3x10 (1x16kg)", "triceps"],
+                        ["DB preacher curls: 3x12 (1x14kg)", "triceps"],
+                        ["DB tricep overhead extensions: 3x10 (1x14kg)", "triceps"],
                         ["DB seated, bentover reverse flyes: 3x12 (2x8kg)", "upper_back"],
-                        ["DB hammer curls: 3x12 (2x20kg)", "biceps"],
+                        ["DB hammer curls: 3x10 (2x20kg)", "biceps"],
                         ["DB incline curls: 3x10 (2x16kg)", "biceps"],
                         ["DB pullover: 3x8 (1x25kg)", "lower_back"],
                         ["DB flyes: 3x10 (2x18kg)", "mid_chest"],
                         ["CB flyes: 3x10 (2x15kg)", "lower_chest"],
-                        ["DB upright row: 3x10 (2x10kg)", "lateral_shoulders", 2],
+                        ["DB upright row: 3x10 (2x16kg)", "lateral_shoulders", 2],
                         ["CB facepulls (14): 3x10 (28kg)", "upper_back"],
                         ["CB tricep push-down: 3x12 (24kg)", "triceps"],
-                        ["CB leaning cable lat. raise: 3x10 (10kg)", "lateral_shoulders", 2]]
+                        ["CB leaning cable lat. raise: 3x10 (7.5kg)", "lateral_shoulders", 2]]
     }
 }
