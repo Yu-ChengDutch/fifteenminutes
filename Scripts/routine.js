@@ -427,7 +427,7 @@ function set_up() {
 
             // Set prayers
 
-            if (liturgical_class <= 2 || liturgical_season == "Lent" || liturgical_season == "Passiontide" || liturgical_season == "Advent") {
+            if (liturgical_class == 1 || liturgical_season == "Lent" || liturgical_season == "Passiontide" || liturgical_season == "Advent") {
 
                 document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray matins</a>';
                 document.getElementById("morning-prayer").className = "make-button";
@@ -444,6 +444,25 @@ function set_up() {
                 document.getElementById("evening-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/" >Pray completes</a>';
                 document.getElementById("evening-prayer").className = "make-button";
                 document.getElementById("evening-prayer").classList.add("introduction");
+
+                // Remove the extra exercises
+
+                let n_back_noon = document.getElementById("n_back_noon");
+                let n_back_evening = document.getElementById("n_back_evening");
+                let med_card_noon = document.getElementById("med_card_noon");
+                let med_card_evening = document.getElementById("med_card_evening");
+
+                n_back_noon.innerHTML = "<div class='introduction' style='background-color: white; color: grey;'>You've got the day off, alleluia :)</div>"
+                n_back_evening.innerHTML = "<div class='introduction' style='background-color: white; color: grey;'>You've got the day off, alleluia :)</div>"
+                med_card_noon.innerHTML = "<div class='introduction' style='background-color: white; color: grey;'>You've got the day off, alleluia :)</div>"
+                med_card_evening.innerHTML = "<div class='introduction' style='background-color: white; color: grey;'>You've got the day off, alleluia :)</div>"
+
+                // Set on clicks to null
+
+                n_back_noon.onclick = null;
+                n_back_evening.onclick = null;
+                med_card_noon.onclick = null;
+                med_card_evening.onclick = null;
 
             }
 
@@ -580,31 +599,36 @@ function set_up() {
 
     // Fill in the hymns / Angelus
 
+    // <img src='../Images/IMAGE_Regina_coeli.png'>
+
     let angelus_text = ""
 
     if (d >= easter_date && d <= (pentecost_date.addDays(8))) {
 
         liturgical_season = "Eastertide"
         angelus_text = `
-    <img src='../Images/IMAGE_Regina_coeli.png'>
 
-    <div class="introduction"> 
-    
-    V. Gaude et laetare, Virgo Maria, alleluia!<br>
-    R. Quia surrexit Dominus vere, alleluia!<br><br>
+            <div class="introduction"> 
+            
+            Regina coeli, laetare, alleluia!<br>
+            Quia quem meruisti portare, alleluia!<br>
+            Resurrexit, sicut dixit, alleluia!<br>
+            Ora pro nobis Deum, alleluia!<br><br>
+            
+            V. Gaude et laetare, Virgo Maria, alleluia!<br>
+            R. Quia surrexit Dominus vere, alleluia!<br><br>
 
-    Oremus.<br>
-    Deus, qui per resurrectionem Filii tui, Domini nostri Iesu Christi, mundum laetificare dignatus es:
-    praesta, quaesumus, ut per eius Genetricem Virginem Mariam, perpetuae capiamus gaudia vitae. <br>
-    Per eundem Christum Dominum nostrum.<br><br>
+            Oremus.<br>
+            Deus, qui per resurrectionem Filii tui, Domini nostri Iesu Christi, mundum laetificare dignatus es:
+            praesta, quaesumus, ut per eius Genetricem Virginem Mariam, perpetuae capiamus gaudia vitae. <br>
+            Per eundem Christum Dominum nostrum.<br><br>
 
-    Gloria Patri et Filio et Spiritui Sancto, sicut erat in principo et nunc et semper, et in saecula
-    saeculorum. Amen. <br><br>
+            Gloria Patri et Filio et Spiritui Sancto, sicut erat in principo et nunc et semper, et in saecula
+            saeculorum. Amen. <br><br>
 
-    In nomine Patris, et Filii, et Spiritus Sancti. Amen. 
-    
-    </div
-    `
+            In nomine Patris, et Filii, et Spiritus Sancti. Amen. 
+            </div
+            `
 
         if (d >= ascension_date && d < pentecost_date) {
 

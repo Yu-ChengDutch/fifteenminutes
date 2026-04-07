@@ -3,6 +3,7 @@
 ALL_WORDS = [];
 NAME = "";
 REPEAT_WORDS_PER_DAY = 5;
+CURRENT_ANSWERS = {};
 
 // Set start and end dates
 
@@ -142,12 +143,12 @@ function showNextWord() {
         if (mode === "Character") {
             question = "Chinese: " + word.Character;
             answer_mode = Math.random() < 0.5 ? "Pinyin" : "Translation";
-            correctAnswer = word[answer_mode];
+            correctAnswer = word;
             distractors = getDistractors(word, answer_mode);
         } else {
             question = "English: " + word.Translation;
             answer_mode = Math.random() < 0.5 ? "Pinyin" : "Character";
-            correctAnswer = word[answer_mode];
+            correctAnswer = word;
             distractors = getDistractors(word, answer_mode);
         }
 
@@ -157,7 +158,7 @@ function showNextWord() {
 
         question = "Chinese: " + word.Character;
         answer_mode = "Pinyin";
-        correctAnswer = word[answer_mode];
+        correctAnswer = word;
         distractors = getDistractors(word, answer_mode);
 
     } else if (currentIndex < yesterdayWords.length + randomWords.length + todaysWords.length + todaysWords.length) {
@@ -165,7 +166,7 @@ function showNextWord() {
 
         question = "Chinese: " + word.Character;
         answer_mode = "Translation";
-        correctAnswer = word[answer_mode];
+        correctAnswer = word;
         distractors = getDistractors(word, answer_mode);
 
     } else {
@@ -175,12 +176,12 @@ function showNextWord() {
         if (mode === "Character") {
             question = "Chinese: " + word.Character;
             answer_mode = Math.random() < 0.5 ? "Pinyin" : "Translation";
-            correctAnswer = word[answer_mode];
+            correctAnswer = word;
             distractors = getDistractors(word, answer_mode);
         } else {
             question = "English: " + word.Translation;
             answer_mode = Math.random() < 0.5 ? "Pinyin" : "Character";
-            correctAnswer = word[answer_mode];
+            correctAnswer = word;
             distractors = getDistractors(word, answer_mode);
         }
 
@@ -207,10 +208,17 @@ function showNextWord() {
     const options = [correctAnswer, ...distractors.slice(0, 3)];
     options.sort(() => Math.random() - 0.5); // shuffle
 
+    // Clear current_answers
+
+    CURRENT_ANSWERS = {};
+
     const allAnswers = document.querySelectorAll(".MC_answer");
     allAnswers.forEach((el, i) => {
-        el.textContent = options[i] || "";
-        el.onclick = () => handleAnswer(el.textContent, correctAnswer, word);
+        el.textContent = options[i][answer_mode] || "";
+
+        CURRENT_ANSWERS[options[i][answer_mode]] = options[i];
+
+        el.onclick = () => handleAnswer(el.textContent, correctAnswer[answer_mode], word);
         el.style.background = ""; // reset color
         el.style.pointerEvents = "auto";
     });
@@ -230,7 +238,7 @@ function getDistractors(correct_word, answer_mode) {
 
     for (const w of shuffled) {
         if (w[answer_mode] !== correct && !distractors.includes(w[answer_mode]) && w["Character"].length == correct_word["Character"].length) {
-            distractors.push(w[answer_mode]);
+            distractors.push(w);
         }
 
         if (distractors.length >= 3) break;
@@ -253,6 +261,9 @@ function handleAnswer(selected, correct, word) {
             showNextWord();
         }, 800);
     } else {
+
+        console.log("Wrong answer selected:", selected, "Correct was:", correct);
+
         // wrong → block this option + add to repeat queue
         allAnswers.forEach(el => {
             if (el.textContent === selected) {
@@ -260,6 +271,8 @@ function handleAnswer(selected, correct, word) {
                 el.style.pointerEvents = "none";
             }
         });
+
+        wordsToRepeat.push(CURRENT_ANSWERS[selected]); // the wrong answer too
         wordsToRepeat.push(word); // repeat at end
         updateCounter();
     }
