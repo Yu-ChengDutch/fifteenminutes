@@ -2,6 +2,8 @@
 
 TOTAL_TARGETS = []
 EXCLUSIONS = []
+TOOLS = ["DB", "BB", "KB", "SD", "OT"]
+TOOLS_AVAILABLE = ["BW"]
 
 const rand_array = new Uint8Array(50);
 self.crypto.getRandomValues(rand_array);
@@ -46,6 +48,10 @@ function up_counter(el) {
 
 function weightedShuffleArray(array) {
 
+  // What tools are available?
+
+
+
   // First weight
 
   array_length = array.length;
@@ -60,7 +66,6 @@ function weightedShuffleArray(array) {
 
       for (let j = 0; j < array[i][2]; j++) {
 
-        console.log(array[i][2])
         duplicate.push(array[i])
 
       };
@@ -75,8 +80,6 @@ function weightedShuffleArray(array) {
     const j = Math.floor((rand_array[i] / 255) * (i + 1));
     [duplicate[i], duplicate[j]] = [duplicate[j], duplicate[i]];
   }
-
-  console.log(duplicate);
 
   return duplicate;
 };
@@ -144,36 +147,46 @@ function select_exercises(exercise_list, number) {
 
   TOTAL_TARGETS.push(exercise_list[0][1])
 
-  for (let i = 1; selected_exercises.length < number + 1; i++) {
+  console.log("Selecting " + number + " exercises from list of " + exercise_list.length + " exercises.");
 
-    let candidate = exercise_list[i][0];
-    let candidate_target = exercise_list[i][1];
-    let overlap = false;
+  if (TOOLS_AVAILABLE.length > 2) {
 
-    for (let j = 0; j < selected_exercises.length; j++) {
+    for (let i = 1; selected_exercises.length < number + 1; i++) {
 
-      if (selected_targets.includes(candidate_target)) {
-        overlap = true;
-        break;
+      let candidate = exercise_list[i][0];
+      let candidate_target = exercise_list[i][1];
+      let overlap = false;
+
+      for (let j = 0; j < selected_exercises.length; j++) {
+
+        if (selected_targets.includes(candidate_target)) {
+          overlap = true;
+          break;
+        }
       }
+
+      if (!overlap && !EXCLUSIONS.includes(candidate_target)) {
+        selected_exercises.push(candidate);
+        selected_targets.push(candidate_target);
+      }
+
     }
 
-    if (!overlap && !EXCLUSIONS.includes(candidate_target)) {
-      selected_exercises.push(candidate);
-      selected_targets.push(candidate_target);
-    }
+    selected_targets.shift();
+    selected_exercises.shift();
 
-  }
+    for (x of selected_targets) { TOTAL_TARGETS.push(x) };
 
-  selected_targets.shift();
-  selected_exercises.shift();
+  } else {
 
-  for (x of selected_targets) { TOTAL_TARGETS.push(x) };
+    selected_exercises = exercise_list.slice(0, number).map(ex => ex[0]);
+    console.log("Chosen exercises: " + selected_exercises);
+
+  };  
 
   return selected_exercises;
 
 };
-
 
 function generate_exercises() {
 
@@ -183,6 +196,17 @@ function generate_exercises() {
   if (document.getElementById("back").checked) { EXCLUSIONS.push("mid_back", "lower_back", "upper_back") };
   if (document.getElementById("biceps").checked) { EXCLUSIONS.push("biceps") };
   if (document.getElementById("triceps").checked) { EXCLUSIONS.push("triceps") }
+
+  // Get tool exclusions
+
+  TOOLS_AVAILABLE = ["BW"];
+  for (x of TOOLS) {
+
+    if (document.getElementById(x).checked) { TOOLS_AVAILABLE.push(x) }
+
+  };
+
+  console.log("Tools available: " + TOOLS_AVAILABLE);
 
   // Clear previous exercises
 
@@ -202,6 +226,37 @@ function generate_exercises() {
       let walls = weightedShuffleArray(data.walls.exercises);
       let combat = weightedShuffleArray(data.combat.exercises);
       let recovery = weightedShuffleArray(data.recovery.exercises);
+
+      // Remove all exercises where the first two characters are not in TOOLS_AVAILABLE
+
+      lists = [training, walls, combat, recovery];
+
+      for (let i = 0; i < lists.length; i++) {
+
+        // console.log("Filtering exercises for list " + i);
+
+        // Clear empty or faulty lists
+
+        for (let j = lists[i].length - 1; j >= 0; j--) {
+
+          // console.log("Checking exercise: " + lists[i][j]);
+
+          if (lists[i][j] == null || lists[i][j].length < 2) {
+            lists[i].splice(j, 1);
+          }
+        };
+
+        // console.log("After clearing faulty exercises, list " + i + " has " + lists[i].length + " exercises.");
+
+        for (let j = lists[i].length - 1; j >= 0; j--) {
+
+          // console.log("Checking exercise: " + lists[i][j][0] + " with tool " + lists[i][j][0].slice(0, 2));
+
+          if (!TOOLS_AVAILABLE.includes(lists[i][j][0].slice(0, 2))) {
+            lists[i].splice(j, 1);
+          };
+        };
+      };
 
       // Parse music
 
@@ -259,8 +314,6 @@ fetch('../Data/history.json')
     const benchPressData = labels.map(date => (data[date].bench_press / (1.75 * data[date].weight)) * 100);
     const deadliftData = labels.map(date => (data[date].deadlift / (2.5 * data[date].weight)) * 100);
     const ctx = document.getElementById("myChart").getContext("2d");
-
-    console.log(benchPressData);
 
     const myChart = new Chart(ctx, {
       type: 'line',

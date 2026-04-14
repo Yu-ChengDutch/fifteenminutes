@@ -458,7 +458,7 @@ ul {
 
 }
 
-.muscle-group {
+.muscle-group, .tool-group {
 
     font-size: 3.5vw;
     text-align: left;
@@ -466,7 +466,7 @@ ul {
 
 }
 
-#fieldset {
+#fieldset-muscle, #fieldset-tools {
 
     width: 80vw;
     margin-left: auto;
@@ -475,12 +475,11 @@ ul {
     align-items: left;
 }
 
-#fieldset .options {
+#fieldset-muscle .options, #fieldset-tools .options {
     display: flex;
     flex-wrap: wrap;
-    gap: auto;
-    align-items: center;
-    justify-content: space-evenly;
+    gap: 1vh;
+    justify-content: center;
 }
 
 input[type=checkbox] {
@@ -488,6 +487,18 @@ input[type=checkbox] {
     line-height: normal;
     width: 4vw;
     height: 4vw;
+}
+
+.checkbox_muscles {
+    margin-left: 1vw;
+    width: 15vw;
+    text-align: left;
+}
+
+.checkbox_tools {
+    margin-left: 1vw;
+    width: 22vw;
+    text-align: left;
 }
 
 

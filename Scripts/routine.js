@@ -10,6 +10,8 @@ Date.prototype.addDays = function (days) {
 let liturgical_season = "";
 let d = new Date();
 
+// Define functions
+
 function set_up() {
 
     // Establish functions
@@ -739,20 +741,20 @@ function set_up() {
         document.getElementById("pre-gym-clothes").innerHTML = "Undress & log myself"
 
     }
-}
-
-set_up();
+};
 
 function nextDate() {
 
     d = d.addDays(1);
     set_up();
 
-}
+};
 
 function pastDate() {
 
     d = d.addDays(-1);
     set_up();
 
-}
+};
+
+set_up();
