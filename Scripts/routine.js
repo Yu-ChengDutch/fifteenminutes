@@ -5,10 +5,12 @@ Date.prototype.addDays = function (days) {
     return date;
 }
 
-// Set necessary variables
+// Globals
 
-let liturgical_season = "";
-let d = new Date();
+let ANGELUS_TEXT = "";
+let LITURGICAL_SEASON = "";
+let DAY_OF_SEASON = 0;
+let D = new Date();
 
 // Define functions
 
@@ -34,40 +36,44 @@ function set_up() {
         return new Date(year, month - 1, day);
     }
 
-    function fetch_imitatio() {
-
-        fetch('../Data/imitation_of_christ.html')
-            .then(response => {
-
-                let all_divs = document.getElementsByTagName("div");
-
-                // Get random
-                const myArray = new Uint8Array(10);
-                let random_val = crypto.getRandomValues(myArray)[0] / 256;
-                let random_index = Math.floor(all_divs.length * random_val);
-
-                return all_divs[random_index]
-
-            });
-
-
-    }
-
     // Set all dates
-    let year = d.getFullYear();
+    let year = D.getFullYear();
     let easter_date = getEaster(year)
     let ascension_date = new Date(easter_date.addDays(39));
     let pentecost_date = new Date(easter_date.addDays(49));
-    let christmas_date = new Date(d.getFullYear(), 11, 25)
+    let christmas_date = new Date(D.getFullYear(), 11, 25)
     let advent_date = new Date(new Date(christmas_date.getFullYear(), christmas_date.getMonth(), (christmas_date.getDate() - christmas_date.getDay()) - 21))
-    let baptism_lord_date = new Date(d.getFullYear(), 0, 13)
+    let baptism_lord_date = new Date(D.getFullYear(), 0, 13)
     let septuagesima_date = new Date(easter_date.addDays(-63))
     let ash_wednesday_date = new Date(easter_date.addDays(-46))
 
-    // console.log("Baptism: " + baptism_lord_date);
-    // console.log(d)
+    // Find current liturgical season
 
-    // Handles setting the prayers
+    if (D >= ash_wednesday_date && D < easter_date.addDays(-14)) {
+        LITURGICAL_SEASON = "Lent";
+    } else if (D >= easter_date.addDays(-14) && D < easter_date) {
+        LITURGICAL_SEASON = "Passiontide";
+    } else if (D >= easter_date && D <= ascension_date) {
+        LITURGICAL_SEASON = "Eastertide";
+    } else if (D > ascension_date && D <= pentecost_date) {
+        LITURGICAL_SEASON = "Ascensiontide";
+    } else if (D > pentecost_date && D < advent_date) {
+        LITURGICAL_SEASON = "Time after Pentecost";
+    } else if (D >= advent_date && D < christmas_date) {
+        LITURGICAL_SEASON = "Advent";
+    } else if (D >= christmas_date || D < baptism_lord_date) {
+        LITURGICAL_SEASON = "Christmas";
+    } else if (D >= baptism_lord_date && D < septuagesima_date) {
+        LITURGICAL_SEASON = "Time after Epiphany";
+    } else if (D >= septuagesima_date && D < ash_wednesday_date) {
+        LITURGICAL_SEASON = "Septuagesimatide";
+    } else {
+        LITURGICAL_SEASON = "Unknown season, contact developer";
+    };
+
+    console.log("INITIALISATION STAGE 1: Liturgical season is " + LITURGICAL_SEASON);
+
+    // Set the examination of conscience
 
     fetch('../Data/virtues-and-vices.json')
         .then((response) => response.json())
@@ -135,29 +141,34 @@ function set_up() {
                     post_examination_prayer.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue + " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
                     post_examination_prayer_2.innerHTML = "St. Ignatius of Loyala, pray for us that the good Lord may grant me the virtue of " + current_virtue + " and protect me from the vice of " + exam_file[current_virtue]["Counter"] + "<br>Amen"
 
-                });
+
+                    console.log("INITIALISATION STAGE 2: Current virtue is " + current_virtue + " and current vice is " + current_vice);
+
+                });            
 
         });
 
-    // Set readings
+    
+
+    // Set the readings incl. Imitation of Christ
 
     fetch('../Data/readings.json')
         .then((response) => response.json())
         .then((readings_file) => {
 
-            let source = readings_file[liturgical_season]
+            let source = readings_file[LITURGICAL_SEASON]
 
             let base = 0;
             let difference = 0;
             let extra_difference = -1;
 
-            if (liturgical_season == "Eastertide") { base = easter_date; }
-            else if (liturgical_season == "Ascensiontide") { base = ascension_date; }
-            else if (liturgical_season == "Time after Pentecost") { base = pentecost_date; }
-            else if (liturgical_season == "Advent") { base = advent_date; }
-            else if (liturgical_season == "Christmastide") {
+            if (LITURGICAL_SEASON == "Eastertide") { base = easter_date; }
+            else if (LITURGICAL_SEASON == "Ascensiontide") { base = ascension_date; }
+            else if (LITURGICAL_SEASON == "Time after Pentecost") { base = pentecost_date; }
+            else if (LITURGICAL_SEASON == "Advent") { base = advent_date; }
+            else if (LITURGICAL_SEASON == "Christmastide") {
 
-                if (d.getMonth() == 11) { base = christmas_date; }
+                if (D.getMonth() == 11) { base = christmas_date; }
                 else {
 
                     // Find day in source where name is "Octave day of the Nativity of the Lord"
@@ -173,21 +184,23 @@ function set_up() {
 
                     };
 
-                    base = new Date(d.getFullYear(), 0, 1);
+                    base = new Date(D.getFullYear(), 0, 1);
 
                 }
 
             }
-            else if (liturgical_season == "Time after Epiphany") { extra_difference = -1; base = baptism_lord_date.addDays(1); }
-            else if (liturgical_season == "Septuagesimatide") { extra_difference = -1; base = septuagesima_date; }
-            else if (liturgical_season == "Lent") { extra_difference = -1; base = ash_wednesday_date; }
-            else if (liturgical_season == "Passiontide") { extra_difference = -1; base = easter_date.addDays(-14); }
+            else if (LITURGICAL_SEASON == "Time after Epiphany") { extra_difference = -1; base = baptism_lord_date.addDays(1); }
+            else if (LITURGICAL_SEASON == "Septuagesimatide") { extra_difference = -1; base = septuagesima_date; }
+            else if (LITURGICAL_SEASON == "Lent") { extra_difference = -1; base = ash_wednesday_date; }
+            else if (LITURGICAL_SEASON == "Passiontide") { extra_difference = -1; base = easter_date.addDays(-14); }
 
-            difference = Math.floor((Math.abs(base - d)) / (1000 * 60 * 60 * 24));
+            difference = Math.floor((Math.abs(base - D)) / (1000 * 60 * 60 * 24));
 
             if (extra_difference != -1) { difference = extra_difference + difference; }
 
-            console.log("Today is day " + (difference + 1) + " in " + liturgical_season);
+            DAY_OF_SEASON = difference + 1;
+
+            console.log("Today is day " + DAY_OF_SEASON + " in " + LITURGICAL_SEASON);
 
             let day_source = source[difference];
 
@@ -256,7 +269,7 @@ function set_up() {
 
                     if (feast == "Martyr" || feast == "Bishop & Martyr") {
 
-                        if (liturgical_season == "Eastertide") {
+                        if (LITURGICAL_SEASON == "Eastertide") {
 
                             first_reading = readings_file["Common readings"][feast]["Eastertide"]["Reading"];
                             gospel_reading = readings_file["Common readings"][feast]["Eastertide"]["Gospel"];
@@ -271,10 +284,10 @@ function set_up() {
 
                 } else {
 
-                    first_reading = readings_file["Common readings"]["BVM"][liturgical_season]["Reading"];
-                    gospel_reading = readings_file["Common readings"]["BVM"][liturgical_season]["Gospel"];
+                    first_reading = readings_file["Common readings"]["BVM"][LITURGICAL_SEASON]["Reading"];
+                    gospel_reading = readings_file["Common readings"]["BVM"][LITURGICAL_SEASON]["Gospel"];
 
-                    // console.log("Set BVM reading for " + liturgical_season);
+                    // console.log("Set BVM reading for " + LITURGICAL_SEASON);
                     // console.log(first_reading);
                     // console.log(gospel_reading);
 
@@ -285,9 +298,9 @@ function set_up() {
             let text_date = "";
 
             if (remark == null || remark == "") {
-                text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + (difference + 1) + "th day in " + liturgical_season + ": <br>" + name;
+                text_date = "It is " + weekday[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name;
             } else {
-                text_date = "It is " + weekday[d.getDay()] + " " + d.toLocaleDateString() + "<br><br>It is the " + (difference + 1) + "th day in " + liturgical_season + ": <br>" + name + "<br><br>Also: " + remark;
+                text_date = "It is " + weekday[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name + "<br><br>Also: " + remark;
             }
 
             // Set first reading
@@ -312,16 +325,16 @@ function set_up() {
                     for (let i = 1; i < reading_length; i++) {
 
                         let reading_title = document.createElement("h4");
-                        let first_reading_card = document.createElement("div");
+                        let first_reading_carD = document.createElement("div");
 
                         // Set classes and ids
-                        reading_title.id = "reading_title";
-                        first_reading_card.id = "first_reading";
-                        first_reading_card.className = "text_card";
+                        reading_title.iD = "reading_title";
+                        first_reading_carD.iD = "first_reading";
+                        first_reading_carD.className = "text_card";
 
                         // Set content
                         reading_title.innerHTML = first_reading[i][0];
-                        first_reading_card.innerHTML = first_reading[i][1];
+                        first_reading_carD.innerHTML = first_reading[i][1];
 
                         // Set in page
                         gospel.parentNode.insertBefore(reading_title, gospel);
@@ -356,17 +369,17 @@ function set_up() {
                     for (let i = 1; i < reading_length; i++) {
 
                         let hagio_title = document.createElement("h4");
-                        let hagio_reading_card = document.createElement("div");
+                        let hagio_reading_carD = document.createElement("div");
 
 
                         // Set classes and ids
-                        hagio_title.id = "hagio_title_" + i;
-                        hagio_reading_card.id = "hagio_card_" + i;
-                        hagio_reading_card.className = "text_card";
+                        hagio_title.iD = "hagio_title_" + i;
+                        hagio_reading_carD.iD = "hagio_card_" + i;
+                        hagio_reading_carD.className = "text_card";
 
                         // Set content
                         hagio_title.innerHTML = hagio_reading[i][0];
-                        hagio_reading_card.innerHTML = hagio_reading[i][1];
+                        hagio_reading_carD.innerHTML = hagio_reading[i][1];
 
                         // console.log(routine_at_six.childNodes);
                         // console.log(hagio_title);
@@ -429,7 +442,7 @@ function set_up() {
 
             // Set prayers
 
-            if (liturgical_class == 1 || liturgical_season == "Lent" || liturgical_season == "Passiontide" || liturgical_season == "Advent") {
+            if (liturgical_class == 1 || LITURGICAL_SEASON == "Lent" || LITURGICAL_SEASON == "Passiontide" || LITURGICAL_SEASON == "Advent") {
 
                 document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray matins</a>';
                 document.getElementById("morning-prayer").className = "make-button";
@@ -469,11 +482,11 @@ function set_up() {
             }
 
             // Set additional devotionals (during Lent & Passiontide, daily rosary yu-chengdutch.github.io/Rosarium, additional readings)
-            if (liturgical_season == "Lent" || liturgical_season == "Passiontide") {
+            if (LITURGICAL_SEASON == "Lent" || LITURGICAL_SEASON == "Passiontide") {
 
                 console.log("Check")
 
-                // id = additional_devotionals is a UL, so add LI for each additional devotional
+                // iD = additional_devotionals is a UL, so add LI for each additional devotional
 
                 let additional_devotionals = document.getElementById("additional_devotionals");
 
@@ -517,7 +530,7 @@ function set_up() {
 
                 dinner_list.innerHTML = "";
 
-                if (d.getDay() == 3 || d.getDay() == 5) {
+                if (D.getDay() == 3 || D.getDay() == 5) {
 
                     let new_rule6 = document.createElement("li");
                     new_rule6.innerHTML = "LENT: NO COLLATIONS";
@@ -537,13 +550,13 @@ function set_up() {
 
             // Setting affirmations
 
-            let current_time = d.getHours();
+            let current_time = D.getHours();
             let morning_affirmations = document.getElementById("morning-affirmations");
             let evening_affirmations = document.getElementById("evening-affirmations");
 
             let bedtime = document.getElementById("bedtime");
 
-            let weekend = (d.getDay() == 6) || (d.getDay() == 0)
+            let weekenD = (D.getDay() == 6) || (D.getDay() == 0)
 
             console.log("Current time: " + current_time)
 
@@ -553,62 +566,54 @@ function set_up() {
 
                 bedtime.innerHTML = "<b>Active before 9!<br>Don't waste your life!</b>"
 
-                if (liturgical_season == "Eastertide") { bedtime.innerHTML = "Active before 9!<br>Don't waste your life!<br><br><b>Alleluia, alleluia! The Lord is risen! He is risen indeed! Alleluia!</b>" }
+                if (LITURGICAL_SEASON == "Eastertide") { bedtime.innerHTML = "Active before 9!<br>Don't waste your life!<br><br><b>Alleluia, alleluia! The Lord is risen! He is risen indeed! Alleluia!</b>" }
 
                 if (current_time == 9) {
-                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to 																						me </li>  <br>  <li> I realise I have only one life, and I will make the most of it. </li>  <br>  <li> I am 																						uniquely created, and uniquely loved. I need not compare myself to others. </li> <br> <li> God has created me to 																						be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be 																						extraordinary. I will change the world ... watch me!</li>";
+                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to 																						me </li>  <br>  <li> I realise I have only one life, and I will make the most of it. </li>  <br>  <li> I am 																						uniquely created, and uniquely loveD. I need not compare myself to others. </li> <br> <li> God has created me to 																						be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be 																						extraordinary. I will change the world ... watch me!</li>";
                 } else if (current_time >= 10) {
-                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to 																						me </li>  <br>  <li> I realise I life is a gift that I'm throwing away, doing a disservice to myself and 																						spitting in the face of God, and I NEED to be better. </li>  <br>  <li> I am uniquely created, and uniquely 																						loved. I need to make the most of myself. </li> <br> <li> God has created me to be extraordinary, and I need to 																						live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the 																						world ... watch me!</li>"
+                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to 																						me </li>  <br>  <li> I realise I life is a gift that I'm throwing away, doing a disservice to myself and 																						spitting in the face of God, and I NEED to be better. </li>  <br>  <li> I am uniquely created, and uniquely 																						loveD. I need to make the most of myself. </li> <br> <li> God has created me to be extraordinary, and I need to 																						live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the 																						world ... watch me!</li>"
                 };
 
             } else {
 
                 bedtime.innerHTML = "<b>Active before 10! <br>Don't waste your life!</b>"
 
-                if (liturgical_season == "Eastertide") { bedtime.innerHTML = "Active before 10!<br>Don't waste your life!<br><br><b>Alleluia, alleluia! The Lord is risen! He is risen indeed! Alleluia!</b>" }
+                if (LITURGICAL_SEASON == "Eastertide") { bedtime.innerHTML = "Active before 10!<br>Don't waste your life!<br><br><b>Alleluia, alleluia! The Lord is risen! He is risen indeed! Alleluia!</b>" }
 
                 if (current_time == 10) {
-                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to me </li>  <br>  <li> I realise I have only one life, and I will make the most of it. </li>  <br>  <li> I am uniquely created, and uniquely loved. I need not compare myself to others. </li> <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>";
+                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to me </li>  <br>  <li> I realise I have only one life, and I will make the most of it. </li>  <br>  <li> I am uniquely created, and uniquely loveD. I need not compare myself to others. </li> <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>";
                 } else if (current_time >= 11) {
-                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to me </li>  <br>  <li> I realise I life is a gift that I'm throwing away, doing a disservice to myself and spitting in the face of God, and I NEED to be better. </li>  <br>  <li> I am uniquely created, and uniquely loved. I need to make the most of myself. </li> <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>"
+                    morning_affirmations.innerHTML = "<li> I acknowledge I threw away my morning doing things that have no value to me </li>  <br>  <li> I realise I life is a gift that I'm throwing away, doing a disservice to myself and spitting in the face of God, and I NEED to be better. </li>  <br>  <li> I am uniquely created, and uniquely loveD. I need to make the most of myself. </li> <br> <li> God has created me to be extraordinary, and I need to live up to that. I am in no way average, but always was, and always will be extraordinary. I will change the world ... watch me!</li>"
                 };
 
             };
 
             // Bedtime
 
-            if ((d.getDay() == 5) || (d.getDay() == 6)) {
+            if ((D.getDay() == 5) || (D.getDay() == 6)) {
 
                 if (current_time == 23) {
-                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time.</li>  <br>  <li> Still, I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents proud. I will do what they never had the chance to, and go where they never could. I am their son first and foremost. The world will know our name.</li>"
+                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time.</li>  <br>  <li> Still, I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents prouD. I will do what they never had the chance to, and go where they never coulD. I am their son first and foremost. The world will know our name.</li>"
                 } else if (current_time >= 0 && current_time <= 12) {
-                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time. </li> <br> <li> I realise that by going to bed this late, I'm throwing away not just one but two days, thus doing a disservice to myself and spitting in the face of God. I NEED to be better </li> <br> <li> I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents proud. I will do what they never had the chance to, and go where they never could. I am their son first and foremost. The world will know our name.</li>"
+                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time. </li> <br> <li> I realise that by going to bed this late, I'm throwing away not just one but two days, thus doing a disservice to myself and spitting in the face of GoD. I NEED to be better </li> <br> <li> I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents prouD. I will do what they never had the chance to, and go where they never coulD. I am their son first and foremost. The world will know our name.</li>"
                 };
 
             } else {
 
                 if (current_time == 0) {
-                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time.</li>  <br>  <li> Still, I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents proud. I will do what they never had the chance to, and go where they never could. I am their son first and foremost. The world will know our name.</li>"
+                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time.</li>  <br>  <li> Still, I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents prouD. I will do what they never had the chance to, and go where they never coulD. I am their son first and foremost. The world will know our name.</li>"
                 } else if (current_time >= 1 && current_time <= 12) {
-                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time. </li> <br> <li> I realise that by going to bed this late, I'm throwing away not just one but two days, thus doing a disservice to myself and spitting in the face of God. I NEED to be better </li> <br> <li> I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents proud. I will do what they never had the chance to, and go where they never could. I am their son first and foremost. The world will know our name.</li>"
+                    evening_affirmations.innerHTML = "<li> I realise sleep is essential for my well-being, and that staying up late just makes things worse the day after, so tomorrow I'll go too bed on time. </li> <br> <li> I realise that by going to bed this late, I'm throwing away not just one but two days, thus doing a disservice to myself and spitting in the face of GoD. I NEED to be better </li> <br> <li> I am grateful for today, and I look forward to tomorrow, but now I allow myself to rest. </li> <br> <li> I will make my parents and grandparents prouD. I will do what they never had the chance to, and go where they never coulD. I am their son first and foremost. The world will know our name.</li>"
                 };
 
             };
 
         });
 
-    // Handles setting the Angelus
+    // Set the Angelus
 
-    // Fill in the hymns / Angelus
-
-    // <img src='../Images/IMAGE_Regina_coeli.png'>
-
-    let angelus_text = ""
-
-    if (d >= easter_date && d <= (pentecost_date.addDays(8))) {
-
-        liturgical_season = "Eastertide"
-        angelus_text = `
+    if (LITURGICAL_SEASON == "Eastertide" || LITURGICAL_SEASON == "Ascensiontide") {
+        ANGELUS_TEXT = `
 
             <div class="introduction"> 
             
@@ -631,22 +636,8 @@ function set_up() {
             In nomine Patris, et Filii, et Spiritus Sancti. Amen. 
             </div
             `
-
-        if (d >= ascension_date && d < pentecost_date) {
-
-            liturgical_season = "Ascensiontide"
-
-        } else if (d >= pentecost_date) {
-
-            liturgical_season = "Time after Pentecost"
-
-        }
-
     } else {
-
-        // angelus_text = "<img src='../Images/IMAGE_Angelus_1.png'>"
-
-        angelus_text = `
+        ANGELUS_TEXT = `
 
             <div class="introduction"> 
             
@@ -674,42 +665,19 @@ function set_up() {
             In nomine Patris, et Filii, et Spiritus Sancti. Amen. 
             </div
             `
+    };
 
-        liturgical_season = "Time after Pentecost"
+    document.getElementById("angelus_block").innerHTML = ANGELUS_TEXT
+    document.getElementById("angelus_block_2").innerHTML = ANGELUS_TEXT
 
-        if (d < christmas_date && d >= advent_date) {
-            liturgical_season = "Advent"
-            //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Alma_Redemptoris.png'>"
-        } else if (d >= christmas_date || d < baptism_lord_date.addDays(1)) {
-            console.log("Christmastide")
-            liturgical_season = "Christmastide"
-            //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Ave_Regina.jpeg'>"
-        } else if (d > baptism_lord_date && d < septuagesima_date) {
-            console.log("Time after Epiphany")
-            liturgical_season = "Time after Epiphany"
-            //document.getElementById("marian-hymn").innerHTML = "<img src='../Images/IMAGE_Salve_Regina.png'>"
-        } else if (d >= septuagesima_date && d < ash_wednesday_date) {
-            liturgical_season = "Septuagesimatide"
-        } else if (d >= ash_wednesday_date && d < easter_date.addDays(-14)) {
-            liturgical_season = "Lent"
-        } else if (d >= easter_date.addDays(-14) && d < easter_date) {
-            liturgical_season = "Passiontide"
-        }
+    // Set day-dependants
 
-        console.log("Easter Date:" + easter_date)
-
-    }
-
-
-    document.getElementById("angelus_block").innerHTML = angelus_text
-    document.getElementById("angelus_block_2").innerHTML = angelus_text
-
-    if (d.getDay() == 6 || d.getDay() == 1 || d.getDay() == 3) {
+    if (D.getDay() == 6 || D.getDay() == 1 || D.getDay() == 3) {
 
         document.getElementById("cleanse_block").innerHTML = "Cleanse face (Bettoli, V., 2020)"
         document.getElementById("cut_block").innerHTML = "Cut facial hair"
 
-        if (d.getDay() == 6) {
+        if (D.getDay() == 6) {
 
             document.getElementById("cut_block").innerHTML = "Cut facial hair<br>Trim haircut<br>Trim finger nails";
             document.getElementById("diary_block_week1").innerHTML = "Analyse monthly goals"
@@ -731,28 +699,27 @@ function set_up() {
         document.getElementById("diary_block_week1").innerHTML = "";
         document.getElementById("diary_block_week2").innerHTML = "";
 
-    }
+        if (D.getDay() == 0) {
 
-    // Tester
-    // d = d.addDays(8);
+            document.getElementById("pre-gym-clothes").innerHTML = "Undress & log myself"
 
-    if (d.getDay() == 6 || d.getDay() == 0) {
+        }
 
-        document.getElementById("pre-gym-clothes").innerHTML = "Undress & log myself"
+    };
 
-    }
+    
 };
 
 function nextDate() {
 
-    d = d.addDays(1);
+    D = D.addDays(1);
     set_up();
 
 };
 
 function pastDate() {
 
-    d = d.addDays(-1);
+    D = D.addDays(-1);
     set_up();
 
 };
