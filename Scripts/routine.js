@@ -11,6 +11,8 @@ let ANGELUS_TEXT = "";
 let LITURGICAL_SEASON = "";
 let DAY_OF_SEASON = 0;
 let D = new Date();
+const WEEKDAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 
 // Define functions
 
@@ -26,7 +28,7 @@ function set_up() {
             H = (C - f(C / 4) - f((8 * C + 13) / 25) + 19 * G + 15) % 30,
             // number of days from 21 March to the Paschal full moon
             I = H - f(H / 28) * (1 - f(29 / (H + 1)) * f((21 - G) / 11)),
-            // weekday for the Paschal full moon
+            // WEEKDAY for the Paschal full moon
             J = (year + f(year / 4) + I + 2 - C + f(C / 4)) % 7,
             // number of days from 21 March to the Sunday on or before the Paschal full moon
             L = I - J,
@@ -156,7 +158,7 @@ function set_up() {
         .then((response) => response.json())
         .then((readings_file) => {
 
-            let source = readings_file[LITURGICAL_SEASON]
+            let proper_source = readings_file["Proper readings"][LITURGICAL_SEASON]
 
             let base = 0;
             let difference = 0;
@@ -200,9 +202,14 @@ function set_up() {
 
             DAY_OF_SEASON = difference + 1;
 
-            console.log("Today is day " + DAY_OF_SEASON + " in " + LITURGICAL_SEASON);
+            console.log("Today is day " + DAY_OF_SEASON + " in " + LITURGICAL_SEASON + ". That means that it is the " + WEEKDAY[D.getDay()] + " of the " + Math.floor(DAY_OF_SEASON / 7) + "th Sunday of " + LITURGICAL_SEASON);
 
-            let day_source = source[difference];
+            // THIS IS THE CORRECT
+            // let day_source = source[difference];
+            // Still to do is the saints and other special days with their own propers
+
+            // THIS IS THE PATCH
+            let day_source = proper_source[Math.floor(DAY_OF_SEASON / 7.1)]
 
             let name = day_source["Name"];
             let remark = day_source["Remark"];
@@ -215,8 +222,7 @@ function set_up() {
 
             let feast = null;
 
-            const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
+            
             // Check if readings are null, in which case set from commons
 
             if (first_reading == null && gospel_reading == null) {
@@ -297,10 +303,18 @@ function set_up() {
 
             let text_date = "";
 
+            // THIS IS THE CORRECT
+            // if (remark == null || remark == "") {
+            //     text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name;
+            // } else {
+            //     text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name + "<br><br>Also: " + remark;
+            // }
+
+            // THIS IS THE PATCH
             if (remark == null || remark == "") {
-                text_date = "It is " + weekday[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name;
+                text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br> we're reading from the " + name;
             } else {
-                text_date = "It is " + weekday[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name + "<br><br>Also: " + remark;
+                text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br> we're reading from the " + name + "<br><br>Also: " + remark;
             }
 
             // Set first reading
