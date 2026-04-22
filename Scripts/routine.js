@@ -456,7 +456,12 @@ function set_up() {
 
             // Set prayers
 
-            if (liturgical_class == 1 || LITURGICAL_SEASON == "Lent" || LITURGICAL_SEASON == "Passiontide" || LITURGICAL_SEASON == "Advent") {
+            // THIS IS CORRECT
+            // if (liturgical_class == 1 || LITURGICAL_SEASON == "Lent" || LITURGICAL_SEASON == "Passiontide" || LITURGICAL_SEASON == "Advent") {
+
+            // THIS IS PLACEHOLDER
+
+                if (D.getDay() == 0) {
 
                 document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray matins</a>';
                 document.getElementById("morning-prayer").className = "make-button";
