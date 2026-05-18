@@ -1,9 +1,9 @@
 // // SET LEARNING PLAN\
 
-ALL_WORDS = [];
-NAME = "";
-REPEAT_WORDS_PER_DAY = 5;
-CURRENT_ANSWERS = {};
+let ALL_WORDS = [];
+let NAME = "";
+let REPEAT_WORDS_PER_DAY = 5;
+let CURRENT_ANSWERS = {};
 
 // Set start and end dates
 
@@ -27,9 +27,11 @@ function getCurrentPeriod(today = new Date()) {
 
     for (const [name, [start, end]] of Object.entries(periods)) {
         if (today >= start && today <= end) {
+            console.log(`Current period: ${name} (${start.toDateString()} - ${end.toDateString()})`);
             return { name, start, end };
         }
     }
+
     return null; // before HSK1 or after HSK6
 }
 
@@ -37,6 +39,25 @@ function getCurrentPeriod(today = new Date()) {
 function daysInPeriod(start, end) {
     const msPerDay = 24 * 60 * 60 * 1000;
     return Math.floor((end - start) / msPerDay) + 1;
+}
+
+function shuffle(array) {
+    // Create a copy
+    const shuffled = [...array];
+    
+    // Simple deterministic seed (you can change this number)
+    let seed = 123456789;  
+    
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        // Simple pseudo-random using seed
+        seed = (seed * 16807) % 2147483647;
+        const j = Math.floor((seed / 2147483647) * (i + 1));
+        
+        // Swap
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    
+    return shuffled;
 }
 
 // 3. Load & chunk vocab
@@ -53,17 +74,19 @@ async function loadAndPrepareVocab() {
 
     NAME = name; // for display and distractor generation
 
+    document.getElementById("chinese_intro").textContent = `Currently doing: ${NAME} - Old`;
+
     // Fetch your real JSON – adjust filename/path
     const response = await fetch(`../Data/HSK_vocabulary.json`);
     const original_JSON = await response.json(); // expect array of {char, pinyin, eng}
 
-    allWords = original_JSON["Vocabulary"].filter(w => w.Level === period.name)[0]["Words"];
+    raw_words = original_JSON["Vocabulary"].filter(w => w.Level === period.name)[0]["Words"];
 
-    console.log(allWords);
+    ALL_WORDS = shuffle(raw_words);
 
-    const wordsPerDay = Math.ceil(allWords.length / totalDays);
+    const wordsPerDay = Math.ceil(ALL_WORDS.length / totalDays);
 
-    console.log(`Plan → ${wordsPerDay} new words/day for ${name} (${allWords.length} total / ${totalDays} days)`);
+    console.log(`Plan → ${wordsPerDay} new words/day for ${name} (${ALL_WORDS.length} total / ${totalDays} days)`);
 
     // Calculate how many days have passed since start (0 = first day)
     const daysSinceStart = Math.floor((new Date() - start) / (24 * 60 * 60 * 1000));
@@ -71,18 +94,18 @@ async function loadAndPrepareVocab() {
     let endIdx = startIdx + wordsPerDay;
 
     // Last period may have fewer words
-    if (endIdx > allWords.length) endIdx = allWords.length;
+    if (endIdx > ALL_WORDS.length) endIdx = ALL_WORDS.length;
 
-    todaysWords = allWords.slice(startIdx, endIdx);
+    todaysWords = ALL_WORDS.slice(startIdx, endIdx);
 
     // For very first day → no yesterday
     yesterdayWords = daysSinceStart > 0
-        ? allWords.slice((daysSinceStart - 1) * wordsPerDay, startIdx)
+        ? ALL_WORDS.slice((daysSinceStart - 1) * wordsPerDay, startIdx)
         : [];
 
     // Random words already learned (for repeat practice) (not for first day)
     randomWords = daysSinceStart > Math.ceil(REPEAT_WORDS_PER_DAY / wordsPerDay)
-        ? allWords.slice(0, startIdx).sort(() => Math.random() - 0.5).slice(0, REPEAT_WORDS_PER_DAY) // 20 random from previous
+        ? ALL_WORDS.slice(0, startIdx).sort(() => Math.random() - 0.5).slice(0, REPEAT_WORDS_PER_DAY) // 20 random from previous
         : [];
 
     console.log("Random words already learned:", randomWords);
@@ -100,11 +123,8 @@ async function loadAndPrepareVocab() {
     wordsToRepeat = [];
     currentIndex = 0;
 
-    updateCounter();
-
-    ALL_WORDS = allWords; // for distractor generation
-
     showNextWord();
+    updateCounter();
 }
 
 // Update x/y counter
@@ -116,6 +136,8 @@ function updateCounter() {
 }
 
 function showNextWord() {
+
+    console.log("Show check")
 
     const wordList = [...sessionWords, ...wordsToRepeat];
 
