@@ -13,6 +13,13 @@ let DAY_OF_SEASON = 0;
 let D = new Date();
 const WEEKDAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+let LESSON = "";
+let GOSPEL = "";
+let SAINT = "";
+let LITURGICAL_CLASS = 0;
+let TITLE = "";
+let COLOUR = "";
+
 
 // Define functions
 
@@ -146,11 +153,11 @@ function set_up() {
 
                     console.log("INITIALISATION STAGE 2: Current virtue is " + current_virtue + " and current vice is " + current_vice);
 
-                });            
+                });
 
         });
 
-    
+
 
     // Set the readings incl. Imitation of Christ
 
@@ -158,7 +165,38 @@ function set_up() {
         .then((response) => response.json())
         .then((readings_file) => {
 
-            let proper_source = readings_file["Proper readings"][LITURGICAL_SEASON]
+            // Import the readings
+
+            const BASE_URL = 'https://www.missalemeum.com';
+
+            async function getDailyReadings(dateStr = null, lang = 'en') {
+                const date = dateStr || new Date().toISOString().split('T')[0];
+                const apiUrl = `https://www.missalemeum.com/${lang}/api/v5/proper/${date}`;
+
+                // Use a CORS proxy
+                const proxy = 'https://corsproxy.io/?';
+                const url = proxy + encodeURIComponent(apiUrl);
+
+                const response = await fetch(url);
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+                const propers = await response.json();
+                const main = propers[0];
+
+                return {
+                    date,
+                    title: main.info.title,
+                    liturgicalClass: main.info.rank,
+                    colour: main.info.colors?.join(', ') || null,
+                    saints: main.info.commemorations || [],
+                    lesson: main.sections.find(s => s.id === 'Lectio' || s.label?.toLowerCase().includes('epistle')),
+                    gospel: main.sections.find(s => s.id === 'Evangelium' || s.label?.toLowerCase().includes('gospel')),
+                    raw: main
+                };
+            }
+
+            // Get the day of season
 
             let base = 0;
             let difference = 0;
@@ -202,257 +240,385 @@ function set_up() {
 
             DAY_OF_SEASON = difference + 1;
 
-            console.log("Today is day " + DAY_OF_SEASON + " in " + LITURGICAL_SEASON + ". That means that it is the " + WEEKDAY[D.getDay()] + " of the " + Math.floor(DAY_OF_SEASON / 7) + "th Sunday of " + LITURGICAL_SEASON);
+            // Today's readings
+            getDailyReadings()
+                .then(data => console.log(data))
+                .catch(err => console.error(err));
 
-            // THIS IS THE CORRECT
-            // let day_source = source[difference];
-            // Still to do is the saints and other special days with their own propers
+            // Specific date
+            getDailyReadings(D.toISOString().split('T')[0])
+                .then(data => {
+                    LESSON = data.lesson.body.toString().split(".,")[0].split("*") || "";
+                    GOSPEL = data.gospel.body.toString().split(".,")[0].split("*") || "";
+                    SAINT = data.saints.join(", ") || "";
+                    TITLE = data.title || "";
+                    LITURGICAL_CLASS = data.liturgicalClass;
+                    COLOUR = data.colour;
 
-            // THIS IS THE PATCH
-            let day_source = proper_source[Math.floor(DAY_OF_SEASON / 7.1)]
+                    if (SAINT != "") { SAINT = data.title + " and " + SAINT } else { SAINT = data.title };
 
-            let name = day_source["Name"];
-            let remark = day_source["Remark"];
-            let first_reading = day_source["Reading"];
-            let gospel_reading = day_source["Gospel"];
-            let liturgical_class = day_source["Class"];
+                    //console.log("Today's lesson is: " + LESSON);
+                    //console.log("Today's gospel is: " + GOSPEL);
+                    //console.log("Today's saint(s) is/are: " + SAINT);
+                    //console.log("Today's liturgical class is: " + LITURGICAL_CLASS);
 
-            console.log("Name: " + name)
-            console.log("Remark: " + remark)
+                    document.getElementById("date").innerHTML = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + SAINT;
 
-            let feast = null;
+                    // Set first reading
+                    document.getElementById("reading_title").innerHTML = LESSON[1]
+                    document.getElementById("first_reading").innerHTML = LESSON[2]
 
-            
-            // Check if readings are null, in which case set from commons
+                    // Set gospel
+                    document.getElementById("gospel_title").innerHTML = GOSPEL[1]
+                    document.getElementById("gospel_reading").innerHTML = GOSPEL[2]
 
-            if (first_reading == null && gospel_reading == null) {
+                    // Set hagiography 
 
-                if (name.includes("martyr")) {
+                    let source = readings_file["Hagiographies"];
+                    let has_hagiography = false;
 
-                    if (name.includes("bishop")) { feast = "Bishop & Martyr" }
-                    else if (name.includes("virgin")) { feast = "Virgin & Martyr" }
-                    else { feast = "Martyr" }
+                    if (SAINT != "" || SAINT != "Feria") {
 
-                }
-                else if (name.includes("doctor")) { feast = "Doctor of the Church" }
-                else if (name.includes("pope")) { feast = "Pope" }
-                else if (name.includes("abbot")) { feast = "Abbot" }
-                else if (name.includes("bishop")) { feast = "Bishop" }
-                else if (name.includes("confessor")) { feast = "Confessor" }
-                else if (name.includes("virgin")) { feast = "Virgin" }
-                else if (name.toLowerCase().includes("saturday")) { feast = "BVM" }
+                        if (!TITLE.includes("St.")) { source = readings_file["Special days"] };
 
-                // Set readings for feria to previous Sunday
+                        for (let i = 0; i < source.length; i++) {
 
-                else if (name.toLowerCase().includes("feria")) {
 
-                    while (first_reading == null && gospel_reading == null) {
+                            if (TITLE.toLowerCase() == source[i]["Name"].toLowerCase().split(",")[0]) {
 
-                        difference = difference - 1;
-                        new_source = source[difference];
+                                console.log(source[i])
 
-                        if (new_source["Name"].toLowerCase().includes("sunday")) {
+                                let hagio_title = source[i]["Name"];
+                                let hagio_reading = source[i]["Hagiography"];
 
-                            first_reading = new_source["Reading"];
-                            gospel_reading = new_source["Gospel"];
+                                console.log("Set hagiography for " + hagio_title);
 
-                        };
+                                document.getElementById("hagio_title").innerHTML = hagio_title;
+                                document.getElementById("hagio_reading").innerHTML = hagio_reading;                                
 
-                    };
-                };
+                                if (document.getElementById("hagio_reading").innerHTML != null) { has_hagiography = true; }
 
-            }
+                                break
 
-            console.log("It is a feast of a: " + feast)
+                            }
 
-            // Set reading to commons if feast isn't null
 
-            if (feast != null) {
-
-                if (feast != "BVM") {
-                    first_reading = readings_file["Common readings"][feast]["Reading"];
-                    gospel_reading = readings_file["Common readings"][feast]["Gospel"];
-
-                    if (feast == "Martyr" || feast == "Bishop & Martyr") {
-
-                        if (LITURGICAL_SEASON == "Eastertide") {
-
-                            first_reading = readings_file["Common readings"][feast]["Eastertide"]["Reading"];
-                            gospel_reading = readings_file["Common readings"][feast]["Eastertide"]["Gospel"];
-
-                        } else {
-
-                            first_reading = readings_file["Common readings"][feast]["Not Eastertide"]["Reading"];
-                            gospel_reading = readings_file["Common readings"][feast]["Not Eastertide"]["Gospel"];
                         }
+                    } else {
+
+                        console.log("No hagiography for today")
 
                     };
 
-                } else {
+                    if (!has_hagiography) {
 
-                    first_reading = readings_file["Common readings"]["BVM"][LITURGICAL_SEASON]["Reading"];
-                    gospel_reading = readings_file["Common readings"]["BVM"][LITURGICAL_SEASON]["Gospel"];
+                        console.log("Either there is no saint of the day, or I can't find a hagiography. Set imitation of christ for today")
 
-                    // console.log("Set BVM reading for " + LITURGICAL_SEASON);
-                    // console.log(first_reading);
-                    // console.log(gospel_reading);
+                        fetch('../Data/imitation_of_christ.html')
+                            .then(response => {
+                                return response.text()
+                            })
+                            .then(html => {
+                                // Initialize the DOM parser
+                                const parser = new DOMParser()
 
-                };
-            };
+                                // Parse the text
+                                const imitatio_christi = parser.parseFromString(html, "text/html")
+
+                                let all_divs = imitatio_christi.getElementsByTagName("div");
+
+                                // Get random
+                                const myArray = new Uint8Array(10);
+                                let random_val = crypto.getRandomValues(myArray)[0] / 256;
+                                let random_index = Math.floor(all_divs.length * random_val);
+
+                                let page = all_divs[random_index]
+
+                                document.getElementById("hagio_announcement").innerHTML = "Step 6: Imitatio Christi"
+                                document.getElementById("hagio_title").innerHTML = "Imitatio Christi";
+                                document.getElementById("hagio_reading").innerHTML = page.innerHTML;
+
+                            });
+                    }
+                });
 
 
-            let text_date = "";
 
-            // THIS IS THE CORRECT
-            // if (remark == null || remark == "") {
-            //     text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name;
-            // } else {
-            //     text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br>" + name + "<br><br>Also: " + remark;
+            // let base = 0;
+            // let difference = 0;
+            // let extra_difference = -1;
+
+            // if (LITURGICAL_SEASON == "Eastertide") { base = easter_date; }
+            // else if (LITURGICAL_SEASON == "Ascensiontide") { base = ascension_date; }
+            // else if (LITURGICAL_SEASON == "Time after Pentecost") { base = pentecost_date; }
+            // else if (LITURGICAL_SEASON == "Advent") { base = advent_date; }
+            // else if (LITURGICAL_SEASON == "Christmastide") {
+
+            //     if (D.getMonth() == 11) { base = christmas_date; }
+            //     else {
+
+            //         // Find day in source where name is "Octave day of the Nativity of the Lord"
+
+            //         for (let i = 0; i < source.length; i++) {
+
+            //             let name = source[i]["Name"];
+            //             if (name == "Octave day of the Nativity of the Lord") {
+
+            //                 extra_difference = i;
+            //                 break;
+            //             }
+
+            //         };
+
+            //         base = new Date(D.getFullYear(), 0, 1);
+
+            //     }
+
+            // }
+            // else if (LITURGICAL_SEASON == "Time after Epiphany") { extra_difference = -1; base = baptism_lord_date.addDays(1); }
+            // else if (LITURGICAL_SEASON == "Septuagesimatide") { extra_difference = -1; base = septuagesima_date; }
+            // else if (LITURGICAL_SEASON == "Lent") { extra_difference = -1; base = ash_wednesday_date; }
+            // else if (LITURGICAL_SEASON == "Passiontide") { extra_difference = -1; base = easter_date.addDays(-14); }
+
+            // difference = Math.floor((Math.abs(base - D)) / (1000 * 60 * 60 * 24));
+
+            // if (extra_difference != -1) { difference = extra_difference + difference; }
+
+            // DAY_OF_SEASON = difference + 1;
+
+            // console.log("Today is day " + DAY_OF_SEASON + " in " + LITURGICAL_SEASON + ". That means that it is the " + WEEKDAY[D.getDay()] + " of the " + Math.floor(DAY_OF_SEASON / 7) + "th Sunday of " + LITURGICAL_SEASON);
+
+            // if let day_source = source[difference];
+            // // Still to do is the saints and other special days with their own propers
+
+            // let name = day_source["Name"];
+            // let remark = day_source["Remark"];
+            // let first_reading = day_source["Reading"];
+            // let gospel_reading = day_source["Gospel"];
+            // let liturgical_class = day_source["Class"];
+
+            // console.log("Name: " + name)
+            // console.log("Remark: " + remark)
+
+            // let feast = null;
+
+
+            // // Check if readings are null, in which case set from commons
+
+            // if (first_reading == null && gospel_reading == null) {
+
+            //     if (name.includes("martyr")) {
+
+            //         if (name.includes("bishop")) { feast = "Bishop & Martyr" }
+            //         else if (name.includes("virgin")) { feast = "Virgin & Martyr" }
+            //         else { feast = "Martyr" }
+
+            //     }
+            //     else if (name.includes("doctor")) { feast = "Doctor of the Church" }
+            //     else if (name.includes("pope")) { feast = "Pope" }
+            //     else if (name.includes("abbot")) { feast = "Abbot" }
+            //     else if (name.includes("bishop")) { feast = "Bishop" }
+            //     else if (name.includes("confessor")) { feast = "Confessor" }
+            //     else if (name.includes("virgin")) { feast = "Virgin" }
+            //     else if (name.toLowerCase().includes("saturday")) { feast = "BVM" }
+
+            //     // Set readings for feria to previous Sunday
+
+            //     else if (name.toLowerCase().includes("feria")) {
+
+            //         while (first_reading == null && gospel_reading == null) {
+
+            //             difference = difference - 1;
+            //             new_source = source[difference];
+
+            //             if (new_source["Name"].toLowerCase().includes("sunday")) {
+
+            //                 first_reading = new_source["Reading"];
+            //                 gospel_reading = new_source["Gospel"];
+
+            //             };
+
+            //         };
+            //     };
+
             // }
 
-            // THIS IS THE PATCH
-            if (remark == null || remark == "") {
-                text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br> we're reading from the " + name;
-            } else {
-                text_date = "It is " + WEEKDAY[D.getDay()] + " " + D.toLocaleDateString() + "<br><br>It is the " + DAY_OF_SEASON + "th day in " + LITURGICAL_SEASON + ": <br> we're reading from the " + name + "<br><br>Also: " + remark;
-            }
+            // console.log("It is a feast of a: " + feast)
+
+            // // Set reading to commons if feast isn't null
+
+            // if (feast != null) {
+
+            //     if (feast != "BVM") {
+            //         first_reading = readings_file["Common readings"][feast]["Reading"];
+            //         gospel_reading = readings_file["Common readings"][feast]["Gospel"];
+
+            //         if (feast == "Martyr" || feast == "Bishop & Martyr") {
+
+            //             if (LITURGICAL_SEASON == "Eastertide") {
+
+            //                 first_reading = readings_file["Common readings"][feast]["Eastertide"]["Reading"];
+            //                 gospel_reading = readings_file["Common readings"][feast]["Eastertide"]["Gospel"];
+
+            //             } else {
+
+            //                 first_reading = readings_file["Common readings"][feast]["Not Eastertide"]["Reading"];
+            //                 gospel_reading = readings_file["Common readings"][feast]["Not Eastertide"]["Gospel"];
+            //             }
+
+            //         };
+
+            //     } else {
+
+            //         first_reading = readings_file["Common readings"]["BVM"][LITURGICAL_SEASON]["Reading"];
+            //         gospel_reading = readings_file["Common readings"]["BVM"][LITURGICAL_SEASON]["Gospel"];
+
+            //         // console.log("Set BVM reading for " + LITURGICAL_SEASON);
+            //         // console.log(first_reading);
+            //         // console.log(gospel_reading);
+
+            //     };
+            // };
+
+
+
 
             // Set first reading
 
-            if (first_reading == null) { document.getElementById("first_reading").innerHTML = "No reading" }
-            else {
+            // if (LESSON == null) { document.getElementById("first_reading").innerHTML = "No reading" }
+            // else {
 
-                if (!Array.isArray(first_reading[0])) {
+            //     if (!Array.isArray(first_reading[0])) {
 
-                    document.getElementById("reading_title").innerHTML = first_reading[0]
-                    document.getElementById("first_reading").innerHTML = first_reading[1]
+            //         document.getElementById("reading_title").innerHTML = first_reading[0]
+            //         document.getElementById("first_reading").innerHTML = first_reading[1]
 
-                } else {
+            //     } else {
 
-                    document.getElementById("reading_title").innerHTML = first_reading[0][0]
-                    document.getElementById("first_reading").innerHTML = first_reading[0][1]
+            //         document.getElementById("reading_title").innerHTML = first_reading[0][0]
+            //         document.getElementById("first_reading").innerHTML = first_reading[0][1]
 
-                    let gospel = document.getElementById("gospel");
+            //         let gospel = document.getElementById("gospel");
 
-                    let reading_length = first_reading.length;
+            //         let reading_length = first_reading.length;
 
-                    for (let i = 1; i < reading_length; i++) {
+            //         for (let i = 1; i < reading_length; i++) {
 
-                        let reading_title = document.createElement("h4");
-                        let first_reading_carD = document.createElement("div");
+            //             let reading_title = document.createElement("h4");
+            //             let first_reading_carD = document.createElement("div");
 
-                        // Set classes and ids
-                        reading_title.iD = "reading_title";
-                        first_reading_carD.iD = "first_reading";
-                        first_reading_carD.className = "text_card";
+            //             // Set classes and ids
+            //             reading_title.iD = "reading_title";
+            //             first_reading_carD.iD = "first_reading";
+            //             first_reading_carD.className = "text_card";
 
-                        // Set content
-                        reading_title.innerHTML = first_reading[i][0];
-                        first_reading_carD.innerHTML = first_reading[i][1];
+            //             // Set content
+            //             reading_title.innerHTML = first_reading[i][0];
+            //             first_reading_carD.innerHTML = first_reading[i][1];
 
-                        // Set in page
-                        gospel.parentNode.insertBefore(reading_title, gospel);
-                        gospel.parentNode.insertBefore(first_reading_card, gospel);
+            //             // Set in page
+            //             gospel.parentNode.insertBefore(reading_title, gospel);
+            //             gospel.parentNode.insertBefore(first_reading_card, gospel);
 
-                    }
+            //         }
 
-                }
+            //     }
 
 
 
-            };
+            // };
 
             // Set hagiography
 
-            if (Object.keys(day_source).includes("Hagiography")) {
+            // if (Object.keys(day_source).includes("Hagiography")) {
 
-                let hagio_reading = day_source["Hagiography"];
+            //     let hagio_reading = day_source["Hagiography"];
 
-                document.getElementById("hagio_title").innerHTML = hagio_reading[0];
-                document.getElementById("hagio_reading").innerHTML = hagio_reading[1];
+            //     document.getElementById("hagio_title").innerHTML = hagio_reading[0];
+            //     document.getElementById("hagio_reading").innerHTML = hagio_reading[1];
 
-                if (Array.isArray(hagio_reading[0])) {
+            //     if (Array.isArray(hagio_reading[0])) {
 
-                    let reading_length = hagio_reading.length;
+            //         let reading_length = hagio_reading.length;
 
-                    document.getElementById("hagio_title").innerHTML = hagio_reading[0][0];
-                    document.getElementById("hagio_reading").innerHTML = hagio_reading[0][1];
+            //         document.getElementById("hagio_title").innerHTML = hagio_reading[0][0];
+            //         document.getElementById("hagio_reading").innerHTML = hagio_reading[0][1];
 
-                    let routine_at_six = document.getElementById("six_oclock_routine");
+            //         let routine_at_six = document.getElementById("six_oclock_routine");
 
-                    for (let i = 1; i < reading_length; i++) {
+            //         for (let i = 1; i < reading_length; i++) {
 
-                        let hagio_title = document.createElement("h4");
-                        let hagio_reading_carD = document.createElement("div");
+            //             let hagio_title = document.createElement("h4");
+            //             let hagio_reading_carD = document.createElement("div");
 
 
-                        // Set classes and ids
-                        hagio_title.iD = "hagio_title_" + i;
-                        hagio_reading_carD.iD = "hagio_card_" + i;
-                        hagio_reading_carD.className = "text_card";
+            //             // Set classes and ids
+            //             hagio_title.iD = "hagio_title_" + i;
+            //             hagio_reading_carD.iD = "hagio_card_" + i;
+            //             hagio_reading_carD.className = "text_card";
 
-                        // Set content
-                        hagio_title.innerHTML = hagio_reading[i][0];
-                        hagio_reading_carD.innerHTML = hagio_reading[i][1];
+            //             // Set content
+            //             hagio_title.innerHTML = hagio_reading[i][0];
+            //             hagio_reading_carD.innerHTML = hagio_reading[i][1];
 
-                        // console.log(routine_at_six.childNodes);
-                        // console.log(hagio_title);
+            //             // console.log(routine_at_six.childNodes);
+            //             // console.log(hagio_title);
 
-                        if (document.getElementById(hagio_title.id) != null) { console.log("Caught it!") }
-                        else {
+            //             if (document.getElementById(hagio_title.id) != null) { console.log("Caught it!") }
+            //             else {
 
-                            // Set in page
-                            routine_at_six.insertBefore(hagio_reading_card, document.getElementById("hagio_title"));
-                            routine_at_six.insertBefore(hagio_title, hagio_reading_card);
+            //                 // Set in page
+            //                 routine_at_six.insertBefore(hagio_reading_card, document.getElementById("hagio_title"));
+            //                 routine_at_six.insertBefore(hagio_title, hagio_reading_card);
 
-                            // console.log(i);
+            //                 // console.log(i);
 
-                        };
+            //             };
 
-                    }
+            //         }
 
-                };
+            //     };
 
-            } else {
+            // } else {
 
-                fetch('../Data/imitation_of_christ.html')
-                    .then(response => {
-                        return response.text()
-                    })
-                    .then(html => {
-                        // Initialize the DOM parser
-                        const parser = new DOMParser()
+            //     fetch('../Data/imitation_of_christ.html')
+            //         .then(response => {
+            //             return response.text()
+            //         })
+            //         .then(html => {
+            //             // Initialize the DOM parser
+            //             const parser = new DOMParser()
 
-                        // Parse the text
-                        const imitatio_christi = parser.parseFromString(html, "text/html")
+            //             // Parse the text
+            //             const imitatio_christi = parser.parseFromString(html, "text/html")
 
-                        let all_divs = imitatio_christi.getElementsByTagName("div");
+            //             let all_divs = imitatio_christi.getElementsByTagName("div");
 
-                        // Get random
-                        const myArray = new Uint8Array(10);
-                        let random_val = crypto.getRandomValues(myArray)[0] / 256;
-                        let random_index = Math.floor(all_divs.length * random_val);
+            //             // Get random
+            //             const myArray = new Uint8Array(10);
+            //             let random_val = crypto.getRandomValues(myArray)[0] / 256;
+            //             let random_index = Math.floor(all_divs.length * random_val);
 
-                        let page = all_divs[random_index]
+            //             let page = all_divs[random_index]
 
-                        document.getElementById("hagio_announcement").innerHTML = "Step 6: Imitatio Christi"
-                        document.getElementById("hagio_reading").innerHTML = page.innerHTML;
+            //             document.getElementById("hagio_announcement").innerHTML = "Step 6: Imitatio Christi"
+            //             document.getElementById("hagio_reading").innerHTML = page.innerHTML;
 
-                    });
-            };
+            //         });
+            // };
 
-            // Set gospel reading
+            // // Set gospel reading
 
-            if (gospel_reading == null) { document.getElementById("gospel_reading").innerHTML = "No reading" }
-            else {
+            // if (gospel_reading == null) { document.getElementById("gospel_reading").innerHTML = "No reading" }
+            // else {
 
-                document.getElementById("gospel_title").innerHTML = gospel_reading[0]
-                document.getElementById("gospel_reading").innerHTML = gospel_reading[1]
+            //     document.getElementById("gospel_title").innerHTML = gospel_reading[0]
+            //     document.getElementById("gospel_reading").innerHTML = gospel_reading[1]
 
-            };
+            // };
 
-            // console.log(text_date);
-            document.getElementById("date").innerHTML = text_date;
+            // // console.log(text_date);
+            // document.getElementById("date").innerHTML = text_date;
 
             // Set prayers
 
@@ -461,7 +627,7 @@ function set_up() {
 
             // THIS IS PLACEHOLDER
 
-                if (D.getDay() == 0) {
+            if (D.getDay() == 0) {
 
                 document.getElementById("morning-prayer").innerHTML = '<a href="https://www.tiltenberg.org/getijdengebed/">Pray matins</a>';
                 document.getElementById("morning-prayer").className = "make-button";
@@ -538,7 +704,7 @@ function set_up() {
                     <li>LENT: DAILY COLD SHOWER</li>
                     <li>LENT: GO OUTSIDE FOR 30 MINUTES</li>
                     <li>LENT: NO MEAT, ALCOHOL, SNACKS</li>
-                
+
                 `
 
                 rules_list.innerHTML = rules_list_HTML;
@@ -628,6 +794,7 @@ function set_up() {
             };
 
         });
+
 
     // Set the Angelus
 
@@ -726,7 +893,7 @@ function set_up() {
 
     };
 
-    
+
 };
 
 function nextDate() {
