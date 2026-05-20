@@ -5,6 +5,12 @@ let NAME = "";
 let REPEAT_WORDS_PER_DAY = 5;
 let CURRENT_ANSWERS = {};
 
+let CURRENT_CORRECT_ANSWER = null;
+
+let CURRENT_INDEX = 0;
+
+let WORD_LIST = []; // current list of words being tested (new + repeats)
+
 // Set start and end dates
 
 const periods = {
@@ -18,7 +24,6 @@ const periods = {
 
 let todaysWords = [];
 let wordsToRepeat = [];     // words failed yesterday / earlier today
-let currentIndex = 0;       // position in todaysWords + repeats
 let todaysTargetCount = 0;
 
 // 1. Determine current period
@@ -121,7 +126,8 @@ async function loadAndPrepareVocab() {
 
     // Working list for today (we'll add failed words to the end)
     wordsToRepeat = [];
-    currentIndex = 0;
+
+    WORD_LIST = [...sessionWords];
 
     showNextWord();
     updateCounter();
@@ -129,8 +135,8 @@ async function loadAndPrepareVocab() {
 
 // Update x/y counter
 function updateCounter() {
-    const done = currentIndex;
-    const total = todaysTargetCount + wordsToRepeat.length;
+    const done = CURRENT_INDEX;
+    const total = WORD_LIST.length;
     document.getElementById("counter_block").textContent =
         `Counter: ${done}/${total}`;
 }
@@ -139,24 +145,22 @@ function showNextWord() {
 
     console.log("Show check")
 
-    const wordList = [...sessionWords, ...wordsToRepeat];
+    console.log(WORD_LIST);
 
-    console.log(wordList);
-
-    if (currentIndex >= wordList.length) {
+    if (CURRENT_INDEX >= WORD_LIST.length) {
         finishSession();
         return;
     }
 
-    const word = wordList[currentIndex];
+    const word = WORD_LIST[CURRENT_INDEX];
 
     let question, correctAnswer, distractors;
 
-    console.log(wordList)
+    console.log(WORD_LIST)
 
     // Random if yesterdays words, Character -> Pinyin for first pass for today's words, then Character -> English for second pass
 
-    if (currentIndex < (yesterdayWords.length + randomWords.length)) {
+    if (CURRENT_INDEX < (yesterdayWords.length + randomWords.length)) {
 
         document.getElementById("chinese_intro").textContent = `Currently doing: ${NAME} - Old`;
 
@@ -174,7 +178,7 @@ function showNextWord() {
             distractors = getDistractors(word, answer_mode);
         }
 
-    } else if (currentIndex < yesterdayWords.length + randomWords.length + todaysWords.length) {
+    } else if (CURRENT_INDEX < yesterdayWords.length + randomWords.length + todaysWords.length) {
 
         document.getElementById("chinese_intro").textContent = `Currently doing: ${NAME} - New`;
 
@@ -183,7 +187,7 @@ function showNextWord() {
         correctAnswer = word;
         distractors = getDistractors(word, answer_mode);
 
-    } else if (currentIndex < yesterdayWords.length + randomWords.length + todaysWords.length + todaysWords.length) {
+    } else if (CURRENT_INDEX < yesterdayWords.length + randomWords.length + todaysWords.length + todaysWords.length) {
         document.getElementById("chinese_intro").textContent = `Currently doing: ${NAME} - New`;
 
         question = "Chinese: " + word.Character;
@@ -244,11 +248,16 @@ function showNextWord() {
         el.style.background = ""; // reset color
         el.style.pointerEvents = "auto";
     });
+
+    // Set the correct answer for "I don't know" button
+
+    CURRENT_CORRECT_ANSWER = correctAnswer;
+
 }
 
 function getDistractors(correct_word, answer_mode) {
     
-    // Get 4 random words from the wordlist
+    // Get 4 random words from the WORD_LIST
     const shuffled = [...ALL_WORDS].sort(() => Math.random() - 0.5);
     
     // Return the first 3 that aren't the correct answer
@@ -272,13 +281,15 @@ function getDistractors(correct_word, answer_mode) {
 function handleAnswer(selected, correct, word) {
     const allAnswers = document.querySelectorAll(".MC_answer");
 
+    console.log("Length of ALL_WORDS:", WORD_LIST.length);
+
     if (selected === correct) {
         // success
         allAnswers.forEach(el => {
             el.style.background = el.textContent === correct ? "#8f8" : "";
         });
         setTimeout(() => {
-            currentIndex++;
+            CURRENT_INDEX++;
             updateCounter();
             showNextWord();
         }, 800);
@@ -294,10 +305,15 @@ function handleAnswer(selected, correct, word) {
             }
         });
 
-        wordsToRepeat.push(CURRENT_ANSWERS[selected]); // the wrong answer too
-        wordsToRepeat.push(word); // repeat at end
+        WORD_LIST.push(CURRENT_ANSWERS[selected]); // the wrong answer too
+        WORD_LIST.push(word); // repeat at end
+
         updateCounter();
+
+        IDontKnow();
     }
+
+    console.log("Length of ALL_WORDS:", WORD_LIST.length);
 }
 
 function finishSession() {
@@ -305,6 +321,68 @@ function finishSession() {
     document.querySelectorAll(".MC").forEach(el => el.style.display = "none");
     // You could also save progress to localStorage here
 }
+
+function IDontKnow() {
+
+    if (CURRENT_CORRECT_ANSWER) {
+
+        // Display correct answer for 3s in id=current_word, while displaying loading bar in button
+
+        const currentWordElement = document.getElementById("current_word");
+        currentWordElement.textContent = "";
+
+        currentWordElement.style.height = "9vh";
+        currentWordElement.style.transition = "height 0.25s";
+
+        currentWordElement.textContent = `Answer: ${CURRENT_CORRECT_ANSWER.Character} / ${CURRENT_CORRECT_ANSWER.Pinyin} / ${CURRENT_CORRECT_ANSWER.Translation}`;
+
+        const idkButton = document.getElementById("idk_button");
+        idkButton.style.background = "#88f";
+        idkButton.style.pointerEvents = "none";
+        idkButton.style.width = "50%";
+        idkButton.style.transition = "width 3s"
+
+        // Add the current word in index + 2 
+
+        WORD_LIST.splice(CURRENT_INDEX + 2, 0, CURRENT_CORRECT_ANSWER);
+
+
+        updateCounter();
+
+        setTimeout(() => {
+            idkButton.style.background = "";
+            idkButton.style.pointerEvents = "auto";
+            
+
+            idkButton.style.width = "78vw";
+            idkButton.style.transition = "width 1s"
+
+            // Reset current word element height
+
+            currentWordElement.textContent = "";
+            currentWordElement.style.height = "5vh";
+            currentWordElement.style.transition = "height 0.25s";
+
+            showNextWord();
+
+        }, 3000);
+
+        
+
+    } else {
+        alert("No current word to show answer for!");
+    };
+
+}
+
+// Add listener to "I don't know" button
+document.getElementById("idk_button").onclick = () => {
+    
+    // Retreive the current word being tested and correct answer
+
+    IDontKnow();
+
+};
 
 // Start everything
 window.addEventListener("load", () => {

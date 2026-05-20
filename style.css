@@ -415,7 +415,7 @@ ul {
 
 }
 
-.MC > .MC_answer {
+.MC > .MC_answer, #idk_button {
 
     display: inline-block;
     width: 35vw;
@@ -430,6 +430,12 @@ ul {
     margin-bottom: 3.5vh;
     padding: 1vh;
     transition-duration: 0.5s;    
+}
+
+#idk_button {
+
+    width: 77vw;
+
 }
 
 #generate {
@@ -717,6 +723,11 @@ input[type=checkbox] {
         background-color: lightgreen;
         transition-duration: 0.5s;
 
+    }
+
+    #current_word {
+
+        height: 5vh;
     }
 
     /* Style the button that is used to open and close the collapsible content */
