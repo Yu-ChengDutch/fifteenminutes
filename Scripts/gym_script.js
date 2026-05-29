@@ -27,23 +27,65 @@ function toggle_song(section) {
 
 };
 
-function up_counter(el) {
+function up_counter(el, time = 60, counter = "start") {
+
+  originalClasses = el.className;
+
+  el.className = originalClasses + " clicked";
+
+  console.log(el)
 
   // First, trigger the timer
-  run_timer(el);
+  run_timer(el, time);
 
-  // 1. Find parent element
-  const parent = el.parentElement;
-  if (!parent) return;
+  // if counter start then adjust counter immediately, else, wait for miliseconds = time
 
-  // 2. Find .exercise-counter within parent
-  const counterDiv = parent.querySelector(".exercise-counter");
-  if (!counterDiv) return;
+  if (counter == "end") {
 
-  // 3. Parse text, increment, set back
-  let count = parseInt(counterDiv.textContent, 10);
-  if (isNaN(count)) count = 0;
-  counterDiv.textContent = count + 1;
+    setTimeout(() => {
+
+      // 1. Find parent element
+      const parent = el.parentElement;
+      if (!parent) return;
+
+      // 2. Find .exercise-counter within parent
+      const counterDiv = parent.querySelector(".exercise-counter");
+      if (!counterDiv) return;
+
+      // 3. Parse text, increment, set back
+      let count = parseInt(counterDiv.textContent, 10);
+      if (isNaN(count)) count = 0;
+      counterDiv.textContent = count + 1;
+
+      // Set back to orignal class
+
+
+      el.className = originalClasses;
+
+    }, time * 1000);
+
+  } else {
+
+    // 1. Find parent element
+    const parent = el.parentElement;
+    if (!parent) return;
+
+    // 2. Find .exercise-counter within parent
+    const counterDiv = parent.querySelector(".exercise-counter");
+    if (!counterDiv) return;
+
+    // 3. Parse text, increment, set back
+    let count = parseInt(counterDiv.textContent, 10);
+    if (isNaN(count)) count = 0;
+    counterDiv.textContent = count + 1;
+
+    // Set back to orignal class
+
+    el.className = originalClasses;
+
+  }
+
+  
 };
 
 function weightedShuffleArray(array) {
@@ -89,27 +131,33 @@ function add_exercise(exercise_var, song_var, container_id) {
   let new_block = document.createElement("div");
   new_block.className = "exercise-block";
   new_block.innerHTML = `<div class="exercise-proper" onclick="toggle_song('${song_var}')">${exercise_var}</div>
-                         <div class="exercise-rest" onclick="up_counter(this);">Rest: 2m00s</div>
+                         <div class="exercise-rest" onclick="up_counter(this, 120);">Rest: 2m00s</div>
                          <div class="exercise-counter">0</div>`;
 
   document.getElementById(container_id).appendChild(new_block);
 };
 
-function run_timer(element) {
+function run_timer(element, time = 60) {
+
+  element.classList.add("clicked");
+
+  // Find initial text
+
+  const initialText = (element.innerHTML).split(": ")[0];
 
   // Ask for permission
   if (Notification.permission !== "granted") {
     Notification.requestPermission();
   }
 
-  // Start 2-minute timer
-  let timeLeft = 120; // seconds (2 minutes)
+  // Start 1-minute timer
+  let timeLeft = time; // seconds (1 minute)
 
   const interval = setInterval(() => {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
 
-    element.innerHTML = `Rest: ${minutes}m${seconds.toString().padStart(2, '0')}s`;
+    element.innerHTML = `${initialText}: ${minutes}m${seconds.toString().padStart(2, '0')}s`;
 
     // Do something every second here
     // e.g., update DOM, play a tick sound, etc.
@@ -127,6 +175,7 @@ function run_timer(element) {
       } else {
         // Show alert
         alert("Time's up!");
+        element.innerHTML = `${initialText}: ${Math.floor(time / 60)}m${(time % 60).toString().padStart(2, '0')}s`;
       }
     }
   }, 1000);

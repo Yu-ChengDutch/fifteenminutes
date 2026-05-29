@@ -741,7 +741,7 @@ function set_up() {
 
             let bedtime = document.getElementById("bedtime");
 
-            let weekenD = (D.getDay() == 6) || (D.getDay() == 0)
+            let weekend = (D.getDay() == 6) || (D.getDay() == 0)
 
             console.log("Current time: " + current_time)
 

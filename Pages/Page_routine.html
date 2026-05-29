@@ -19,7 +19,7 @@
         <div id="date_buttons">
 
             <input type="button" value="Back" id="btnPrevious" onclick="pastDate()"/>
-            <strong id="date"></strong>
+            <h3 id="date"></h3>
             <input type="button" value="Next" id="btnNext" onclick="nextDate()"/>
 
         </div>
@@ -58,7 +58,9 @@
 
             </ul>
 
-            <h2>Step 1: Toilet</h2>
+            <h2>Step 1: Toilet & bathroom</h2>
+
+            <h3>Toilet</h3>
 
             <ul>
 
@@ -66,7 +68,23 @@
                 <li id="pre-gym-clothes"></li>
                 <li id="gym-clothes"></li>
                 <li>Check calendar</li>
-                <li>Take supplements (incl. vitamin D)</li>
+
+            </ul>
+
+            <h3>Supplements</h3>
+
+            <ul>
+
+                <li>Fish oil capsule</li>
+
+            </ul>
+
+            <h3>Dental routine</h3>
+
+            <ul>
+
+                <li>Flossing and Kegels</li>
+                <li>Brushing teeth and balancing</li>
 
             </ul>
 
@@ -94,15 +112,41 @@
 
             <p>The exercises need to be updated manually. If you can't do them now, then place them on the to-do list.These are the current exercises:</p>
 
-            <ul>
+            <div>
 
-                <li>4 * planks (1 min. on, 15 sec. off)</li>
-                <li>4 * reverse planks (1 min. on, 15 sec. off)</li>
-                <li>4 * push-ups (20 reps, 1 min. off)</li>
-                <li>4 * pull-ups (10 reps, 1 min. off)</li>
-                <li>4 * bodyweight squats (20 reps, 1 min. off)</li>
+                <div class="exercise-block">
 
-            </ul>
+                    <div class="exercise-proper" onclick="up_counter(this, 60, 'end')">Plank: 1m00s</div>
+                    <div class="exercise-rest" id="plank-rest" onclick="up_counter(this, 60)">Rest: 1m00s</div>
+                    <div class="exercise-counter">0</div>
+
+                </div>
+                
+                <div class="exercise-block">
+
+                    <div class="exercise-proper" onclick="up_counter(this, 60, 'end')">Reverse Plank: 1m00s</div>
+                    <div class="exercise-rest" id="reverse-plank-rest" onclick="up_counter(this, 60)">Rest: 1m00s</div>
+                    <div class="exercise-counter">0</div>
+
+                </div>   
+
+                <div class="exercise-block">
+
+                    <div class="exercise-proper">20 pushups</div>
+                    <div class="exercise-rest" onclick="up_counter(this, 60)">Rest: 1m00s</div>
+                    <div class="exercise-counter">0</div>
+
+                </div>   
+
+                <div class="exercise-block">
+
+                    <div class="exercise-proper">20 bodyweight squats</div>
+                    <div class="exercise-rest" id="bodyweight-squats-rest" onclick="up_counter(this, 60)">Rest: 1m00s</div>
+                    <div class="exercise-counter">0</div>
+
+                </div>  
+
+            </div>
 
             <h2>Step 5: Conditioning exercises (~15 min)</h2>
 
@@ -111,17 +155,6 @@
             <p>10 burpees: tuck jump + hill climbers</p>
 
             <h2>Step 6: Bathroom</h2>
-
-            <h3>Step 6.1: Dental routine</h3>
-
-            <ul>
-
-                <li>Flossing and Kegels</li>
-                <li>Brushing teeth and balancing</li>
-
-            </ul>
-
-            <h3>Step 6.2: Shower</h3>
 
             <ul>
 
@@ -439,7 +472,34 @@
 
             </ul>
 
-            <h2>Step 1: Toilet</h2>
+            <h2>Step 1: Toilet & bathroom </h2>
+
+            <h3>Supplements</h3>
+
+            <ul>
+
+                <li>Fish oil capsule</li>
+
+            </ul>
+
+            <h3>Dental routine</h3>
+
+            <ul>
+
+                <li>Flossing and Kegels</li>
+                <li>Brushing teeth and balancing</li>
+
+            </ul>
+
+            <h3>Washing up</h3>
+
+            <ul>
+                <li id="cut_block"></li>
+                <li id="cleanse_block"></li>
+                <li>Coconut oil hair and face (Saxena et al.)</li>
+            </ul>
+
+            <h2 id="lipbalm_2"></h2>
 
             <h2>Step 2: Preparations for tomorrow</h2>
 
@@ -449,49 +509,12 @@
                 <li>Change into pyjamas</li>
                 <li>Pack my bags</li>
                 <li>Prepare clothing</li>
+                <li>Refill water bottle</li>
                 <li>Roll out bed</li>
 
             </ul>
 
-            <h2>Step 3: Supplements</h2>
-
-            <ul>
-
-                <li>Fish oil capsule</li>
-                <li>Chondroitin tablet</li>
-                <li>Ashwaganda capsule</li>
-
-            </ul>
-
-            <h2>Step 4: Myofunctional therapy</h2>
-
-            <div class="card" onClick="window.location.href = '../Pages/Page_OMT.html';">
-
-                <img src="../Images/Mouth.png">
-
-            </div>
-
-            <h2>Step 5: Dental routine</h2>
-
-            <ul>
-
-                <li>Flossing and Kegels</li>
-                <li>Brushing teeth</li>
-
-            </ul>
-
-            <h2>Step 6: Bathroom routine</h2>
-
-            <ul>
-                <li id="cut_block"></li>
-                <li id="cleanse_block"></li>
-                <li>Coconut oil hair and face (Saxena et al.)</li>
-                <li>Refill water bottle</li>
-            </ul>
-
-            <h2 id="lipbalm_2"></h2>
-
-            <h2>Step 7: Evening prayer</h2>
+            <h2>Step 3: Evening prayer</h2>
 
             <div id="evening-prayer">
                 <div class="introduction">
@@ -601,7 +624,7 @@
                 </div>
             </div>
 
-            <h2>Step 8: Write diary</h2>
+            <h2>Step 4: Write diary</h2>
 
             <ul>
 
@@ -628,7 +651,24 @@
 
             <div id="virtue-question" class="introduction"></div>
 
-            <h2>Step 9: Psalm reading</h2>
+
+            <h2>Step 5: Myofunctional therapy</h2>
+
+            <div class="card" onClick="window.location.href = '../Pages/Page_OMT.html';">
+
+                <img src="../Images/Mouth.png">
+
+            </div>
+
+            <h2>Step 6: Meditate</h2>
+
+            <div class="card" onClick="window.location.href = '../Pages/Page_meditation.html';">
+
+                <img src="../Images/Meditation.png">
+
+            </div>
+
+            <h2>Step 7: Psalm reading</h2>
 
             <div class="introduction">
 
@@ -656,14 +696,6 @@
 
             </div>
 
-            <h2>Step 10: Meditate</h2>
-
-            <div class="card" onClick="window.location.href = '../Pages/Page_meditation.html';">
-
-                <img src="../Images/Meditation.png">
-
-            </div>
-
         </div>
 
     </div>
@@ -671,6 +703,7 @@
     <script type="module" src="../Scripts/routine.js"></script>
     <script src="https://unpkg.com/romcal@3.0.0-dev.29/dist/iife/romcal.js"></script>
     <script src="../Scripts/collapsible_script.js"></script>
+    <script src="../Scripts/gym_script.js"></script>
 
 </body>
 

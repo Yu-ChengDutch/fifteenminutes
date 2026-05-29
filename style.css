@@ -213,7 +213,7 @@ ul {
     box-shadow: inset 0.5vw 0.3vw 2vw rgb(92, 115, 122);
 }
 
-.exercise-proper:active, .exercise-proper:hover {
+.exercise-proper.clicked{
 
     box-shadow: 0.5vw 0.3vw 2vw rgb(92, 115, 122);
 
@@ -233,7 +233,7 @@ ul {
 
 }
 
-.exercise-rest:active, .exercise-rest:hover {
+.exercise-rest.clicked{
 
     box-shadow: 0.5vw 0.3vw 2vw rgb(22, 65, 40);
 
