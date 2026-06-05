@@ -35,6 +35,19 @@ function up_counter(el, time = 60, counter = "start") {
 
   console.log(el)
 
+  // 1. Find parent element
+    const parent = el.parentElement;
+    if (!parent) return;
+
+    // 2. Find .exercise-counter within parent
+    const counterDiv = parent.querySelector(".exercise-counter");
+    if (!counterDiv) return;
+
+    // 3. Parse text, increment, set back
+    let count = parseInt((counterDiv.textContent).split("/")[0], 10);
+    let total = parseInt((counterDiv.textContent).split("/")[1], 10);
+    if (isNaN(count)) count = 0;
+
   // First, trigger the timer
   run_timer(el, time);
 
@@ -44,46 +57,43 @@ function up_counter(el, time = 60, counter = "start") {
 
     setTimeout(() => {
 
-      // 1. Find parent element
-      const parent = el.parentElement;
-      if (!parent) return;
-
-      // 2. Find .exercise-counter within parent
-      const counterDiv = parent.querySelector(".exercise-counter");
-      if (!counterDiv) return;
-
-      // 3. Parse text, increment, set back
-      let count = parseInt(counterDiv.textContent, 10);
-      if (isNaN(count)) count = 0;
-      counterDiv.textContent = count + 1;
-
-      // Set back to orignal class
-
+      counterDiv.textContent = `${count + 1}/${total}`;
 
       el.className = originalClasses;
 
+      if (count + 1 == total) { 
+
+        counterDiv.classList.add("completed");
+        counterDiv.textContent = "DONE"
+
+      }
+
     }, time * 1000);
 
-  } else {
+  } else if (counter == "start") {    
+    
+    counterDiv.textContent = `${count + 1}/${total}`;
 
-    // 1. Find parent element
-    const parent = el.parentElement;
-    if (!parent) return;
+    if (count + 1 == total) { 
 
-    // 2. Find .exercise-counter within parent
-    const counterDiv = parent.querySelector(".exercise-counter");
-    if (!counterDiv) return;
+        counterDiv.classList.add("completed");
+        counterDiv.textContent = "DONE"
 
-    // 3. Parse text, increment, set back
-    let count = parseInt(counterDiv.textContent, 10);
-    if (isNaN(count)) count = 0;
-    counterDiv.textContent = count + 1;
+    }
 
     // Set back to orignal class
 
     el.className = originalClasses;
 
-  }
+
+
+  } else if (counter == "none") {
+
+    // Do nothing to counter
+
+    el.className = originalClasses;
+
+  };
 
   
 };
@@ -144,6 +154,7 @@ function run_timer(element, time = 60) {
   // Find initial text
 
   const initialText = (element.innerHTML).split(": ")[0];
+  const initialString = element.innerHTML;
 
   // Ask for permission
   if (Notification.permission !== "granted") {
@@ -166,6 +177,10 @@ function run_timer(element, time = 60) {
 
     if (timeLeft < 0) {
       clearInterval(interval); // stop the interval
+
+      // Reset text
+
+      element.innerHTML = initialString;
 
       // Or show notification
       if (Notification.permission === "granted") {

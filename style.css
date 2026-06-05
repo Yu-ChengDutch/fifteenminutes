@@ -255,6 +255,13 @@ ul {
 
 }
 
+.exercise-counter.completed {
+
+    background-color: aquamarine;
+    box-shadow: 0.5vw 0.3vw 2vw green;
+
+}
+
 .timer-text {
     display: inline-block;
     width: 45vw;
