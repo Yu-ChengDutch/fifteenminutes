@@ -102,9 +102,23 @@
 
             <p>The exercises need to be updated manually. If you can't do them now, then place them on the to-do list.These are the current exercises:</p>
 
-            <div class="card" onClick="window.location.href = '../Pages/Page_flexibility.html';">
+            <div>
 
-                <img src="../Images/Flexibility.png">
+                <div class="exercise-block">
+
+                    <div class="exercise-proper" onclick="up_counter(this, 30, 'end')">Pike stretch - shin: 0m30s</div>
+                    <div class="exercise-rest" id="plank-rest" onclick="up_counter(this, 30, 'none')">Rest: 0m30s</div>
+                    <div class="exercise-counter">0/6</div>
+
+                </div>
+
+                <div class="exercise-block">
+
+                    <div class="exercise-proper" onclick="up_counter(this, 30, 'end')">Belt reach backs: 0m30s</div>
+                    <div class="exercise-rest" id="plank-rest" onclick="up_counter(this, 30, 'none')">Rest: 0m30s</div>
+                    <div class="exercise-counter">0/6</div>
+
+                </div>  
 
             </div>
 
@@ -121,34 +135,26 @@
                     <div class="exercise-counter">0/4</div>
 
                 </div>
-                
+
                 <div class="exercise-block">
 
-                    <div class="exercise-proper" onclick="up_counter(this, 60, 'end')">Reverse Plank: 1m00s</div>
-                    <div class="exercise-rest" id="reverse-plank-rest" onclick="up_counter(this, 60, 'none')">Rest: 1m00s</div>
-                    <div class="exercise-counter">0/4</div>
+                    <div class="exercise-proper">15 pike pushups</div>
+                    <div class="exercise-rest" onclick="up_counter(this, 60, 'start')">Rest: 1m00s</div>
+                    <div class="exercise-counter">0/3</div>
 
                 </div>   
 
                 <div class="exercise-block">
 
-                    <div class="exercise-proper">10 pike pushups</div>
+                    <div class="exercise-proper">2x7 archer pushups</div>
                     <div class="exercise-rest" onclick="up_counter(this, 60, 'start')">Rest: 1m00s</div>
-                    <div class="exercise-counter">0/2</div>
-
-                </div>   
-
-                <div class="exercise-block">
-
-                    <div class="exercise-proper">10 archer pushups</div>
-                    <div class="exercise-rest" onclick="up_counter(this, 60, 'start')">Rest: 1m00s</div>
-                    <div class="exercise-counter">0/2</div>
+                    <div class="exercise-counter">0/3</div>
 
                 </div>  
 
                 <div class="exercise-block">
 
-                    <div class="exercise-proper">10 cossack squats</div>
+                    <div class="exercise-proper">2x5 shrimp squats</div>
                     <div class="exercise-rest" id="bodyweight-squats-rest" onclick="up_counter(this, 60, 'start')">Rest: 1m00s</div>
                     <div class="exercise-counter">0/4</div>
 
@@ -164,8 +170,8 @@
 
                 <div class="exercise-block">
 
-                    <div class="exercise-proper">10 tuck jump burpees</div>
-                    <div class="exercise-rest" id="plank-rest" onclick="up_counter(this, 60, 'none')">Rest: 1m00s</div>
+                    <div class="exercise-proper">5 tuck jump burpees</div>
+                    <div class="exercise-rest" id="plank-rest" onclick="up_counter(this, 60, 'start')">Rest: 1m00s</div>
                     <div class="exercise-counter">0/4</div>
 
                 </div>
